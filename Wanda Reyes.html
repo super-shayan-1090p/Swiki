@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanda Reyes - Fictional Character & Real Professionals</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --fictional-primary: #E75480;
+            --fictional-secondary: #FF69B4;
+            --fictional-accent: #FFB6C1;
+            --real-primary: #4682B4;
+            --real-secondary: #5F9EA0;
+            --real-accent: #87CEEB;
+            --light: #F5F5F5;
+            --dark: #333333;
+            --gray: #666666;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--fictional-primary), var(--real-primary));
+            color: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        /* Introduction */
+        .intro {
+            background-color: white;
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .fictional-section {
+            border-top: 5px solid var(--fictional-primary);
+        }
+        
+        .real-section {
+            border-top: 5px solid var(--real-primary);
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+            font-size: 1.8rem;
+        }
+        
+        .fictional-section h2 {
+            color: var(--fictional-primary);
+        }
+        
+        .real-section h2 {
+            color: var(--real-primary);
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 1.8rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .fictional-section h3 {
+            color: var(--fictional-secondary);
+        }
+        
+        .real-section h3 {
+            color: var(--real-secondary);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .highlight-box {
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 5px;
+        }
+        
+        .fictional-highlight {
+            background-color: #FFF0F5;
+            border-left: 4px solid var(--fictional-accent);
+        }
+        
+        .real-highlight {
+            background-color: #F0F8FF;
+            border-left: 4px solid var(--real-accent);
+        }
+        
+        /* Character/Person Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .card {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .fictional-card {
+            background-color: #FFF8F8;
+            border-top: 3px solid var(--fictional-secondary);
+        }
+        
+        .real-card {
+            background-color: #F8FBFF;
+            border-top: 3px solid var(--real-secondary);
+        }
+        
+        .card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        
+        .fictional-card h4 {
+            color: var(--fictional-secondary);
+        }
+        
+        .real-card h4 {
+            color: var(--real-secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #e9ecef;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .fictional-badge {
+            background-color: var(--fictional-primary);
+        }
+        
+        .real-badge {
+            background-color: var(--real-primary);
+        }
+        
+        .context-box {
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #4A90E2;
+        }
+        
+        .role-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .role-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .role-item {
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-left: 3px solid var(--fictional-accent);
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Wanda Reyes</h1>
+            <p>Fictional Character & Real-World Professionals</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#fictional">Fictional Character</a></li>
+                <li><a href="#real">Real Professionals</a></li>
+                <li><a href="#comparison">Comparison</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Introduction -->
+    <section class="intro">
+        <div class="container">
+            <p>The name "Wanda Reyes" refers to different individuals. The most prominent is a fictional character from Orange Is the New Black, but there are also accomplished real-life professionals with this name.</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Fictional Section -->
+        <div class="fictional-section section" id="fictional">
+            <h2>Wanda Reyes - Fictional Character</h2>
+            <p>Wanda Reyes is best known as a character from the award-winning Netflix series <em>Orange Is the New Black</em> (OITNB).</p>
+            
+            <div class="fictional-highlight highlight-box">
+                <h3>Character Overview</h3>
+                <p><strong>Source:</strong> Netflix series <em>Orange Is the New Black</em></p>
+                <p><strong>Portrayed by:</strong> Actor Maria Dizzia</p>
+                <p><strong>Role:</strong> Wife of main character Joe Caputo (played by Nick Sandow)</p>
+            </div>
+            
+            <h3>Character Traits & Role</h3>
+            
+            <div class="grid">
+                <div class="fictional-card card">
+                    <h4>Personality & Character</h4>
+                    <p>Wanda is portrayed as a kind, grounded, and supportive partner. She provides a stable and loving home life for Caputo, which contrasts with the chaos of his job as the prison administrator.</p>
+                    <p>Her character represents the "normal" world outside of Litchfield Penitentiary, offering Caputo an escape from the constant drama of the prison.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "Wanda Reyes provides the emotional anchor for Joe Caputo, representing stability and normalcy amidst the chaos of Litchfield Penitentiary."
+            </div>
+            
+            <h3>Character Development</h3>
+            <p>Wanda becomes a central figure in Caputo's personal life, especially in the later seasons of the show. Her relationship with Caputo evolves throughout the series, showing both the challenges and rewards of their partnership.</p>
+            
+            <p><span class="badge fictional-badge">Fictional Character</span> <span class="badge fictional-badge">OITNB</span> <span class="badge fictional-badge">Supporting Role</span></p>
+        </div>
+        
+        <!-- Real Professionals Section -->
+        <div class="real-section section" id="real">
+            <h2>Wanda Reyes - Real Professionals</h2>
+            <p>There are several accomplished professionals named Wanda Reyes. Here are two notable examples:</p>
+            
+            <div class="grid">
+                <div class="real-card card">
+                    <h4>Wanda T. Reyes - Government Official</h4>
+                    <p><strong>Notable Position:</strong> Served as the Acting Secretary of State for New Mexico in 2021</p>
+                    <p><strong>Career Highlights:</strong></p>
+                    <ul>
+                        <li>Held several high-level positions in New Mexico state government</li>
+                        <li>Served as Superintendent of Insurance</li>
+                        <li>Directed the Risk Management Division</li>
+                        <li>Demonstrated leadership in public service</li>
+                    </ul>
+                </div>
+                
+                <div class="real-card card">
+                    <h4>Wanda L. Reyes - Military Officer</h4>
+                    <p><strong>Notable Position:</strong> Brigadier General in the United States Marine Corps</p>
+                    <p><strong>Career Highlights:</strong></p>
+                    <ul>
+                        <li>First woman to command the Marine Corps Recruit Depot Parris Island</li>
+                        <li>First woman to command the Eastern Recruiting Region</li>
+                        <li>Distinguished career in the Marine Corps</li>
+                        <li>Pioneer for women in military leadership</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="real-highlight highlight-box">
+                <h3>Other Professionals</h3>
+                <p>The name Wanda Reyes also belongs to professionals in various fields including education, healthcare, and the arts across the United States. Without specific context (like location or profession), it's difficult to pinpoint a particular individual beyond the notable examples listed.</p>
+            </div>
+            
+            <p><span class="badge real-badge">Government Official</span> <span class="badge real-badge">Military Leader</span> <span class="badge real-badge">Professional</span></p>
+        </div>
+    </div>
+    
+    <!-- Comparison Section -->
+    <div class="container">
+        <div class="section" id="comparison">
+            <h2 class="text-center">Distinguishing Between Wanda Reyes References</h2>
+            
+            <div class="context-box">
+                <h3 class="text-center">How to Determine Which Wanda Reyes is Being Referenced</h3>
+                
+                <div class="role-list">
+                    <div class="role-item">
+                        <h4>Fictional Character Context</h4>
+                        <ul>
+                            <li>Discussions about television shows</li>
+                            <li>References to <em>Orange Is the New Black</em></li>
+                            <li>Conversations about Netflix series</li>
+                            <li>Discussions about character relationships</li>
+                            <li>Entertainment or pop culture contexts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="role-item">
+                        <h4>Real Professional Context</h4>
+                        <ul>
+                            <li>Government or political discussions</li>
+                            <li>New Mexico state government</li>
+                            <li>Military leadership topics</li>
+                            <li>Marine Corps history</li>
+                            <li>Professional achievements</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="text-center" style="margin-top: 1.5rem;"><strong>Conclusion:</strong> If the context is entertainment, television, or <em>Orange Is the New Black</em>, you are referring to the fictional character. If the context is government, military, or professional accomplishments, you are referring to one of the real-life professionals.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Wanda Reyes - Fictional</h4>
+                    <p>Orange Is the New Black Character</p>
+                    <p>Portrayed by Maria Dizzia</p>
+                    <p>Wife of Joe Caputo</p>
+                    <p>Supporting Character</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Wanda Reyes - Real Professionals</h4>
+                    <p>Wanda T. Reyes - Government Official</p>
+                    <p>Wanda L. Reyes - Military Officer</p>
+                    <p>Various Other Professionals</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About This Resource</h4>
+                    <p>This website distinguishes between the fictional character and real professionals named Wanda Reyes.</p>
+                    <p>All information is based on publicly available sources.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Name Reference Archive | This site provides information about fictional and real individuals named Wanda Reyes</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
