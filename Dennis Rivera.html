@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dennis Rivera - Labor Leader & Political Strategist</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #8B0000;
+            --primary-dark: #660000;
+            --secondary: #003366;
+            --accent: #D4AF37;
+            --light: #F5F5F5;
+            --dark: #333333;
+            --gray: #666666;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .tagline {
+            font-style: italic;
+            font-size: 1.1rem;
+            max-width: 400px;
+            text-align: right;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--secondary);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--light);
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            font-size: 1.6rem;
+        }
+        
+        h4 {
+            color: var(--secondary);
+            margin: 1.8rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .highlight-box {
+            background-color: #FFF9E6;
+            border-left: 4px solid var(--accent);
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .timeline {
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-year {
+            min-width: 100px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary);
+        }
+        
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--primary);
+        }
+        
+        /* Committee Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .impact-card {
+            background-color: #f0f7ff;
+            padding: 1.8rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--secondary);
+        }
+        
+        .impact-card h4 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #e9ecef;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Quote Section */
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--gray);
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent);
+            background-color: #f9f9f9;
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .accent-text {
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Dennis Rivera</h1>
+                <p>Labor Leader & Political Strategist</p>
+            </div>
+            <div class="tagline">
+                "Transforming healthcare unionism into a political powerhouse"
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#leadership">1199SEIU Leadership</a></li>
+                <li><a href="#influence">Political Influence</a></li>
+                <li><a href="#later-roles">Later Career</a></li>
+                <li><a href="#legacy">Legacy</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>A Transformative Force in the American Labor Movement</h2>
+            <p>Puerto Rican-born labor leader who revolutionized healthcare unionism and became a key political ally for the Democratic Party</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Primary Content -->
+        <div class="primary-content">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h3>About Dennis Rivera</h3>
+                <p>Dennis Rivera is a legendary figure in American labor history, known for his charismatic leadership and strategic brilliance in building one of the most powerful healthcare unions in the United States. His influence extends far beyond the labor movement into national politics and healthcare policy.</p>
+                
+                <div class="highlight-box">
+                    <h4>Core Identity</h4>
+                    <p>A Puerto Rican-born labor union leader who revolutionized healthcare unionism and became a key political ally for the Democratic Party, leveraging worker power to advance progressive causes.</p>
+                </div>
+                
+                <p>Throughout his career, Rivera has demonstrated an exceptional ability to mobilize workers, influence policy, and build coalitions that have shaped American healthcare and labor rights.</p>
+            </section>
+            
+            <!-- Leadership Section -->
+            <section id="leadership" class="section">
+                <h3>Leadership at 1199SEIU United Healthcare Workers East</h3>
+                <p>Rivera's most significant impact came during his tenure as president of 1199SEIU, the largest healthcare union in the United States.</p>
+                
+                <h4>Presidency: 1989-2007</h4>
+                <p>During his 18-year leadership, Rivera transformed 1199SEIU into a political and organizing powerhouse:</p>
+                <ul>
+                    <li><span class="accent-text">Dramatic Growth:</span> Expanded the union's membership and influence significantly</li>
+                    <li><span class="accent-text">Strategic Organizing:</span> Mastered hospital and nursing home worker organizing</li>
+                    <li><span class="accent-text">Political Mobilization:</span> Developed the ability to mobilize tens of thousands of members for political actions</li>
+                    <li><span class="accent-text">The "1199 Magic":</span> His charismatic leadership made the union's endorsement highly sought after by politicians at all levels</li>
+                </ul>
+                
+                <div class="quote">
+                    "Under Rivera's leadership, 1199SEIU became more than a union—it became a movement that politicians couldn't ignore."
+                </div>
+            </section>
+            
+            <!-- Political Influence -->
+            <section id="influence" class="section">
+                <h3>Political Influence and Key Issues</h3>
+                <p>Rivera made healthcare workers' union a dominant force in progressive politics, focusing on several key issues:</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <h4>Healthcare Reform</h4>
+                        <p>He was a pivotal early and forceful supporter of the Affordable Care Act (Obamacare), using his union's resources and grassroots network to help pass the landmark legislation.</p>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <h4>Medicaid & Medicare</h4>
+                        <p>Consistently fought to protect and expand these crucial programs, which were vital for both his members' patients and their job security in the healthcare sector.</p>
+                    </div>
+                </div>
+                
+                <h4>State and Local Politics</h4>
+                <p>In New York, Rivera was instrumental in advocating for progressive legislation including:</p>
+                <ul>
+                    <li>Healthcare staffing ratios to ensure quality patient care</li>
+                    <li>Workers' rights and fair labor practices</li>
+                    <li>Increased funding for healthcare services</li>
+                    <li>His endorsement was often seen as essential for Democrats running for statewide office</li>
+                </ul>
+            </section>
+        </div>
+        
+        <!-- Sidebar Content -->
+        <div class="sidebar-content">
+            <!-- Later Roles -->
+            <section id="later-roles" class="section">
+                <h3>Later Roles & Continued Influence</h3>
+                <p>After stepping down from the 1199SEIU presidency in 2007, Rivera remained a major player in national politics and the labor movement.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2007-</div>
+                        <div class="timeline-content">
+                            <h4>Chair of SEIU Healthcare</h4>
+                            <p>Served as the first chair of SEIU Healthcare, coordinating healthcare initiatives for the entire SEIU international union.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2007-</div>
+                        <div class="timeline-content">
+                            <h4>Senior Advisor to SEIU President</h4>
+                            <p>Acted as a key strategic advisor to SEIU's international president, Andy Stern.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2007</div>
+                        <div class="timeline-content">
+                            <h4>Coalition Building</h4>
+                            <p>Founded the Partnership for Quality Care (PQC), a coalition of healthcare providers and unions working to improve the U.S. healthcare system.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2008-2020</div>
+                        <div class="timeline-content">
+                            <h4>National Politics</h4>
+                            <p>Prominent surrogate and advisor for Democratic presidential campaigns, including Hillary Clinton and Joe Biden, focusing on Latino outreach and healthcare policy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Legacy -->
+            <section id="legacy" class="section">
+                <h3>Legacy & Impact</h3>
+                
+                <h4>Key Achievements</h4>
+                <p><span class="badge">Political Powerhouse</span> <span class="badge">Healthcare Advocate</span> <span class="badge">Labor Strategist</span></p>
+                
+                <ul>
+                    <li>Transformed a major healthcare union into a political powerhouse</li>
+                    <li>Became one of the most influential Latino figures in American politics</li>
+                    <li>Used his influence to fight for universal healthcare, workers' rights, and progressive causes</li>
+                    <li>Continues to be a respected strategist and power broker within the Democratic Party and the labor movement</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>Historical Significance:</strong> Dennis Rivera's career represents a model of how labor leadership can extend beyond traditional union activities to shape national policy and political landscapes.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Career Highlights</h4>
+                    <p>President, 1199SEIU (1989-2007)</p>
+                    <p>Chair, SEIU Healthcare</p>
+                    <p>Senior Advisor, SEIU International</p>
+                    <p>Founder, Partnership for Quality Care</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Key Contributions</h4>
+                    <a href="#">Affordable Care Act Advocacy</a>
+                    <a href">Healthcare Worker Organizing</a>
+                    <a href="#">Progressive Coalition Building</a>
+                    <a href="#">Latino Political Outreach</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Labor Movement Impact</h4>
+                    <p>Transformed healthcare unionism</p>
+                    <p>Pioneered political mobilization strategies</p>
+                    <p>Bridged labor and Democratic Party interests</p>
+                    <p>Advanced workers' rights and healthcare access</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>This website provides information about the influential labor leader Dennis Rivera. For current activities and official positions, please consult recent publications and SEIU resources.</p>
+                <p>&copy; 2023 Labor Leadership Historical Archive</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
