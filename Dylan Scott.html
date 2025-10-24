@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan Scott - Country Singer & Journalist</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --music-primary: #8B4513;
+            --music-secondary: #CD853F;
+            --music-accent: #DEB887;
+            --journalism-primary: #2E8B57;
+            --journalism-secondary: #3CB371;
+            --journalism-accent: #90EE90;
+            --light: #F5F5F5;
+            --dark: #333333;
+            --gray: #666666;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--music-primary), var(--journalism-primary));
+            color: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        /* Introduction */
+        .intro {
+            background-color: white;
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .music-section {
+            border-top: 5px solid var(--music-primary);
+        }
+        
+        .journalism-section {
+            border-top: 5px solid var(--journalism-primary);
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+            font-size: 1.8rem;
+        }
+        
+        .music-section h2 {
+            color: var(--music-primary);
+        }
+        
+        .journalism-section h2 {
+            color: var(--journalism-primary);
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 1.8rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .music-section h3 {
+            color: var(--music-secondary);
+        }
+        
+        .journalism-section h3 {
+            color: var(--journalism-secondary);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .highlight-box {
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 5px;
+        }
+        
+        .music-highlight {
+            background-color: #FFF8F0;
+            border-left: 4px solid var(--music-accent);
+        }
+        
+        .journalism-highlight {
+            background-color: #F0FFF8;
+            border-left: 4px solid var(--journalism-accent);
+        }
+        
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .card {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .music-card {
+            background-color: #FFF8F0;
+            border-top: 3px solid var(--music-secondary);
+        }
+        
+        .journalism-card {
+            background-color: #F0FFF8;
+            border-top: 3px solid var(--journalism-secondary);
+        }
+        
+        .card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        
+        .music-card h4 {
+            color: var(--music-secondary);
+        }
+        
+        .journalism-card h4 {
+            color: var(--journalism-secondary);
+        }
+        
+        /* Discography & Coverage Areas */
+        .items-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .item {
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #e9ecef;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .music-badge {
+            background-color: var(--music-primary);
+        }
+        
+        .journalism-badge {
+            background-color: var(--journalism-primary);
+        }
+        
+        .context-box {
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #4A90E2;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-left: 3px solid var(--music-accent);
+            background-color: #f9f9f9;
+        }
+        
+        .journalism-quote {
+            border-left: 3px solid var(--journalism-accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Dylan Scott</h1>
+            <p>Country Music Artist & Healthcare Policy Journalist</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#music">Country Singer</a></li>
+                <li><a href="#journalist">Journalist</a></li>
+                <li><a href="#comparison">Comparison</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Introduction -->
+    <section class="intro">
+        <div class="container">
+            <p>The name "Dylan Scott" is shared by two prominent individuals: a popular country music singer and a respected healthcare policy journalist. This website provides information about both.</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Music Section -->
+        <div class="music-section section" id="music">
+            <h2>Dylan Scott - Country Music Singer</h2>
+            <p>Dylan Scott is a prominent figure in modern country music, known for his deep baritone voice and blend of traditional country with contemporary pop and R&B influences.</p>
+            
+            <div class="music-highlight highlight-box">
+                <h3>Artist Profile</h3>
+                <p><strong>Born:</strong> November 28, 1990, in Bastrop, Louisiana, USA</p>
+                <p><strong>Record Label:</strong> Curb Records</p>
+                <p><strong>Genre:</strong> Country, Country Pop</p>
+            </div>
+            
+            <h3>Musical Career & Success</h3>
+            
+            <div class="grid">
+                <div class="music-card card">
+                    <h4>Breakout Hit</h4>
+                    <p>His 2016 single "My Girl" was a massive success, reaching the top of the Billboard Country Airplay chart and becoming a multi-platinum certified anthem.</p>
+                </div>
+                
+                <div class="music-card card">
+                    <h4>Major Success</h4>
+                    <p>His 2021 single "Nobody" was an even bigger cross-over hit, also reaching #1 on the Country Airplay chart and achieving platinum status multiple times over. Its popularity soared on social media platforms like TikTok.</p>
+                </div>
+            </div>
+            
+            <h3>Discography</h3>
+            <div class="items-grid">
+                <div class="item">
+                    <h4>Dylan Scott (2013)</h4>
+                    <p>Self-titled debut album</p>
+                </div>
+                
+                <div class="item">
+                    <h4>Nothing To Do Town (2018)</h4>
+                    <p>Major-label debut album</p>
+                </div>
+                
+                <div class="item">
+                    <h4>Livin' My Best Life (2022)</h4>
+                    <p>Latest studio album</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "Dylan Scott's music often focuses on themes of love, small-town life, and romance, connecting with audiences through relatable storytelling."
+            </div>
+            
+            <h3>Personal Life</h3>
+            <p>He is married to his high school sweetheart, Blair Scott, and they have children together. His family and faith are central themes in his life and often feature in his social media and music.</p>
+            
+            <p><span class="badge music-badge">Country Music</span> <span class="badge music-badge">Chart-Topper</span> <span class="badge music-badge">Curb Records</span></p>
+        </div>
+        
+        <!-- Journalism Section -->
+        <div class="journalism-section section" id="journalist">
+            <h2>Dylan Scott - Journalist</h2>
+            <p>Dylan Scott is a respected journalist covering health care policy for Vox, known for making complex policy issues accessible to general audiences.</p>
+            
+            <div class="journalism-highlight highlight-box">
+                <h3>Professional Profile</h3>
+                <p><strong>Profession:</strong> Senior Correspondent and Editor</p>
+                <p><strong>Outlet:</strong> Vox</p>
+                <p><strong>Specialization:</strong> Health care policy, public health, U.S. domestic policy</p>
+            </div>
+            
+            <h3>Journalism Career & Expertise</h3>
+            
+            <div class="grid">
+                <div class="journalism-card card">
+                    <h4>Policy Coverage</h4>
+                    <p>He is a leading journalist covering health care policy, public health, and the U.S. government's domestic policy agenda. He is particularly known for his in-depth coverage of the Affordable Care Act (Obamacare), Medicaid, and Medicare.</p>
+                </div>
+                
+                <div class="journalism-card card">
+                    <h4>Reputation & Style</h4>
+                    <p>He is widely recognized for his ability to explain complex policy issues in an accessible and clear way for a general audience. His work helps readers understand the intricacies of healthcare systems and policy debates.</p>
+                </div>
+            </div>
+            
+            <h3>Key Coverage Areas</h3>
+            <div class="items-grid">
+                <div class="item">
+                    <h4>Affordable Care Act</h4>
+                    <p>In-depth reporting on Obamacare implementation and impacts</p>
+                </div>
+                
+                <div class="item">
+                    <h4>Medicaid</h4>
+                    <p>Coverage of Medicaid expansion and policy changes</p>
+                </div>
+                
+                <div class="item">
+                    <h4>Medicare</h4>
+                    <p>Reporting on Medicare policy and reforms</p>
+                </div>
+                
+                <div class="item">
+                    <h4>Public Health</h4>
+                    <p>Coverage of broader public health issues and policies</p>
+                </div>
+            </div>
+            
+            <div class="quote journalism-quote">
+                "Dylan Scott excels at translating complex healthcare policy into understandable information for the public, making him a vital resource in political journalism."
+            </div>
+            
+            <p><span class="badge journalism-badge">Healthcare Policy</span> <span class="badge journalism-badge">Vox</span> <span class="badge journalism-badge">Public Health</span></p>
+        </div>
+    </div>
+    
+    <!-- Comparison Section -->
+    <div class="container">
+        <div class="section" id="comparison">
+            <h2 class="text-center">Distinguishing Between Dylan Scott References</h2>
+            
+            <div class="context-box">
+                <h3 class="text-center">How to Determine Which Dylan Scott is Being Referenced</h3>
+                
+                <div class="items-grid">
+                    <div class="item">
+                        <h4>Country Singer Context</h4>
+                        <ul>
+                            <li>Music charts and awards</li>
+                            <li>Country music festivals and concerts</li>
+                            <li>Radio airplay and music streaming</li>
+                            <li>Social media trends (especially TikTok)</li>
+                            <li>Entertainment news</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item">
+                        <h4>Journalist Context</h4>
+                        <ul>
+                            <li>Healthcare policy discussions</li>
+                            <li>Vox media articles</li>
+                            <li>Political analysis</li>
+                            <li>Government policy debates</li>
+                            <li>Public health reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="text-center" style="margin-top: 1.5rem;"><strong>Conclusion:</strong> If the context involves music, entertainment, or chart success, you're referring to the country artist. If it involves healthcare policy, political journalism, or Vox media, you're referring to the journalist.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dylan Scott - Country Singer</h4>
+                    <p>Chart-Topping Artist</p>
+                    <p>Curb Records</p>
+                    <p>Hit Singles: "My Girl", "Nobody"</p>
+                    <p>Modern Country Music</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Dylan Scott - Journalist</h4>
+                    <p>Senior Correspondent at Vox</p>
+                    <p>Healthcare Policy Expert</p>
+                    <p>Public Health Reporter</p>
+                    <p>Policy Analyst</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About This Resource</h4>
+                    <p>This website distinguishes between the country music artist and journalist named Dylan Scott.</p>
+                    <p>Information is compiled from publicly available sources.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Name Reference Archive | This site provides information about two distinct professionals named Dylan Scott</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
