@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roger Ward - Actor & Racing Driver</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --actor-primary: #8B4513;
+            --actor-secondary: #D2691E;
+            --actor-accent: #F4A460;
+            --racer-primary: #8B0000;
+            --racer-secondary: #B22222;
+            --racer-accent: #DC143C;
+            --light: #F5F5F5;
+            --dark: #333333;
+            --gray: #666666;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--actor-primary), var(--racer-primary));
+            color: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: #555;
+        }
+        
+        /* Introduction */
+        .intro {
+            background-color: white;
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .actor-section {
+            border-top: 5px solid var(--actor-primary);
+        }
+        
+        .racer-section {
+            border-top: 5px solid var(--racer-primary);
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+            font-size: 1.8rem;
+        }
+        
+        .actor-section h2 {
+            color: var(--actor-primary);
+        }
+        
+        .racer-section h2 {
+            color: var(--racer-primary);
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 1.8rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .actor-section h3 {
+            color: var(--actor-secondary);
+        }
+        
+        .racer-section h3 {
+            color: var(--racer-secondary);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .highlight-box {
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 5px;
+        }
+        
+        .actor-highlight {
+            background-color: #FFF8F0;
+            border-left: 4px solid var(--actor-accent);
+        }
+        
+        .racer-highlight {
+            background-color: #FFF0F0;
+            border-left: 4px solid var(--racer-accent);
+        }
+        
+        /* Timeline */
+        .timeline {
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-year {
+            min-width: 80px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .actor-section .timeline-year {
+            color: var(--actor-primary);
+        }
+        
+        .racer-section .timeline-year {
+            color: var(--racer-primary);
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .actor-section .timeline-content:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--actor-primary);
+        }
+        
+        .actor-section .timeline-content:after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--actor-primary);
+        }
+        
+        .racer-section .timeline-content:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--racer-primary);
+        }
+        
+        .racer-section .timeline-content:after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--racer-primary);
+        }
+        
+        /* Film/Race Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .actor-card {
+            background-color: #f8f4f0;
+            border-top: 3px solid var(--actor-secondary);
+        }
+        
+        .racer-card {
+            background-color: #f8f0f0;
+            border-top: 3px solid var(--racer-secondary);
+        }
+        
+        .card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        
+        .actor-card h4 {
+            color: var(--actor-secondary);
+        }
+        
+        .racer-card h4 {
+            color: var(--racer-secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #e9ecef;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .actor-badge {
+            background-color: var(--actor-primary);
+        }
+        
+        .racer-badge {
+            background-color: var(--racer-primary);
+        }
+        
+        .context-box {
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #4A90E2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Roger Ward</h1>
+            <p>Two Notable Individuals - Australian Actor & American Racing Champion</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#actor">Australian Actor</a></li>
+                <li><a href="#racer">Racing Driver</a></li>
+                <li><a href="#comparison">Comparison</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Introduction -->
+    <section class="intro">
+        <div class="container">
+            <p>The name "Roger Ward" refers to more than one notable person. This website provides information about the two most prominent individuals: an Australian actor known for his role in Mad Max, and an American auto racing champion who won the Indianapolis 500 twice.</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Actor Section -->
+        <div class="actor-section section" id="actor">
+            <h2>Roger Ward - Australian Actor</h2>
+            <p>Roger Ward is a quintessential figure in the Australian New Wave cinema of the 1970s and 80s, internationally recognized for his role in <em>Mad Max</em>.</p>
+            
+            <div class="actor-highlight highlight-box">
+                <h3>Vital Information</h3>
+                <p><strong>Born:</strong> 1938 in Adelaide, South Australia</p>
+                <p><strong>Profession:</strong> Actor, Stuntman, Author</p>
+                <p><strong>Known For:</strong> Tough, rugged, or villainous characters in Australian cult cinema</p>
+            </div>
+            
+            <h3>Notable Roles & Career</h3>
+            
+            <div class="grid">
+                <div class="actor-card card">
+                    <h4>Mad Max (1979)</h4>
+                    <p>Best known for his role as "Fifi" Macaffee, the cynical and bureaucratic Captain of the Main Force Patrol. This role made him a recognizable face in cult cinema worldwide.</p>
+                </div>
+                
+                <div class="actor-card card">
+                    <h4>The Man from Hong Kong (1975)</h4>
+                    <p>Played a key role in this early Australia-Hong Kong co-production, helping to establish his reputation in action cinema.</p>
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="actor-card card">
+                    <h4>Turkey Shoot (1982)</h4>
+                    <p>Starred in this notorious and violent exploitation film, which has developed a strong cult following over the years.</p>
+                </div>
+                
+                <div class="actor-card card">
+                    <h4>Television Career</h4>
+                    <p>Long career on Australian TV with appearances in classic series like <em>Prisoner</em> (as Officer Spence), <em>The Sullivans</em>, <em>Homicide</em>, and <em>Bluey</em>.</p>
+                </div>
+            </div>
+            
+            <p>Beyond acting, Ward has also worked as a stuntman and has written several books about his life and career in the film industry.</p>
+            
+            <h3>Career Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1938</div>
+                    <div class="timeline-content">
+                        <h4>Born in Adelaide</h4>
+                        <p>Roger Ward was born in Adelaide, South Australia.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1975</div>
+                    <div class="timeline-content">
+                        <h4>The Man from Hong Kong</h4>
+                        <p>Appeared in this early Australia-Hong Kong co-production.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1979</div>
+                    <div class="timeline-content">
+                        <h4>Mad Max Breakthrough</h4>
+                        <p>Played "Fifi" Macaffee in the iconic film that would become a worldwide cult classic.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1982</div>
+                    <div class="timeline-content">
+                        <h4>Turkey Shoot</h4>
+                        <p>Starred in this notorious exploitation film that developed a strong cult following.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p><span class="badge actor-badge">Australian Cinema</span> <span class="badge actor-badge">Cult Classic</span> <span class="badge actor-badge">Character Actor</span></p>
+        </div>
+        
+        <!-- Racer Section -->
+        <div class="racer-section section" id="racer">
+            <h2>Roger Ward - American Racing Driver</h2>
+            <p>Roger Ward was a legend in American open-wheel racing, particularly during the 1950s and 1960s, with two Indianapolis 500 victories to his name.</p>
+            
+            <div class="racer-highlight highlight-box">
+                <h3>Vital Information</h3>
+                <p><strong>Lived:</strong> 1921 – 2004</p>
+                <p><strong>Profession:</strong> Auto Racing Driver</p>
+                <p><strong>Known For:</strong> Two-time Indianapolis 500 champion</p>
+            </div>
+            
+            <h3>Notable Achievements & Career</h3>
+            
+            <div class="grid">
+                <div class="racer-card card">
+                    <h4>Indianapolis 500 Champion</h4>
+                    <p>Won the prestigious Indianapolis 500 twice (1959 and 1962). Winning this race once makes a driver famous; winning it twice cements their legacy in motorsports history.</p>
+                </div>
+                
+                <div class="racer-card card">
+                    <h4>National Champion</h4>
+                    <p>Was the USAC National Champion in 1959, the same year as his first Indianapolis 500 victory.</p>
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="racer-card card">
+                    <h4>Competitive Rivalry</h4>
+                    <p>Was a fierce competitor and rival to other legends of the era, most notably A.J. Foyt, creating one of the great rivalries in American motorsports.</p>
+                </div>
+                
+                <div class="racer-card card">
+                    <h4>Versatility</h4>
+                    <p>While his greatest success came on paved ovals, he was also a skilled road racer and competed in the NASCAR Grand National Series (now Cup Series).</p>
+                </div>
+            </div>
+            
+            <p>He is a member of the Motorsports Hall of Fame of America and the National Sprint Car Hall of Fame, cementing his legacy as one of America's racing greats.</p>
+            
+            <h3>Career Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1921</div>
+                    <div class="timeline-content">
+                        <h4>Born</h4>
+                        <p>Roger Ward was born in the United States.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1959</div>
+                    <div class="timeline-content">
+                        <h4>First Indianapolis 500 Victory</h4>
+                        <p>Won his first Indianapolis 500 and became USAC National Champion.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1962</div>
+                    <div class="timeline-content">
+                        <h4>Second Indianapolis 500 Victory</h4>
+                        <p>Won his second Indianapolis 500, cementing his legacy in motorsports history.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">
+                        <h4>Passed Away</h4>
+                        <p>Roger Ward died, leaving behind a legendary racing career.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p><span class="badge racer-badge">Indianapolis 500</span> <span class="badge racer-badge">Racing Legend</span> <span class="badge racer-badge">Hall of Fame</span></p>
+        </div>
+    </div>
+    
+    <!-- Comparison Section -->
+    <div class="container">
+        <div class="section" id="comparison">
+            <h2 class="text-center">Distinguishing Between the Two Roger Wards</h2>
+            
+            <div class="context-box">
+                <h3 class="text-center">How to Determine Which Roger Ward is Relevant</h3>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h4>Australian Actor Context</h4>
+                        <ul>
+                            <li>Film, especially cult classics</li>
+                            <li><em>Mad Max</em> franchise</li>
+                            <li>Australian New Wave cinema</li>
+                            <li>Australian television</li>
+                            <li>Action or exploitation films</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>American Racer Context</h4>
+                        <ul>
+                            <li>Auto racing history</li>
+                            <li>Indianapolis 500</li>
+                            <li>American sports history</li>
+                            <li>USAC Championship</li>
+                            <li>Vintage motorsports</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="text-center" style="margin-top: 1.5rem;"><strong>Conclusion:</strong> If the context is film, <em>Mad Max</em>, or Australian culture, you are looking for the actor. If the context is auto racing, the Indianapolis 500, or American sports history, you are looking for the racing driver.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Roger Ward - Actor</h4>
+                    <p>Australian New Wave Cinema</p>
+                    <p>Mad Max (1979)</p>
+                    <p>Character Actor & Stuntman</p>
+                    <p>Author</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Roger Ward - Racer</h4>
+                    <p>American Auto Racing</p>
+                    <p>2-time Indianapolis 500 Winner</p>
+                    <p>USAC National Champion</p>
+                    <p>Motorsports Hall of Fame</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About This Resource</h4>
+                    <p>This website distinguishes between two notable individuals who share the name Roger Ward.</p>
+                    <p>All information is based on publicly available biographical data.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Notable Names Archive | This site provides information about two distinct individuals named Roger Ward</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
