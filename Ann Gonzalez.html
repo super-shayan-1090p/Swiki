@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assemblymember Ann Gonzalez - California District 53</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #003366, #0055a4);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .logo p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #004280;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: #003366;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #e9ecef;
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #495057;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef;
+            font-size: 1.5rem;
+        }
+        
+        h4 {
+            color: #0055a4;
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background-color: #e7f1ff;
+            border-left: 4px solid #0055a4;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .district-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 480px) {
+            .district-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Committee Section */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .committee-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .committee-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-top: 3px solid #003366;
+        }
+        
+        .committee-card h4 {
+            margin-top: 0;
+            color: #003366;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 2.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #e9ecef;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #004280;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: #0055a4;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Assemblymember Ann Gonzalez</h1>
+                <p>California State Assembly - District 53</p>
+            </div>
+            <div class="contact-info">
+                <p>Democratic Party</p>
+                <p>In Office Since 2012</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#district">District 53</a></li>
+                <li><a href="#priorities">Policy Priorities</a></li>
+                <li><a href="#committees">Committee Roles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Representing Glendale, Burbank & Los Angeles Communities</h2>
+            <p>Fighting for consumer protection, clean energy, and working families in the California State Assembly</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Primary Content -->
+        <div class="primary-content">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h3>About Assemblymember Ann Gonzalez</h3>
+                <p>Ann Gonzalez is a dedicated public servant and member of the Democratic Party who has represented California's 53rd Assembly District since her election in 2012. With multiple successful re-elections, she has established herself as a prominent figure in California politics.</p>
+                
+                <div class="highlight-box">
+                    <h4>Political Background</h4>
+                    <p>Before serving in the State Assembly, Ann Gonzalez was an elected member of the Glendale Community College Board of Trustees. She brings a background in both business and education to her legislative work.</p>
+                </div>
+                
+                <p>Throughout her tenure, Assemblymember Gonzalez has focused on practical solutions to the challenges facing her constituents and all Californians. Her legislative record reflects her commitment to consumer rights, environmental sustainability, and educational opportunities.</p>
+            </section>
+            
+            <!-- District Section -->
+            <section id="district" class="section">
+                <h3>Assembly District 53</h3>
+                <p>Assemblymember Gonzalez represents the 53rd District of California, which covers a significant portion of Los Angeles County including diverse urban and suburban communities.</p>
+                
+                <h4>Cities and Neighborhoods Represented</h4>
+                <div class="district-list">
+                    <div>
+                        <ul>
+                            <li><strong>Glendale</strong></li>
+                            <li><strong>Burbank</strong></li>
+                            <li>Atwater Village</li>
+                            <li>Los Feliz</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Silver Lake</li>
+                            <li>Echo Park</li>
+                            <li>Parts of Los Angeles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p>The district encompasses a vibrant mix of residential communities, commercial centers, and cultural institutions, representing the diverse fabric of Southern California.</p>
+            </section>
+            
+            <!-- Policy Priorities -->
+            <section id="priorities" class="section">
+                <h3>Policy Priorities & Legislative Work</h3>
+                
+                <h4>Consumer Protection</h4>
+                <p>As Chair of the Assembly Committee on Consumer Protection and Business, Assemblymember Gonzalez has been a leading voice for:</p>
+                <ul>
+                    <li>Data privacy and security legislation</li>
+                    <li>Fair business practices and regulations</li>
+                    <li>Product safety standards</li>
+                    <li>Protection against fraudulent activities</li>
+                </ul>
+                
+                <h4>Utilities & Energy</h4>
+                <p>In her role as Chair of the Assembly Committee on Utilities and Energy, she oversees critical policy areas including:</p>
+                <ul>
+                    <li>California's transition to clean energy</li>
+                    <li>Electricity, water, and gas infrastructure</li>
+                    <li>Telecommunications policy</li>
+                    <li>Climate change mitigation strategies</li>
+                </ul>
+                
+                <h4>Additional Legislative Focus</h4>
+                <p>Beyond her committee responsibilities, Assemblymember Gonzalez works on legislation related to:</p>
+                <ul>
+                    <li>Healthcare access and affordability</li>
+                    <li>Education funding and reform</li>
+                    <li>Support for working families</li>
+                    <li>Economic development</li>
+                </ul>
+            </section>
+        </div>
+        
+        <!-- Sidebar Content -->
+        <div class="sidebar-content">
+            <!-- Committee Roles -->
+            <section id="committees" class="section">
+                <h3>Committee Leadership</h3>
+                <p>Assemblymember Gonzalez holds key leadership positions in the California State Assembly:</p>
+                
+                <div class="committee-grid">
+                    <div class="committee-card">
+                        <h4>Consumer Protection & Business</h4>
+                        <p><strong>Role:</strong> Chair</p>
+                        <p>Oversees legislation related to privacy, data security, fair business practices, and product safety.</p>
+                    </div>
+                    
+                    <div class="committee-card">
+                        <h4>Utilities & Energy</h4>
+                        <p><strong>Role:</strong> Chair</p>
+                        <p>Leads policy decisions affecting California's energy infrastructure and transition to clean energy.</p>
+                    </div>
+                </div>
+                
+                <p>These leadership positions place Assemblymember Gonzalez at the forefront of critical policy debates in California.</p>
+            </section>
+            
+            <!-- Key Facts -->
+            <section class="section">
+                <h3>Key Information</h3>
+                
+                <h4>Political Affiliation</h4>
+                <p><span class="badge">Democratic Party</span></p>
+                
+                <h4>First Elected</h4>
+                <p>2012</p>
+                
+                <h4>District</h4>
+                <p>California State Assembly District 53</p>
+                
+                <h4>Region</h4>
+                <p>Los Angeles County</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Note:</strong> For the most current information on Assemblymember Gonzalez's work, positions, and legislative actions, please check her official California State Assembly website or recent news sources.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>State Capitol Office</p>
+                    <p>Sacramento, CA</p>
+                    <p>Phone: (916) 319-2053</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>District Office</h4>
+                    <p>Glendale, CA</p>
+                    <p>Phone: (818) 240-6330</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Official Assembly Website</a>
+                    <a href="#">Legislation</a>
+                    <a href="#">News & Updates</a>
+                    <a href="#">Constituent Services</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>This is an informational resource about Assemblymember Ann Gonzalez. For official information, please visit the California State Assembly website.</p>
+                <p>&copy; 2023 California State Assembly District 53</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
