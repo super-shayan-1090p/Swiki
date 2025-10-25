@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanjiro Kamado | Demon Slayer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .technique {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .water-breathing {
+            color: #00aaff;
+            text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .hinokami {
+            color: #ff4444;
+            text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+            font-weight: bold;
+        }
+        
+        .breathing-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .forms-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .form-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .form-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .demon-slayer-glow {
+            animation: demon-slayer 3s infinite;
+        }
+        
+        @keyframes demon-slayer {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 68, 68, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .compassion {
+            background: linear-gradient(45deg, #ff8c00, #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .family-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .forms-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TANJIRO KAMADO <span class="demon-slayer-glow">🗡️</span></h1>
+        <p class="subtitle">The Kind-hearted Demon Slayer</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Tanjiro Kamado</h2>
+                <p>Tanjiro Kamado is the main protagonist of Koyoharu Gotouge's Demon Slayer: Kimetsu no Yaiba. He was once a kind-hearted charcoal seller living peacefully with his family in the mountains until his family was slaughtered by demons, with only his sister Nezuko surviving the attack - though she was turned into a demon.</p>
+                
+                <div class="quote">
+                    "No matter how many people you may lose, you have no choice but to go on living. No matter how devastating the blows may be."
+                </div>
+                
+                <p>Determined to find a cure for his sister and avenge his family, Tanjiro joins the Demon Slayer Corps to battle demons and protect humanity while never losing his compassionate nature.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Tanjiro is characterized by his exceptional kindness, strong sense of justice, and unwavering determination. Despite the tragedy he's endured, he maintains a pure heart and shows compassion even toward demons.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Compassionate</span>
+                    <span class="trait">Determined</span>
+                    <span class="trait">Empathetic</span>
+                    <span class="trait">Persevering</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Strong-willed</span>
+                </div>
+                
+                <p>Tanjiro's most remarkable quality is his ability to sense the emotions and memories of others through his enhanced sense of smell, which allows him to understand even his enemies' pain and suffering.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Family & Companions</h2>
+                <div class="family-section">
+                    <p>Tanjiro's journey is defined by his relationships with those closest to him:</p>
+                    
+                    <div class="forms-list">
+                        <div class="form-item">
+                            <div class="form-name">Nezuko Kamado</div>
+                            <div>Demon sister & companion</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Zenitsu Agatsuma</div>
+                            <div>Fellow Demon Slayer</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Inosuke Hashibira</div>
+                            <div>Wild companion</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Sakonji Urokodaki</div>
+                            <div>Mentor & teacher</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Breathing Techniques & Forms</h2>
+                <div class="breathing-section">
+                    <p>Tanjiro masters multiple Breathing Styles throughout his journey as a Demon Slayer:</p>
+                    
+                    <div class="forms-list">
+                        <div class="form-item">
+                            <div class="form-name">Water Breathing</div>
+                            <div>10 Forms mastered</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Hinokami Kagura</div>
+                            <div>Sun Breathing</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Dance of the Fire God</div>
+                            <div>Original technique</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>Tanjiro possesses unique abilities that make him one of the most formidable Demon Slayers in history.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Enhanced Sense of Smell</h3>
+                        <p>Can detect emotions, track demons, identify weaknesses, and even sense the "Opening Thread" - lines that show where to strike for maximum effect.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Water Breathing</h3>
+                        <p>Mastered all 10 forms of Water Breathing under Urokodaki's training, creating fluid, powerful attacks that mimic water's movements.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Hinokami Kagura</h3>
+                        <p>Inherited the Sun Breathing technique from his father, the original and most powerful Breathing Style that can seriously harm Muzan Kibutsuji.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Demon Slayer Mark</h3>
+                        <p>Awakened during intense battles, enhancing his physical abilities, speed, and reaction time to superhuman levels.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Transparent World</h3>
+                        <p>Can see into his opponents' bodies, observing muscle movements, blood flow, and joint actions to predict attacks.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Bright Red Nichirin Sword</h3>
+                        <p>His blade turns bright red when using Hinokami Kagura, temporarily neutralizing demon regeneration abilities.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Breathing Techniques</h2>
+            <ul class="power-list">
+                <li><span class="technique">Water Breathing:</span> 10 Forms mastered</li>
+                <li><span class="technique">Hinokami Kagura:</span> Sun Breathing</li>
+                <li><span class="technique">Total Concentration:</span> Constant state</li>
+                <li><span class="technique">Constant:</span> Even while sleeping</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Nezuko Kamado</strong> - Sister turned demon</li>
+                <li><strong>Zenitsu Agatsuma</strong> - Thunder Breathing companion</li>
+                <li><strong>Inosuke Hashibira</strong> - Beast Breathing wild child</li>
+                <li><strong>Sakonji Urokodaki</strong> - Water Breathing mentor</li>
+                <li><strong>Giyu Tomioka</strong> - The Hashira who saved him</li>
+                <li><strong>Muzan Kibutsuji</strong> - Demon King & nemesis</li>
+            </ul>
+            
+            <h2>The Kamado Legacy</h2>
+            <p>Tanjiro comes from a long line of practitioners of the <span class="hinokami">Hinokami Kagura</span> (Dance of the Fire God), which was actually the original <span class="hinokami">Sun Breathing</span> technique passed down through generations to keep it from being lost.</p>
+            
+            <h2>Unique Perspective</h2>
+            <p>What sets Tanjiro apart is his <span class="compassion">compassion toward demons</span>. While dedicated to eliminating demons that harm humans, he recognizes their tragic origins and often prays for them as they die, acknowledging their suffering.</p>
+            
+            <h2>Demon Slayer Rank</h2>
+            <p>Tanjiro quickly rises through the Demon Slayer Corps ranks, eventually becoming a <span class="highlight">Hashira-level</span> combatant recognized for his exceptional skills and contributions to defeating the Twelve Kizuki and Muzan himself.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Tanjiro Kamado from Demon Slayer: Kimetsu no Yaiba</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
