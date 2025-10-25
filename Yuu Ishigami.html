@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuu Ishigami | Kaguya-sama: Love Is War</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .student-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .loner-accent {
+            color: #8b0000;
+            text-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .character-growth {
+            color: #00aa00;
+            text-shadow: 0 0 5px rgba(0, 170, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .skills-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .skill-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .ishigami-glow {
+            animation: ishigami 3s infinite;
+        }
+        
+        @keyframes ishigami {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(139, 0, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .justice {
+            background: linear-gradient(45deg, #ff8c00, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .relationships-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .flower-bloom {
+            animation: flower-bloom 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes flower-bloom {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .skill-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YUU ISHIGAMI <span class="ishigami-glow">🎮</span></h1>
+        <p class="subtitle">The Redeemed Loner of the Student Council</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Yuu Ishigami</h2>
+                <p>Yuu Ishigami is a main character in Aka Akasaka's Kaguya-sama: Love Is War, serving as the treasurer of the Student Council. Initially introduced as a gloomy, socially isolated student, Ishigami gradually develops into one of the series' most complex and beloved characters through his journey of redemption and personal growth.</p>
+                
+                <div class="quote">
+                    "I'm not a good person. I'm just someone who can't stand seeing others suffer."
+                </div>
+                
+                <p>Despite his cynical exterior and self-deprecating humor, Ishigami possesses a strong sense of justice and secretly cares deeply about others. His character arc from social outcast to valued member of the Student Council is one of the most compelling stories in the series.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Ishigami presents himself as a pessimistic loner who prefers video games to social interaction, but this facade hides a deeply compassionate individual with a strong moral compass and surprising emotional intelligence.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Cynical</span>
+                    <span class="trait">Compassionate</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Self-deprecating</span>
+                    <span class="trait">Observant</span>
+                    <span class="trait">Surprisingly Wise</span>
+                </div>
+                
+                <p>Ishigami's growth involves learning to value himself and open up to others while maintaining his unique perspective on life. His blunt honesty often provides unexpected wisdom to his peers.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Student Council Dynamics</h2>
+                <div class="relationships-section">
+                    <p>Ishigami's evolving relationships within the Student Council:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Miyuki Shirogane</div>
+                            <div>President & mentor</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Kaguya Shinomiya</div>
+                            <div>Vice President & protector</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Chika Fujiwara</div>
+                            <div>Secretary & gaming rival</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Miko Iino</div>
+                            <div>Discipline officer & complicated crush</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Hidden Talents</h2>
+                <div class="skills-section">
+                    <p>Ishigami's unexpected skills and abilities:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Academic Excellence</div>
+                            <div>Top-tier student when motivated</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Gaming Master</div>
+                            <div>Exceptional video game skills</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Observational Skills</div>
+                            <div>Notices details others miss</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Emotional Intelligence</div>
+                            <div>Surprisingly good at reading people</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Character Development</h2>
+                <p>Ishigami's journey from isolation to acceptance showcases his remarkable growth and hidden strengths.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Middle School Trauma</h3>
+                        <p>Ishigami's past as a social outcast stems from an incident where he was unfairly blamed for a classmate's suicide attempt after trying to protect her from an abusive relationship.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Redemption Arc</h3>
+                        <p>Through the intervention of Shirogane and Shinomiya, Ishigami is given a second chance in the Student Council, where he gradually learns to trust others and value himself.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Unexpected Popularity</h3>
+                        <p>After his character development, Ishigami becomes surprisingly popular with female students who appreciate his genuine nature and hidden kindness.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Romantic Awakening</h3>
+                        <p>Ishigami experiences his first real romantic feelings, first for Tsubame Koyasu and later developing complicated feelings for Miko Iino.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Moral Courage</h3>
+                        <p>Despite his timid appearance, Ishigami repeatedly demonstrates courage in standing up for what's right, even when it costs him socially.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Self-Acceptance</h3>
+                        <p>Ishigami's greatest achievement is learning to accept himself and recognize his own worth, moving beyond his self-imposed isolation.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Student Council Profile</h2>
+            <ul class="power-list">
+                <li><span class="student-info">Position:</span> Treasurer</li>
+                <li><span class="student-info">Reputation:</span> <span class="loner-accent">Former Loner</span></li>
+                <li><span class="student-info">Hobby:</span> Video Games</li>
+                <li><span class="student-info">Academic:</span> Top Student</li>
+                <li><span class="student-info">Growth:</span> <span class="character-growth">Remarkable</span></li>
+                <li><span class="student-info">Motto:</span> <span class="justice">"I can't stand injustice"</span></li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Miyuki Shirogane</strong> - Mentor who saved him</li>
+                <li><strong>Kaguya Shinomiya</strong> - Secret protector</li>
+                <li><strong>Tsubame Koyasu</strong> - First love interest</li>
+                <li><strong>Miko Iino</strong> - Complicated relationship</li>
+                <li><strong>Chika Fujiwara</strong> - Gaming companion</li>
+                <li><strong>Osaragi</strong> - Middle school classmate</li>
+            </ul>
+            
+            <h2>The Incident</h2>
+            <p>Ishigami's middle school trauma involved discovering a female classmate being cheated on. When he confronted her boyfriend, it led to a chain of events that made him a social pariah, despite acting out of <span class="justice">genuine concern</span>.</p>
+            
+            <h2>Secret Kindness</h2>
+            <p>Despite his gloomy appearance, Ishigami repeatedly shows unexpected kindness - from secretly placing flowers on Tsubame's desk <span class="flower-bloom">💮</span> to helping classmates with their problems without seeking recognition.</p>
+            
+            <h2>Gaming Prowess</h2>
+            <p>Ishigami is an exceptional gamer who can compete with Chika Fujiwara, one of the series' most talented players. His gaming skills provide both comic relief and surprising moments of competence.</p>
+            
+            <h2>Legacy & Impact</h2>
+            <p>Ishigami's character arc is celebrated for its realistic portrayal of social anxiety, depression, and redemption. His journey from isolation to acceptance resonates deeply with audiences and represents one of the series' most heartfelt narratives.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Yuu Ishigami from Kaguya-sama: Love Is War</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
