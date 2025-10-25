@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilia - Re:Zero Royal Candidate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .personality-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .personality-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .personality-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .magic-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .magic-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .candidates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .candidate-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .candidate-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .ice-decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+        }
+        
+        .spirit-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .personality-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .candidates-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .silver-hair {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: sparkle 3s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 90%, 100% { opacity: 1; }
+            95% { opacity: 0.8; }
+        }
+        
+        .prejudice-warning {
+            text-align: center;
+            margin: 10px 0;
+            font-style: italic;
+            color: #ff9933;
+            background-color: #330000;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Emilia</h1>
+        <div class="subtitle">Royal Candidate of Lugunica • Silver-Haired Half-Elf</div>
+        <p>The Heroine of Re:Zero − Starting Life in Another World</p>
+        <div class="silver-hair">✦</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Emilia is one of the main heroines of the popular light novel and anime series "Re:Zero − Starting Life in Another World" (Re:Zero kara Hajimeru Isekai Seikatsu), created by Tappei Nagatsuki.</p>
+            <p>She plays a central and critically important role in the story, serving as the primary motivation for the protagonist, Subaru Natsuki.</p>
+            
+            <h3>Role in the Story</h3>
+            <p><strong>The Heroine:</strong> She is one of the main female protagonists alongside Rem. Her story arc is the primary driving force for much of the plot.</p>
+            <p><strong>The Royal Candidate:</strong> She is one of the five candidates competing to become the 42nd King of Lugunica following the demise of the royal family.</p>
+            <p><strong>Subaru's Goal:</strong> The protagonist, Subaru Natsuki, swears to help her achieve her dream and win the royal selection, making her survival and success his central mission.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Personality</h2>
+            <p>Emilia is kind-hearted, noble, and somewhat naive, but she carries deep emotional scars from a painful past.</p>
+            
+            <div class="personality-grid">
+                <div class="personality-item">
+                    <div class="personality-title">Innately Kind and Selfless</div>
+                    <p>She has a strong moral compass and a deep desire to help others, even at great personal cost. This is shown when she selflessly helps Subaru despite having just met him.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Socially Inexperienced and Naive</div>
+                    <p>Having been isolated for most of her life, she is initially clumsy with social interactions and has a childlike innocence about the world.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Insecure and Lonely</div>
+                    <p>Due to her heritage, she has been shunned and feared by society her entire life. This has given her intense feelings of insecurity and a belief that she is unworthy of love or support.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Strong-Willed and Determined</div>
+                    <p>Despite her insecurities, she possesses a strong inner will. She is determined to prove herself in the Royal Selection and fight for a better world for everyone, especially for discriminated groups like half-elves.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Appearance and Heritage</h2>
+            <p>Her appearance is a major source of conflict in the world:</p>
+            
+            <div class="skill-label">
+                <span>Half-Elf Heritage</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Resemblance to Satella</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Social Prejudice Faced</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Half-Elf Characteristics</div>
+                    <p>She is a Half-Elf, with silver hair, amethyst eyes, and pointed ears.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Resemblance to the Witch</div>
+                    <p>She bears a striking resemblance to the Jealous Witch, Satella, a figure of ultimate evil in this world who devoured half of the world centuries ago.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Source of Prejudice</div>
+                    <p>Because of this resemblance, she faces intense prejudice, fear, and hatred from almost everyone, making her life one of isolation and pain.</p>
+                    <div class="prejudice-warning">
+                        "I'm used to being hated for how I look."
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Abilities and Powers</h2>
+            <p>As a candidate for the throne, Emilia is magically powerful.</p>
+            
+            <div class="magic-section">
+                <div class="magic-title">Spirit Arts User</div>
+                <p>She is a powerful spirit mage, capable of forming pacts with spirits (elemental beings).</p>
+            </div>
+            
+            <div class="magic-section">
+                <div class="magic-title">Puck, the Great Spirit</div>
+                <p>Her primary familiar and father figure is Puck, the Great Spirit of Fire. Their contract is extremely strong, and together they can wield immense power. Puck is fiercely protective of her.</p>
+                <div class="quote">
+                    "I am Puck. Just your average familiar."
+                </div>
+                <div class="spirit-symbol">🔥</div>
+            </div>
+            
+            <div class="magic-section">
+                <div class="magic-title">Ice Magic</div>
+                <p>Her primary affinity is for ice magic, which she can use to create projectiles, construct barriers, and freeze opponents.</p>
+                <div class="ice-decoration">❄️ ❄️ ❄️</div>
+            </div>
+            
+            <div class="magic-section">
+                <div class="magic-title">The Key to the Seal</div>
+                <p>At the story's beginning, she was the guardian of the seal containing the Jealous Witch in the Elior Forest, a duty she took on for decades.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Subaru Natsuki</div>
+                    <p>The protagonist. He falls in love with her at first sight and dedicates himself to saving her from her tragic fate. Their relationship is complex and grows from one of dependency to a deep, mutual understanding and love.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Puck</div>
+                    <p>The Great Spirit of Fire who acts as her familiar, protector, and loving father figure. He is fiercely protective of her well-being.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Rem</div>
+                    <p>One of the maids of Roswaal's Mansion. Initially hostile due to her prejudice against the Witch, Rem's relationship with Emilia evolves into one of deep loyalty and sisterly affection.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>The Royal Candidates</h2>
+            <p>She is in a political race against four other powerful and cunning women:</p>
+            
+            <div class="candidates-grid">
+                <div class="candidate-item">
+                    <div class="candidate-name">Felt</div>
+                    <p>The street urchin candidate with incredible speed and a mysterious background.</p>
+                </div>
+                
+                <div class="candidate-item">
+                    <div class="candidate-name">Priscilla Barielle</div>
+                    <p>The arrogant and confident candidate who believes the world revolves around her.</p>
+                </div>
+                
+                <div class="candidate-item">
+                    <div class="candidate-name">Crusch Karsten</div>
+                    <p>The serious and honorable candidate with the ability to see through deception.</p>
+                </div>
+                
+                <div class="candidate-item">
+                    <div class="candidate-name">Anastasia Hoshin</div>
+                    <p>The merchant candidate with a sharp business mind and ambitious goals.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why She is Important</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Narrative Catalyst</div>
+                    <p>Subaru's entire journey in the second half of the story is built around his promise to make her smile and see her crowned king.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">A Symbol of Prejudice</div>
+                    <p>Her character explores themes of discrimination, otherness, and the pain of being judged for something you are, not who you are.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Emotional Core</div>
+                    <p>Her personal struggle with self-worth and her desire to be loved for herself, not for her resemblance to the Witch, forms a key emotional arc of the series.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Hope for Change</div>
+                    <p>Her determination to become king despite the prejudice she faces represents hope for a more inclusive and understanding society.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I want you to see me for who I am, not for who I look like."
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Emilia is the kind-hearted, silver-haired half-elf royal candidate in Re:Zero, whose resemblance to the Jealous Witch makes her an outcast, and whose dream of becoming king becomes the central goal for the protagonist, Subaru.</p>
+        <p style="margin-top: 15px;">© Re:Zero − Starting Life in Another World created by Tappei Nagatsuki | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
