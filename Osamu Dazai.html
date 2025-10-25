@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osamu Dazai | Bungo Stray Dogs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .agency-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .no-longer-human {
+            color: #8b0000;
+            text-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .double-black {
+            color: #0000ff;
+            text-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .abilities-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .technique-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .technique-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .technique-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .dazai-glow {
+            animation: dazai 3s infinite;
+        }
+        
+        @keyframes dazai {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(139, 0, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .suicide {
+            background: linear-gradient(45deg, #ff8c00, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .relationships-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .bandage-float {
+            animation: bandage-float 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes bandage-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .technique-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OSAMU DAZAI <span class="dazai-glow">💫</span></h1>
+        <p class="subtitle">The No Longer Human Genius</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Osamu Dazai</h2>
+                <p>Osamu Dazai is a main character in Kafka Asagiri's Bungo Stray Dogs series. He is a suicidal, eccentric member of the Armed Detective Agency known for his brilliant strategic mind and his powerful ability "No Longer Human." Despite his cheerful and often dramatic personality, Dazai hides a dark, calculating nature and a troubled past with the Port Mafia.</p>
+                
+                <div class="quote">
+                    "Ah, what a wonderful day for a double suicide with a beautiful woman!"
+                </div>
+                
+                <p>Dazai serves as a mentor to Atsushi Nakajima while constantly searching for the perfect suicide method. His bandaged appearance and suicidal tendencies mask one of the most brilliant tactical minds in the series.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Dazai presents himself as a cheerful, eccentric man obsessed with suicide, but this facade conceals a deeply intelligent and manipulative strategist with a complex moral compass.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Brilliant Strategist</span>
+                    <span class="trait">Suicidal</span>
+                    <span class="trait">Manipulative</span>
+                    <span class="trait">Charismatic</span>
+                    <span class="trait">Enigmatic</span>
+                    <span class="trait">Surprisingly Caring</span>
+                </div>
+                
+                <p>Despite his constant suicide jokes and lazy demeanor, Dazai is incredibly perceptive and cares deeply about his colleagues, especially Atsushi and Kunikida. His past as an executive in the Port Mafia continues to influence his actions and relationships.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Key Relationships</h2>
+                <div class="relationships-section">
+                    <p>Dazai's complex connections that define his character development:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Atsushi Nakajima</div>
+                            <div>Protégé & mentee</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Chuuya Nakahara</div>
+                            <div>Former partner & rival</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Doppo Kunikida</div>
+                            <div>Current partner</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Oda Sakunosuke</div>
+                            <div>Deceased best friend</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Strategic Approaches</h2>
+                <div class="abilities-section">
+                    <p>Dazai's methods for manipulating situations and opponents:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Psychological Warfare</div>
+                            <div>Manipulating opponents' minds</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Information Control</div>
+                            <div>Managing what others know</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Long-term Planning</div>
+                            <div>Setting up future victories</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Double Suicide Bait</div>
+                            <div>Using his reputation as weapon</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Skills</h2>
+                <p>Dazai possesses one of the most powerful and versatile abilities in the series, combined with exceptional intelligence and combat skills.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>No Longer Human</h3>
+                        <p>His ability nullifies any other ability he touches. This makes him the perfect counter to virtually any gifted individual and allows him to neutralize dangerous abilities.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Genius Intellect</h3>
+                        <p>Possesses superhuman analytical and strategic abilities, capable of predicting complex scenarios and manipulating multiple parties simultaneously.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Combat Proficiency</h3>
+                        <p>Highly skilled in hand-to-hand combat and firearms, trained during his time in the Port Mafia. Can hold his own against powerful opponents.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Psychological Manipulation</h3>
+                        <p>Master of reading and influencing people's emotions and actions. Uses his understanding of human nature to control situations.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Leadership</h3>
+                        <p>Natural leader who can command respect and loyalty from diverse individuals, having led both Port Mafia operations and Detective Agency missions.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Escape Artistry</h3>
+                        <p>Expert at escaping from seemingly impossible situations, including straightjackets, handcuffs, and various confinement methods.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Agency Profile</h2>
+            <ul class="power-list">
+                <li><span class="agency-info">Ability:</span> <span class="no-longer-human">No Longer Human</span></li>
+                <li><span class="agency-info">Type:</span> Nullification</li>
+                <li><span class="agency-info">Affiliation:</span> Armed Detective Agency</li>
+                <li><span class="agency-info">Former Role:</span> Port Mafia Executive</li>
+                <li><span class="agency-info">Signature:</span> Bandages <span class="bandage-float">🩹</span></li>
+                <li><span class="agency-info">Goal:</span> <span class="suicide">Perfect Suicide</span></li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Atsushi Nakajima</strong> - Protégé he guides</li>
+                <li><strong>Chuuya Nakahara</strong> - Former "Double Black" partner</li>
+                <li><strong>Doppo Kunikida</strong> - Current straight-laced partner</li>
+                <li><strong>Oda Sakunosuke</strong> - Deceased friend who changed him</li>
+                <li><strong>Yukichi Fukuzawa</strong> - Agency president</li>
+                <li><strong>Mori Ougai</strong> - Former Port Mafia boss</li>
+            </ul>
+            
+            <h2>The Double Black</h2>
+            <p>Dazai and Chuuya were known as <span class="double-black">"Double Black"</span> - the most feared and effective partnership in Port Mafia history. Their combination of Dazai's strategic genius and Chuuya's destructive power was legendary.</p>
+            
+            <h2>Philosophical Nature</h2>
+            <p>Dazai's suicidal tendencies stem from his philosophical search for meaning in a world he finds empty. His namesake, the real Osamu Dazai, was also known for his dark themes and multiple suicide attempts.</p>
+            
+            <h2>Character Development</h2>
+            <p>Dazai's journey involves moving from the darkness of the Port Mafia to the light of the Armed Detective Agency, influenced by his friendship with Oda Sakunosuke who believed Dazai could become a better person.</p>
+            
+            <h2>Bandaged Mystery</h2>
+            <p>The bandages covering Dazai's body serve as both a physical reminder of his past injuries and a metaphorical representation of the emotional wounds he hides beneath his cheerful exterior.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Osamu Dazai from Bungo Stray Dogs</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
