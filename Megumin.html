@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megumin | Konosuba</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .crimson-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .explosion {
+            color: #ff4444;
+            text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+            font-weight: bold;
+        }
+        
+        .crimson-mage {
+            color: #cc0000;
+            text-shadow: 0 0 5px rgba(204, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .explosion-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .party-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .party-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .party-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .explosion-glow {
+            animation: explosion 3s infinite;
+        }
+        
+        @keyframes explosion {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 68, 68, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .chuunibyou {
+            background: linear-gradient(45deg, #ff8c00, #cc0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .adventure-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .eye-patch {
+            animation: eye-patch 4s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes eye-patch {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .party-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MEGUMIN <span class="explosion-glow">💥</span></h1>
+        <p class="subtitle">The Explosion Magic Arch-Wizard</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Megumin</h2>
+                <p>Megumin is a Crimson Demon arch-wizard and a main character in Natsume Akatsuki's Konosuba series. As a member of the Crimson Demon Clan, she possesses incredible magical power but specializes exclusively in Explosion magic, considering all other magic beneath her.</p>
+                
+                <div class="quote">
+                    "EXPLOSION! Witness the ultimate magic that will consume all of my mana and render me immobile!"
+                </div>
+                
+                <p>Despite being only 14 years old, Megumin is one of the most powerful mages in the world, though her single-minded devotion to explosion magic means she can only cast one spell per day before collapsing from exhaustion.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Megumin is characterized by her dramatic, chuunibyou personality and unwavering dedication to explosion magic. She speaks in grandiose, theatrical language and believes explosion magic to be the pinnacle of all magical arts.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Dramatic</span>
+                    <span class="trait">Determined</span>
+                    <span class="trait">Proud</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Chuunibyou</span>
+                    <span class="trait">Single-minded</span>
+                </div>
+                
+                <p>Beneath her chuunibyou exterior, Megumin is actually highly intelligent and surprisingly practical when it comes to matters outside of explosion magic. She develops strong feelings for Kazuma and becomes fiercely protective of her party members.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Party Members</h2>
+                <div class="adventure-section">
+                    <p>Megumin adventures with Kazuma's party, forming unlikely bonds with her companions:</p>
+                    
+                    <div class="party-list">
+                        <div class="party-item">
+                            <div class="party-name">Kazuma Satou</div>
+                            <div>Party leader & love interest</div>
+                        </div>
+                        <div class="party-item">
+                            <div class="party-name">Aqua</div>
+                            <div>Goddess & rival</div>
+                        </div>
+                        <div class="party-item">
+                            <div class="party-name">Darkness</div>
+                            <div>Crusader & friend</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Explosion Magic & Abilities</h2>
+                <div class="explosion-section">
+                    <p>Megumin's devotion to explosion magic is absolute, and she has developed it to incredible levels:</p>
+                    
+                    <div class="party-list">
+                        <div class="party-item">
+                            <div class="party-name">Explosion</div>
+                            <div>Daily ultimate spell</div>
+                        </div>
+                        <div class="party-item">
+                            <div class="party-name">Advanced Magic</div>
+                            <div>Multiple explosion variants</div>
+                        </div>
+                        <div class="party-item">
+                            <div class="party-name">Mana Capacity</div>
+                            <div>Massive but limited</div>
+                        </div>
+                        <div class="party-item">
+                            <div class="party-name">Chant Shortening</div>
+                            <div>Mastered quick casting</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Skills & Powers</h2>
+                <p>While explosion magic is her sole combat focus, Megumin possesses several other notable abilities and characteristics.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Explosion Magic Mastery</h3>
+                        <p>Can cast the most powerful explosion spells in the world, capable of destroying entire fortresses or mountains with a single spell.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Crimson Demon Heritage</h3>
+                        <p>Born with naturally high intelligence and massive mana pools characteristic of the Crimson Demon clan.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Chant Shortening</h3>
+                        <p>Has mastered shortening explosion magic incantations from lengthy chants to quick, efficient versions.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Manatite Usage</h3>
+                        <p>Can use manatite (magic stones) to store additional mana, allowing for multiple explosion casts in emergencies.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Tactical Intelligence</h3>
+                        <p>Surprisingly clever and strategic when not obsessed with explosion magic, often coming up with practical solutions.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Dramatic Flair</h3>
+                        <p>Master of theatrical presentations and chuunibyou performances that both entertain and intimidate.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Crimson Demon Profile</h2>
+            <ul class="power-list">
+                <li><span class="crimson-info">Age:</span> 14 years old</li>
+                <li><span class="crimson-info">Race:</span> <span class="crimson-mage">Crimson Demon</span></li>
+                <li><span class="crimson-info">Class:</span> Arch-Wizard</li>
+                <li><span class="crimson-info">Eye:</span> <span class="eye-patch">🔴</span> Crimson magic eye</li>
+                <li><span class="crimson-info">Specialty:</span> <span class="explosion">Explosion Magic</span></li>
+                <li><span class="crimson-info">Limit:</span> One spell per day</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Kazuma Satou</strong> - Party leader & romantic interest</li>
+                <li><strong>Aqua</strong> - Party member & comedic rival</li>
+                <li><strong>Darkness</strong> - Party member & close friend</li>
+                <li><strong>Yunyun</strong> - Rival & fellow Crimson Demon</li>
+                <li><strong>Wiz</strong> - Lich friend & explosion appreciator</li>
+                <li><strong>Chomusuke</strong> - Her black cat familiar</li>
+            </ul>
+            
+            <h2>The Crimson Demon Clan</h2>
+            <p>Megumin comes from the <span class="crimson-mage">Crimson Demon Clan</span>, a group of people genetically modified to have high intelligence, massive mana pools, and distinctive red eyes. The clan is known for their dramatic personalities and chuunibyou tendencies.</p>
+            
+            <h2>Chuunibyou Persona</h2>
+            <p>Megumin fully embraces her <span class="chuunibyou">chuunibyou</span> (middle school syndrome) personality, speaking in dramatic, fantasy-inspired language and believing herself to be a powerful dark sorceress with a sealed evil eye.</p>
+            
+            <h2>Daily Routine</h2>
+            <p>Megumin's typical day involves finding the perfect location for her daily explosion, dramatically casting the spell, then being carried back to town by Kazuma after collapsing from mana exhaustion.</p>
+            
+            <h2>Character Growth</h2>
+            <p>While maintaining her love for explosion magic, Megumin gradually becomes more practical and develops genuine romantic feelings for Kazuma, showing a softer, more vulnerable side beneath her dramatic exterior.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Megumin from Konosuba: God's Blessing on This Wonderful World!</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
