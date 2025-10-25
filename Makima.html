@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makima - The Control Devil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .manipulation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .manipulation-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .manipulation-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .contract-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .contract-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .methods-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .method-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .method-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .control-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: control-pulse 3s infinite;
+        }
+        
+        @keyframes control-pulse {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #cc0000; }
+            50% { opacity: 1; text-shadow: 0 0 15px #cc0000; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #cc0000; }
+        }
+        
+        .dog-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .manipulation-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .methods-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .makima-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-public {
+            color: #ff9933;
+        }
+        
+        .scale-manipulator {
+            color: #cc0000;
+        }
+        
+        .scale-devil {
+            color: #ff0000;
+        }
+        
+        .fear-symbol {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .red-eyes {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: eyes-glow 4s infinite;
+        }
+        
+        @keyframes eyes-glow {
+            0% { color: #ff7700; }
+            50% { color: #cc0000; }
+            100% { color: #ff7700; }
+        }
+        
+        .warning-text {
+            font-weight: bold;
+            color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Makima</h1>
+        <div class="subtitle">The Control Devil • Public Safety Devil Hunter • The Master Manipulator</div>
+        <p>The Antagonist of Tatsuki Fujimoto's Chainsaw Man</p>
+        <div class="control-symbol">⛓️</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Makima is the primary antagonist of Tatsuki Fujimoto's dark fantasy manga "Chainsaw Man." She serves as the head of the Public Safety Devil Hunters and is later revealed to be the Control Devil, one of the Four Horsemen.</p>
+            <p>Her calm, collected demeanor masks a manipulative and terrifyingly powerful being who sees humans and devils as tools to be controlled.</p>
+            
+            <div class="makima-scale">
+                <div class="scale-item scale-public">
+                    <h3>Public Figure</h3>
+                    <p>Division Director</p>
+                </div>
+                <div class="scale-item scale-manipulator">
+                    <h3>Manipulator</h3>
+                    <p>Denji's Handler</p>
+                </div>
+                <div class="scale-item scale-devil">
+                    <h3>Control Devil</h3>
+                    <p>True Nature</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>The Art of Manipulation</h2>
+            
+            <div class="manipulation-grid">
+                <div class="manipulation-item">
+                    <div class="manipulation-title">Psychological Control</div>
+                    <p>Makima excels at understanding and exploiting human psychology. She identifies people's deepest desires and fears, using them to establish complete control over her subordinates.</p>
+                </div>
+                
+                <div class="manipulation-item">
+                    <div class="manipulation-title">The Dog Metaphor</div>
+                    <p>She views relationships in terms of dominance and submission, famously stating she wants to make "pets" of those she finds interesting, particularly Chainsaw Man.</p>
+                    <div class="dog-symbol">🐕 → 🎯</div>
+                </div>
+                
+                <div class="manipulation-item">
+                    <div class="manipulation-title">Conditional Affection</div>
+                    <p>She provides just enough affection and validation to keep her targets dependent while maintaining emotional distance, creating an addictive cycle of seeking her approval.</p>
+                </div>
+                
+                <div class="manipulation-item">
+                    <div class="manipulation-title">Information Control</div>
+                    <p>Makima carefully controls what information others receive, creating narratives that serve her goals while keeping her true intentions hidden.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities & Devil Contracts</h2>
+            
+            <div class="skill-label">
+                <span>Manipulation Skills</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Combat Power</span>
+                <span>98%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 98%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Strategic Planning</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Contract Mastery</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">The Control Devil's Power</div>
+                    <div class="contract-section">
+                        <div class="contract-title">Absolute Domination</div>
+                        <p>As the Control Devil, Makima can dominate anyone she considers inferior to herself. This ability works through eye contact and allows her to completely control minds and bodies.</p>
+                        <div class="red-eyes">👁️‍🗨️</div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Contract with the Prime Minister</div>
+                    <div class="contract-section">
+                        <div class="contract-title">The Ultimate Protection</div>
+                        <p>Her most powerful contract transfers any fatal damage she receives to random Japanese citizens, making her virtually unkillable as long as Japanese citizens exist.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Bang Attack</div>
+                    <p>She can create powerful concussive forces by pointing her finger, capable of devastating destruction over long distances.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Summoning Contracts</div>
+                    <p>Makima has contracts with numerous powerful devils, allowing her to summon them for combat or specific tasks.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Denji</div>
+                    <p>Her primary target of manipulation. She exploits his loneliness and desire for normalcy, becoming the object of his obsession while viewing him as a tool to control Chainsaw Man.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Aki Hayakawa</div>
+                    <p>One of her most loyal subordinates whose tragic fate she orchestrates. She manipulates his desire for revenge and family, ultimately using him as a pawn in her plans.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Power</div>
+                    <p>The Blood Devil who becomes Denji's friend. Makima eliminates her to emotionally break Denji and demonstrate her absolute control.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Kishibe</div>
+                    <p>The most experienced devil hunter who sees through her manipulation but is powerless to stop her directly. He represents one of the few characters who understands her true nature.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I want to make Chainsaw Man my dog. I want him to be mine and only mine."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Manipulation Methods</h2>
+            
+            <div class="methods-grid">
+                <div class="method-item">
+                    <div class="method-name">Love Bombing</div>
+                    <p>She showers targets with affection and validation initially, creating dependency before gradually introducing control and manipulation.</p>
+                </div>
+                
+                <div class="method-item">
+                    <div class="method-name">Isolation</div>
+                    <p>She systematically isolates her targets from their support systems, making them increasingly dependent on her for validation and companionship.</p>
+                </div>
+                
+                <div class="method-item">
+                    <div class="method-name">Future Faking</div>
+                    <p>Makima promises a perfect future together while ensuring it remains just out of reach, keeping her targets striving for her approval.</p>
+                </div>
+                
+                <div class="method-item">
+                    <div class="method-name">Intermittent Reinforcement</div>
+                    <p>She provides affection and rewards unpredictably, creating an addictive cycle where targets constantly seek to please her.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "If I told you to die, you would die. That's the kind of woman I am."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Psychological Profile</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Fear of Intimacy</div>
+                    <p>Despite her desire for control over relationships, Makima fears genuine emotional connection, preferring the safety of complete dominance over vulnerability.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Messiah Complex</div>
+                    <p>She genuinely believes her vision of a better world justifies any means necessary, seeing herself as the only one capable of creating true peace.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">The Ultimate Narcissist</div>
+                    <p>Makima sees others as extensions of herself rather than independent beings, unable to form genuine relationships based on mutual respect.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Fear of Being Equal</div>
+                    <p>Her entire existence is built around maintaining superiority, as being seen as equal to others would destroy her self-concept.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I've always been alone. I've never had anyone by my side. That's why I want to make Chainsaw Man mine."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why Makima is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Modern Antagonist</div>
+                    <p>She represents a new type of villain - not motivated by traditional evil, but by a twisted desire for connection through control.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Psychological Horror</div>
+                    <p>Her manipulation tactics feel terrifyingly real, representing real-world abusive relationship dynamics amplified through supernatural power.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Subversion of Expectations</div>
+                    <p>She appears as a typical cool, competent female lead before revealing her true nature as one of manga's most terrifying antagonists.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Symbolic Depth</div>
+                    <p>As the Control Devil, she represents humanity's fear of losing autonomy and being dominated by external forces.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                <span class="warning-text">"All devils fear Chainsaw Man. When he eats a devil, that devil ceases to exist in this world and in people's memories."</span>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Makima is the terrifyingly manipulative Control Devil of Chainsaw Man, whose calm exterior masks a being of absolute control and psychological manipulation, representing one of modern manga's most compelling antagonists.</p>
+        <p style="margin-top: 15px;">© Chainsaw Man created by Tatsuki Fujimoto | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
