@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edward Elric | Fullmetal Alchemist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .alchemy-rule {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .automail {
+            color: #cccccc;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .alchemy-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .principles-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .principle-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .principle-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .alchemy-glow {
+            animation: alchemy 3s infinite;
+        }
+        
+        @keyframes alchemy {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .equivalent-exchange {
+            background: linear-gradient(45deg, #ff8c00, #ff6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .principles-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EDWARD ELRIC <span class="alchemy-glow">⚗️</span></h1>
+        <p class="subtitle">The Fullmetal Alchemist</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Edward Elric</h2>
+                <p>Edward Elric, known as the Fullmetal Alchemist, is the protagonist of Hiromu Arakawa's Fullmetal Alchemist series. He and his younger brother Alphonse committed the ultimate alchemical taboo - human transmutation - in an attempt to resurrect their deceased mother.</p>
+                
+                <div class="quote">
+                    "A lesson without pain is meaningless. That's because you can't gain anything without sacrificing something else in return."
+                </div>
+                
+                <p>As punishment for their transgression, Edward lost his left leg and Alphonse lost his entire body. Edward sacrificed his right arm to bind Alphonse's soul to a suit of armor. Now, as a State Alchemist, Edward searches for the Philosopher's Stone to restore their bodies.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Edward is fiercely determined, intelligent, and protective of those he cares about, particularly his brother Alphonse. Despite his short temper and prideful nature, he possesses a strong moral compass and sense of justice.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Determined</span>
+                    <span class="trait">Brilliant</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Hot-tempered</span>
+                    <span class="trait">Compassionate</span>
+                    <span class="trait">Resourceful</span>
+                </div>
+                
+                <p>Edward is extremely sensitive about his height and reacts violently to being called "short" or any related terms, though he grows significantly throughout the series.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Alchemical Principles</h2>
+                <div class="alchemy-section">
+                    <p class="equivalent-exchange">"Humankind cannot gain anything without first giving something in return. To obtain, something of equal value must be lost."</p>
+                    
+                    <div class="principles-list">
+                        <div class="principle-item">
+                            <div class="principle-name">Transmutation</div>
+                            <div>Changing matter's form</div>
+                        </div>
+                        <div class="principle-item">
+                            <div class="principle-name">Equivalent Exchange</div>
+                            <div>Fundamental law of alchemy</div>
+                        </div>
+                        <div class="principle-item">
+                            <div class="principle-name">Circles</div>
+                            <div>Required for transmutation</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Alchemical Abilities & Skills</h2>
+                <p>Edward is a prodigious alchemist who specializes in combat alchemy and can perform transmutations without a circle by clapping his hands, having seen the Truth at the Gate.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Transmutation Without Circle</h3>
+                        <p>Can perform alchemy by clapping his hands, having seen the Truth beyond the Gate.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Spear Creation</h3>
+                        <p>Transforms his automail arm into various weapons, primarily spears and blades.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Structural Analysis</h3>
+                        <p>Expert at analyzing and understanding the molecular structure of materials.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Hand-to-Hand Combat</h3>
+                        <p>Highly skilled fighter, combining alchemy with martial arts and his automail limbs.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Physical Characteristics</h2>
+            <ul class="power-list">
+                <li><span class="alchemy-rule">Height:</span> 165 cm (initially)</li>
+                <li><span class="alchemy-rule">Hair:</span> Golden blond ponytail</li>
+                <li><span class="alchemy-rule">Eyes:</span> Golden, fierce</li>
+                <li><span class="alchemy-rule">Automail:</span> Right arm & left leg</li>
+                <li><span class="alchemy-rule">State Alchemist:</span> Code name "Fullmetal"</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Alphonse Elric</strong> - Younger brother and closest companion</li>
+                <li><strong>Winry Rockbell</strong> - Childhood friend and automail mechanic</li>
+                <li><strong>Roy Mustang</strong> - Commanding officer and mentor</li>
+                <li><strong>Riza Hawkeye</strong> - Mustang's lieutenant and ally</li>
+                <li><strong>Van Hohenheim</strong> - Estranged father</li>
+            </ul>
+            
+            <h2>The Gate of Truth</h2>
+            <p>Edward saw the Truth beyond the Gate when he attempted human transmutation, gaining immense alchemical knowledge but paying the toll of his limbs. The Gate contains all alchemical knowledge of the universe.</p>
+            
+            <h2>Automail</h2>
+            <p>Edward's <span class="automail">right arm and left leg</span> are advanced prosthetic limbs created and maintained by Winry Rockbell. The automail provides enhanced strength but requires regular maintenance and causes significant pain.</p>
+            
+            <h2>State Alchemist</h2>
+            <p>As a State Alchemist, Edward holds the military rank of Major and is known by the code name "Fullmetal" due to his automail limbs. The position gives him access to resources for his research but also makes him a "dog of the military."</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Edward Elric from Fullmetal Alchemist</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
