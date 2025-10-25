@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askeladd | Vinland Saga</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .viking-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .welsh-accent {
+            color: #00aa00;
+            text-shadow: 0 0 5px rgba(0, 170, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .battle-wisdom {
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .strategies-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .strategy-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .strategy-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .strategy-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .askeladd-glow {
+            animation: askeladd 3s infinite;
+        }
+        
+        @keyframes askeladd {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(0, 170, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .arthurian {
+            background: linear-gradient(45deg, #ff8c00, #00aa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .crew-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .crown-pulse {
+            animation: crown-pulse 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes crown-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .strategy-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ASKELADD <span class="askeladd-glow">⚔️</span></h1>
+        <p class="subtitle">The Welsh Viking Strategist</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Askeladd</h2>
+                <p>Askeladd is a major antagonist and complex anti-hero in Makoto Yukimura's Vinland Saga. He is the leader of a band of Danish Vikings who serves as both mentor and antagonist to the protagonist, Thorfinn. Despite his Viking appearance and lifestyle, Askeladd is actually half-Welsh and carries a deep connection to his mother's heritage.</p>
+                
+                <div class="quote">
+                    "A man doesn't die when he should, but when he can."
+                </div>
+                
+                <p>Askeladd is a brilliant strategist and charismatic leader who operates with both ruthless pragmatism and unexpected honor. His complex motivations and tragic backstory make him one of anime's most compelling characters.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Askeladd presents himself as a cynical, pragmatic Viking mercenary, but beneath this exterior lies a man driven by complex loyalties and a deep-seated dream for Wales' independence.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Strategic Genius</span>
+                    <span class="trait">Charismatic Leader</span>
+                    <span class="trait">Ruthlessly Pragmatic</span>
+                    <span class="trait">Honorable in His Way</span>
+                    <span class="trait">Deeply Complex</span>
+                    <span class="trait">Tragically Visionary</span>
+                </div>
+                
+                <p>Askeladd operates by a unique moral code that combines Viking pragmatism with Arthurian ideals. He values intelligence and strategy over brute strength and often outmaneuvers his opponents through psychological warfare.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Key Relationships</h2>
+                <div class="crew-section">
+                    <p>Askeladd's most significant connections that define his journey:</p>
+                    
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <div class="strategy-name">Thorfinn</div>
+                            <div>Protégé & sworn enemy</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Prince Canute</div>
+                            <div>The chosen king</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Bjorn</div>
+                            <div>Loyal right-hand man</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">His Mother</div>
+                            <div>Welsh heritage & motivation</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Military Strategies</h2>
+                <div class="strategies-section">
+                    <p>Askeladd's battlefield tactics and psychological warfare methods:</p>
+                    
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <div class="strategy-name">Psychological Warfare</div>
+                            <div>Breaking enemy morale first</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Terrain Mastery</div>
+                            <div>Using environment strategically</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Feigned Retreats</div>
+                            <div>Classic Viking tactics</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Information Control</div>
+                            <div>Managing what enemies know</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Skills</h2>
+                <p>Askeladd combines Viking combat prowess with sophisticated strategic thinking, making him one of the most dangerous men in the North Sea.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Master Swordsmanship</h3>
+                        <p>Extremely skilled with a sword, capable of defeating multiple opponents simultaneously despite his age. His style blends Viking techniques with refined footwork.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Brilliant Strategy</h3>
+                        <p>Possesses genius-level tactical intelligence, able to outthink and outmaneuver numerically superior forces through clever planning and psychological insight.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Charismatic Leadership</h3>
+                        <p>Natural leader who commands absolute loyalty from his men through a combination of respect, fear, and proven success.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Linguistic Talent</h3>
+                        <p>Fluent in multiple languages including Norse, Welsh, and English, using this skill for diplomacy, espionage, and psychological warfare.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Political Manipulation</h3>
+                        <p>Expert at navigating the complex political landscape of 11th century Europe, playing kings and jarls against each other for his own ends.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Endurance & Willpower</h3>
+                        <p>Possesses incredible physical and mental fortitude, able to push through injuries and exhaustion to achieve his objectives.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Character Profile</h2>
+            <ul class="power-list">
+                <li><span class="viking-info">Origin:</span> <span class="welsh-accent">Half-Welsh, Half-Dane</span></li>
+                <li><span class="viking-info">Age:</span> Mid-40s</li>
+                <li><span class="viking-info">Rank:</span> Mercenary Captain</li>
+                <li><span class="viking-info">Weapon:</span> Sword & Shield</li>
+                <li><span class="viking-info">Dream:</span> <span class="arthurian">Wales for the Welsh</span></li>
+                <li><span class="viking-info">Fate:</span> <span class="crown-pulse">👑</span> Sacrificial Death</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Thorfinn</strong> - Complex father-son dynamic</li>
+                <li><strong>Prince Canute</strong> - The king he creates</li>
+                <li><strong>Bjorn</strong> - Most loyal follower</li>
+                <li><strong>Thors</strong> - Respected warrior</li>
+                <li><strong>Floki</strong> - Jomsviking rival</li>
+                <li><strong>His Mother</strong> - Source of his ideals</li>
+            </ul>
+            
+            <h2>The Arthurian Dream</h2>
+            <p>Askeladd's ultimate motivation is his <span class="arthurian">Arthurian dream</span> of a united, independent Wales free from Danish and English domination. He sees Prince Canute as the "Once and Future King" who could make this dream reality.</p>
+            
+            <h2>Complex Morality</h2>
+            <p>Askeladd operates by a unique moral code where he commits atrocities for practical reasons but shows unexpected honor and keeps his word. He values intelligence and sees most Vikings as "pigs" who live only for plunder.</p>
+            
+            <h2>Legacy & Sacrifice</h2>
+            <p>Askeladd's final act - sacrificing himself to make Canute king - completes his character arc from self-serving mercenary to visionary who dies for a cause greater than himself <span class="battle-wisdom">⚔️</span>.</p>
+            
+            <h2>Welsh Heritage</h2>
+            <p>Despite living as a Viking, Askeladd never forgets his Welsh mother's stories of King Arthur and maintains his Welsh identity, speaking the language and working toward Welsh independence throughout his life.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Askeladd from Vinland Saga</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
