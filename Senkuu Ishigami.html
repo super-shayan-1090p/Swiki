@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senku Ishigami | Dr. Stone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .science-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .scientific-accent {
+            color: #00bfff;
+            text-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .revival-formula {
+            color: #00ff00;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .inventions-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .invention-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .invention-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .invention-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .senku-glow {
+            animation: senku 3s infinite;
+        }
+        
+        @keyframes senku {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(0, 191, 255, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .billion-percent {
+            background: linear-gradient(45deg, #ff8c00, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .kingdom-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .chemical-reaction {
+            animation: reaction 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes reaction {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .invention-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SENKU ISHIGAMI <span class="senku-glow">⚗️</span></h1>
+        <p class="subtitle">The Scientific Genius of the Stone World</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Senku Ishigami</h2>
+                <p>Senku Ishigami is the main protagonist of Riichiro Inagaki's Dr. Stone series. He was a high school science prodigy when a mysterious green light petrified all of humanity for 3,700 years. Senku managed to maintain his consciousness throughout the petrification and eventually broke free, dedicating himself to rebuilding civilization through science.</p>
+                
+                <div class="quote">
+                    "Get excited! This is the birth of a new scientific civilization!"
+                </div>
+                
+                <p>With his catchphrase "Get excited!" and his encyclopedic knowledge of science, Senku leads the effort to revive humanity and advance technology from the Stone Age to the modern era, facing numerous challenges including the antagonistic Tsukasa Empire.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Senku is a brilliant, pragmatic scientist who approaches every problem with logic and creativity. Despite his scientific detachment, he genuinely cares about people and believes science should be used to benefit humanity.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Genius Intellect</span>
+                    <span class="trait">Pragmatic</span>
+                    <span class="trait">Charismatic Leader</span>
+                    <span class="trait">Resourceful</span>
+                    <span class="trait">Determined</span>
+                    <span class="trait">Surprisingly Caring</span>
+                </div>
+                
+                <p>Senku's greatest strength is his ability to apply scientific principles to real-world problems and inspire others to join his mission. He values human life and sees science as the ultimate tool for progress and protection.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Kingdom of Science</h2>
+                <div class="kingdom-section">
+                    <p>Senku's core team in rebuilding civilization:</p>
+                    
+                    <div class="invention-list">
+                        <div class="invention-item">
+                            <div class="invention-name">Taiju Oki</div>
+                            <div>Best friend & moral support</div>
+                        </div>
+                        <div class="invention-item">
+                            <div class="invention-name">Yuzuriha Ogawa</div>
+                            <div>Artistic talent & reviver</div>
+                        </div>
+                        <div class="invention-item">
+                            <div class="invention-name">Chrome</div>
+                            <div>Natural scientist & protégé</div>
+                        </div>
+                        <div class="invention-item">
+                            <div class="invention-name">Kohaku</div>
+                            <div>Warrior protector & ally</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Major Inventions</h2>
+                <div class="inventions-section">
+                    <p>Senku's revolutionary creations in the Stone World:</p>
+                    
+                    <div class="invention-list">
+                        <div class="invention-item">
+                            <div class="invention-name">Revival Fluid</div>
+                            <div>Nital solution for depetrification</div>
+                        </div>
+                        <div class="invention-item">
+                            <div class="invention-name">Gunpowder</div>
+                            <div>First major weapon creation</div>
+                        </div>
+                        <div class="invention-item">
+                            <div class="invention-name">Telephone</div>
+                            <div>Long-distance communication</div>
+                        </div>
+                        <div class="invention-item">
+                            <div class="invention-name">Sulfa Drugs</div>
+                            <div>First modern medicine</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Scientific Abilities</h2>
+                <p>Senku possesses an incredible range of scientific knowledge and practical skills that allow him to recreate modern technology from scratch.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Chemistry Mastery</h3>
+                        <p>Expert knowledge of chemical reactions, compounds, and industrial processes. Can create everything from medicine to explosives using primitive materials.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Physics & Engineering</h3>
+                        <p>Deep understanding of mechanical principles, electricity, and structural engineering. Designs and builds complex machines from basic components.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Biology & Medicine</h3>
+                        <p>Comprehensive knowledge of human anatomy, diseases, and medical treatments. Creates antibiotics and other medicines to treat illnesses.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Mathematics & Calculation</h3>
+                        <p>Exceptional mathematical skills for precise measurements, calculations, and scientific predictions. Can perform complex calculations mentally.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Resource Management</h3>
+                        <p>Expert at identifying, collecting, and utilizing natural resources efficiently. Knows where to find essential minerals and materials.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Teaching & Leadership</h3>
+                        <p>Skilled at explaining complex scientific concepts to others and inspiring them to contribute to his scientific revolution.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Scientific Profile</h2>
+            <ul class="power-list">
+                <li><span class="science-info">Age:</span> ~3,700+ years mentally</li>
+                <li><span class="science-info">Specialty:</span> <span class="scientific-accent">All Sciences</span></li>
+                <li><span class="science-info">Title:</span> Kingdom of Science Leader</li>
+                <li><span class="science-info">First Creation:</span> <span class="revival-formula">Revival Fluid</span></li>
+                <li><span class="science-info">Catchphrase:</span> <span class="billion-percent">"Get excited!"</span></li>
+                <li><span class="science-info">Goal:</span> Revive all humanity</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Taiju Oki</strong> - Best friend since childhood</li>
+                <li><strong>Byakuya Ishigami</strong> - Adoptive astronaut father</li>
+                <li><strong>Chrome</strong> - Scientific apprentice & successor</li>
+                <li><strong>Kohaku</strong> - Warrior ally & protector</li>
+                <li><strong>Gen Asagiri</strong> - Psychological expert ally</li>
+                <li><strong>Tsukasa Shishio</strong> - Rival & former enemy</li>
+            </ul>
+            
+            <h2>The Ten Billion Percent Genius</h2>
+            <p>Senku's mind operates with <span class="billion-percent">"ten billion percent"</span> certainty when he has enough data. His scientific predictions are almost always accurate, and he can recall complex formulas and processes from memory.</p>
+            
+            <h2>Petrification Survival</h2>
+            <p>Senku survived 3,700 years of petrification by counting seconds in his mind, maintaining his consciousness through sheer willpower and mathematical discipline <span class="chemical-reaction">🧪</span>.</p>
+            
+            <h2>Scientific Philosophy</h2>
+            <p>Senku believes science belongs to everyone and should be used to improve human life. He rejects the idea of hoarding knowledge and actively teaches others, creating a new generation of scientists.</p>
+            
+            <h2>Legacy & Impact</h2>
+            <p>Through his Kingdom of Science, Senku demonstrates that human progress doesn't require thousands of years - with the right knowledge, civilization can advance from the Stone Age to modern technology in a single lifetime.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Senku Ishigami from Dr. Stone</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
