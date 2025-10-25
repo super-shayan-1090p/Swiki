@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurapika | Hunter x Hunter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .chain {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .scarlet-eye {
+            color: #ff0000;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .chains-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .chains-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .chain-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .chain-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .eye-glow {
+            animation: eye-glow 3s infinite;
+        }
+        
+        @keyframes eye-glow {
+            0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 0, 0, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                fontSize: 1.8rem;
+            }
+            
+            .chains-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KURAPIKA <span class="scarlet-eye eye-glow">◆</span></h1>
+        <p class="subtitle">The Last of the Kurta Clan</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Kurapika</h2>
+                <p>Kurapika is a main character in Yoshihiro Togashi's Hunter x Hunter series. He is the sole survivor of the Kurta Clan, whose members were massacred by the Phantom Troupe for their unique scarlet eyes that turn bright red when experiencing strong emotions.</p>
+                
+                <div class="quote">
+                    "I don't care if this is a sin. No matter what happens, I will not regret this."
+                </div>
+                
+                <p>Driven by vengeance and the desire to reclaim his clan's stolen eyes, Kurapika becomes a Hunter and develops a specialized Nen ability specifically designed to combat the Phantom Troupe.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Kurapika is typically calm, intelligent, and analytical, but becomes consumed by rage when confronting those responsible for his clan's destruction. He struggles between his desire for revenge and his moral principles.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Intelligent</span>
+                    <span class="trait">Driven</span>
+                    <span class="trait">Analytical</span>
+                    <span class="trait">Vengeful</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Tragic</span>
+                </div>
+                
+                <p>Despite his thirst for vengeance, Kurapika maintains strong friendships with Gon, Killua, and Leorio, showing he hasn't completely lost his humanity to his quest for justice.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Chain Jail Abilities</h2>
+                <div class="chains-section">
+                    <p>Kurapika's Nen ability manifests as chains with specialized functions, each designed for specific purposes in his mission:</p>
+                    
+                    <div class="chains-list">
+                        <div class="chain-item">
+                            <div class="chain-name">Chain Jail</div>
+                            <div>Restrains Spider members</div>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-name">Holy Chain</div>
+                            <div>Healing ability</div>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-name">Judgment Chain</div>
+                            <div>Enforces rules on targets</div>
+                        </div>
+                        <div class="chain-item">
+                            <div class="chain-name">Dowsing Chain</div>
+                            <div>Lie detection</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Nen Abilities & Powers</h2>
+                <p>As a Nen user, Kurapika specializes in Conjuration and Manipulation, creating his signature chains with specific conditions and limitations that make them incredibly powerful.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Scarlet Eyes</h3>
+                        <p>When his eyes turn scarlet, he becomes a Specialist and masters all Nen categories at 100% efficiency.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Emperor Time</h3>
+                        <p>His Specialist ability that activates with scarlet eyes, granting him mastery over all Nen types.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Chain Jail</h3>
+                        <p>His most powerful chain that can only be used against Phantom Troupe members, enforced by a life-forfeiting vow.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Steal Chain</h3>
+                        <p>Later developed ability that allows him to steal others' Nen abilities under specific conditions.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Nen Specialization</h2>
+            <ul class="power-list">
+                <li><span class="chain">Primary:</span> Conjuration (100%)</li>
+                <li><span class="chain">Secondary:</span> Manipulation (80%)</li>
+                <li><span class="chain">Emperor Time:</span> All Types (100%)</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Gon Freecss</strong> - Fellow Hunter and friend</li>
+                <li><strong>Killua Zoldyck</strong> - Companion and ally</li>
+                <li><strong>Leorio Paradinight</strong> - Close friend and moral anchor</li>
+                <li><strong>Phantom Troupe</strong> - Targets of his vengeance</li>
+                <li><strong>Kurta Clan</strong> - His massacred family</li>
+            </ul>
+            
+            <h2>Hunter Career</h2>
+            <p>Kurapika became a <span class="highlight">Blacklist Hunter</span>, specializing in hunting criminals. He later works as a bodyguard for the Nostrade family to gain resources for his mission.</p>
+            
+            <h2>The Vow</h2>
+            <p>Kurapika's Chain Jail carries a <span class="scarlet-eye">deadly restriction</span>: if he uses it on anyone other than a Phantom Troupe member, he will die instantly.</p>
+            
+            <h2>Current Mission</h2>
+            <p>Kurapika is currently focused on retrieving the remaining <span class="scarlet-eye">Scarlet Eyes</span> of his clan from collectors and the Phantom Troupe.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Kurapika from Hunter x Hunter</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
