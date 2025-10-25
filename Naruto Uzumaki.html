@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Uzumaki | Naruto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .ninja-rank {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .hokage {
+            color: #ffff00;
+            text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .rasengan-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .jutsu-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .jutsu-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .jutsu-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .nine-tails-glow {
+            animation: nine-tails 3s infinite;
+        }
+        
+        @keyframes nine-tails {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .dattebayo {
+            background: linear-gradient(45deg, #ff8c00, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .team-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .jutsu-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NARUTO UZUMAKI <span class="nine-tails-glow">🍥</span></h1>
+        <p class="subtitle">The Seventh Hokage</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Naruto Uzumaki</h2>
+                <p>Naruto Uzumaki is the main protagonist of Masashi Kishimoto's Naruto series. He was born as the jinchuriki of the Nine-Tails Fox, which attacked Konohagakure on the day of his birth. Orphaned and shunned by the village, Naruto grew up determined to become Hokage to gain the villagers' acknowledgment.</p>
+                
+                <div class="quote">
+                    "I'm not gonna run away, I never go back on my word! That's my nindo: my ninja way!"
+                </div>
+                
+                <p>Through hard work, perseverance, and his unbreakable will, Naruto overcame countless obstacles to become the hero of the Hidden Leaf Village and eventually achieve his dream of becoming Hokage.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Naruto is known for his energetic, optimistic, and never-give-up attitude. Despite his difficult childhood, he maintains a positive outlook and believes in the good in everyone. His catchphrase "<span class="dattebayo">dattebayo</span>" reflects his unique personality.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Determined</span>
+                    <span class="trait">Compassionate</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Energetic</span>
+                    <span class="trait">Persevering</span>
+                    <span class="trait">Empathetic</span>
+                </div>
+                
+                <p>Naruto's ability to understand and connect with others' pain, born from his own loneliness, becomes his greatest strength in changing people's hearts and ending cycles of hatred.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Team 7</h2>
+                <div class="team-section">
+                    <p>Naruto was placed on Team 7 under Kakashi Hatake's leadership, forming bonds that would shape his entire ninja career:</p>
+                    
+                    <div class="jutsu-list">
+                        <div class="jutsu-item">
+                            <div class="jutsu-name">Sasuke Uchiha</div>
+                            <div>Rival & best friend</div>
+                        </div>
+                        <div class="jutsu-item">
+                            <div class="jutsu-name">Sakura Haruno</div>
+                            <div>Teammate & friend</div>
+                        </div>
+                        <div class="jutsu-item">
+                            <div class="jutsu-name">Kakashi Hatake</div>
+                            <div>Sensei & mentor</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Signature Jutsu</h2>
+                <div class="rasengan-section">
+                    <p>Naruto developed and mastered several powerful techniques throughout his journey, with some becoming his trademark moves:</p>
+                    
+                    <div class="jutsu-list">
+                        <div class="jutsu-item">
+                            <div class="jutsu-name">Rasengan</div>
+                            <div>Spiraling sphere of chakra</div>
+                        </div>
+                        <div class="jutsu-item">
+                            <div class="jutsu-name">Shadow Clone</div>
+                            <div>Mass clone technique</div>
+                        </div>
+                        <div class="jutsu-item">
+                            <div class="jutsu-name">Sage Mode</div>
+                            <div>Natural energy mastery</div>
+                        </div>
+                        <div class="jutsu-item">
+                            <div class="jutsu-name">Six Paths Sage Mode</div>
+                            <div>Ultimate power form</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>Naruto possesses immense chakra reserves and unique abilities that make him one of the most powerful shinobi in history.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Nine-Tails Chakra Mode</h3>
+                        <p>Can access and control the Nine-Tails' power, manifesting as a golden chakra cloak with enhanced abilities.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Sage Mode</h3>
+                        <p>Mastered at Mount Myoboku, granting enhanced strength, sensing, and natural energy attacks.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Six Paths Sage Mode</h3>
+                        <p>Granted by Hagoromo Otsutsuki, with truth-seeking balls and flight capability.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Mass Shadow Clones</h3>
+                        <p>Can create thousands of clones due to his massive chakra reserves, each with full combat capability.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Rasenshuriken</h3>
+                        <p>Advanced Rasengan that can be thrown, containing microscopic wind blades that damage at cellular level.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Tailed Beast Ball</h3>
+                        <p>Ultimate jinchuriki technique combining positive and negative chakra into a destructive sphere.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Ninja Journey</h2>
+            <ul class="power-list">
+                <li><span class="ninja-rank">Academy Student:</span> Struggled with basics</li>
+                <li><span class="ninja-rank">Genin:</span> Graduated with determination</li>
+                <li><span class="ninja-rank">Chunin Exams:</span> Proved his strength</li>
+                <li><span class="ninja-rank">Sage Training:</span> Mastered at Myoboku</li>
+                <li><span class="ninja-rank">War Hero:</span> Saved the ninja world</li>
+                <li><span class="ninja-rank">Hokage:</span> Achieved his dream</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Iruka Umino</strong> - First teacher and father figure</li>
+                <li><strong>Sasuke Uchiha</strong> - Rival and brother-like bond</li>
+                <li><strong>Jiraiya</strong> - Godfather and mentor</li>
+                <li><strong>Hinata Hyuga</strong> - Wife and biggest supporter</li>
+                <li><strong>Kurama</strong> - Nine-Tails, from enemy to partner</li>
+                <li><strong>Minato & Kushina</strong> - Parents who sacrificed for him</li>
+            </ul>
+            
+            <h2>The Dream Achieved</h2>
+            <p>Naruto eventually became the <span class="hokage">Seventh Hokage</span>, achieving his lifelong dream and becoming the most respected leader in Konoha's history, protecting the village with his signature orange jumpsuit replaced by the Hokage's cloak.</p>
+            
+            <h2>Legacy</h2>
+            <p>Naruto's greatest achievement wasn't becoming Hokage, but changing the entire shinobi world through his philosophy of understanding and ending cycles of hatred. He became the "Child of Prophecy" who brought peace to the ninja world.</p>
+            
+            <h2>Family</h2>
+            <p>Naruto married Hinata Hyuga and has two children: Boruto Uzumaki and Himawari Uzumaki, continuing the Uzumaki legacy into the next generation.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Naruto Uzumaki from Naruto</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
