@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killua Zoldyck - The Prodigious Assassin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .personality-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .personality-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .personality-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .nen-ability {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .nen-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .lightning-decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+        }
+        
+        .chocolate {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .personality-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .zoldyck-crest {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+        }
+        
+        .lightning-text {
+            display: inline-block;
+            animation: lightning 3s infinite;
+        }
+        
+        @keyframes lightning {
+            0%, 90%, 100% { opacity: 1; }
+            95% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="lightning-text">Killua Zoldyck</h1>
+        <div class="subtitle">The Prodigious Assassin</div>
+        <p>Heir of the Zoldyck Family • Gon's Best Friend • Lightning Transmuter</p>
+        <div class="zoldyck-crest">⚡</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Killua Zoldyck is one of the two main protagonists of the beloved manga and anime series "Hunter x Hunter", created by Yoshihiro Togashi. He is a fan-favorite character known for his complex personality and incredible growth throughout the story.</p>
+            
+            <h3>Role in the Story</h3>
+            <p><strong>Position:</strong> Best friend and partner of the main protagonist, Gon Freecss.</p>
+            <p><strong>Background:</strong> The heir-apparent of the infamous Zoldyck Family, a legendary lineage of assassins who have operated from their mountain estate for generations.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Personality and Character Arc</h2>
+            <p>Killua's character is defined by his journey from a emotionally suppressed assassin to a loyal friend seeking his own identity.</p>
+            
+            <div class="personality-grid">
+                <div class="personality-item">
+                    <div class="personality-title">Initially Cold and Cynical</div>
+                    <p>Having been raised as an assassin, he was initially detached, pragmatic, and saw killing as a normal solution. He was trained to feel no emotion or remorse.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Playful and Mischievous</div>
+                    <p>Once he breaks free from his family's control, his true, more childish and playful personality emerges. He has a sweet tooth (especially for chocolate) and often teases his friends lightheartedly.</p>
+                    <div class="chocolate">🍫</div>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Intellectually Gifted</div>
+                    <p>He is a brilliant strategist and analyst, often being the one to coolly assess dangerous situations and devise the best plan of action.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Deeply Loyal and Protective</div>
+                    <p>His core character arc revolves around his relationship with Gon. Gon's unwavering friendship and trust teach Killua what it means to have a bond that isn't transactional. Killua's loyalty to Gon becomes absolute, and he is fiercely protective of him.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Insecure and Self-Doubting</div>
+                    <p>Despite his immense power, he often struggles with feelings of inadequacy and self-worth, especially when comparing himself to Gon's natural talent and determination. A major part of his journey is learning to value himself for who he is, not just as a weapon.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities and Powers</h2>
+            <p>As a product of the Zoldyck family's brutal training, Killua is a prodigious fighter with a diverse and deadly skill set.</p>
+            
+            <div class="skill-label">
+                <span>Assassin Skills</span>
+                <span>98%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 98%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Nen Ability</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Speed & Agility</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Strategic Thinking</span>
+                <span>96%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 96%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Assassin Training</div>
+                    <p>From birth, he was trained in stealth, poison resistance, and various forms of hand-to-hand combat and assassination techniques.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Nen Affinity: Transmutation</div>
+                    <p>Nen is the life energy power system in Hunter x Hunter. As a Transmuter, Killua can give his aura the properties of something else.</p>
+                    
+                    <div class="nen-ability">
+                        <div class="nen-title">Godspeed (雷神・神速, Kaminari no Kami: Shinsoku)</div>
+                        <p>This is his signature technique, split into two forms:</p>
+                        <p><strong>Speed of Lightning (電光石火, Denkō Sekka):</strong> He transmutes his aura into electricity to stimulate his nerves, allowing him to move and react at blinding speeds without needing to think.</p>
+                        <p><strong>Whirlwind (疾風迅雷, Shippū Jinrai):</strong> An automatic, pre-programmed defensive response. If an enemy with malicious intent enters his En range, his body reacts automatically to dodge and counterattack.</p>
+                    </div>
+                    
+                    <div class="nen-ability">
+                        <div class="nen-title">Lightning Palm (落雷, Rakurai)</div>
+                        <p>He charges his hand with electricity to stun or paralyze opponents.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Assassin's Secret Technique: Rhythm Echo</div>
+                    <p>A stealth technique that allows him to move silently.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Physical Prowess</div>
+                    <p>He possesses superhuman strength, speed, and agility even without Nen. His signature weapons are his retractable, razor-sharp claws.</p>
+                </li>
+            </ul>
+            
+            <div class="lightning-decoration">⚡ ⚡ ⚡</div>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Gon Freecss</div>
+                    <p>His best friend. Their bond is the emotional core of the series. Gon represents the freedom and normal childhood Killua never had, and Killua is the voice of reason and experience that often grounds Gon's recklessness.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Alluka/Nanika</div>
+                    <p>His younger sibling, whom he loves and protects unconditionally. His mission to protect Alluka from the rest of their manipulative family becomes a central driving force in the later part of the story.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">The Zoldyck Family</div>
+                    <p>His relationship with his family is complex. He fears and resents his controlling father (Silva) and especially his manipulative mother (Kikyo) and older brother (Illumi), who implanted a needle in his head to control him. He has a more amicable, though distant, relationship with his grandfather, Zeno, and older brother, Milluki.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I don't need a reason to help you. We're friends, aren't we?"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why He's So Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">Compelling Character Arc</div>
+                    <p>His journey from a trained killer to a loyal friend seeking his own path is one of the most well-written in shonen anime.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Powerful yet Relatable</div>
+                    <p>He is incredibly strong, but his internal struggles with self-doubt and his desire for a normal life make him deeply human and relatable.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Dynamic with Gon</div>
+                    <p>His friendship with Gon is pure, heartfelt, and central to the story's emotional weight, making their highs and lows incredibly impactful for the audience.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Cool Factor</div>
+                    <p>His design, lightning-based abilities, and calm, collected demeanor in battle make him incredibly stylish and popular.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I'll never betray you. That's why I'm your friend."
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Killua Zoldyck is the prodigious assassin heir who escapes his dark past to find friendship and his own identity, becoming one of the most powerful and beloved characters in Hunter x Hunter.</p>
+        <p style="margin-top: 15px;">© Hunter x Hunter created by Yoshihiro Togashi | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
