@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miko Iino | Kaguya-sama: Love Is War</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .iino-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .purple-accent {
+            color: #9370db;
+            text-shadow: 0 0 5px rgba(147, 112, 219, 0.5);
+            font-weight: bold;
+        }
+        
+        .discipline-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .rules-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .rule-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .rule-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .justice-glow {
+            animation: justice 3s infinite;
+        }
+        
+        @keyframes justice {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(147, 112, 219, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .justice {
+            background: linear-gradient(45deg, #ff8c00, #9370db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .student-council-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .heart-sparkle {
+            animation: heart-sparkle 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heart-sparkle {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .rules-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MIKO IINO <span class="justice-glow">⚖️</span></h1>
+        <p class="subtitle">The Righteous Discipline Committee Member</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Miko Iino</h2>
+                <p>Miko Iino is a main character in Aka Akasaka's Kaguya-sama: Love Is War, introduced as the head of the Public Morals Committee who later becomes the Student Council's Discipline Officer. She's known for her strict adherence to rules and strong sense of justice, though she secretly yearns for romance and acceptance.</p>
+                
+                <div class="quote">
+                    "Rules exist to protect the weak! If we don't follow them, society will collapse into chaos!"
+                </div>
+                
+                <p>Despite her rigid exterior, Miko has a vulnerable side and struggles with loneliness and the desire to be loved. Her journey involves learning to balance her ideals with the complexities of human relationships.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Miko presents herself as a strict, rule-abiding moralist, but beneath this facade lies a sensitive, romantic soul who desperately wants to experience love and friendship like her peers.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Righteous</span>
+                    <span class="trait">Strict</span>
+                    <span class="trait">Idealistic</span>
+                    <span class="trait">Sensitive</span>
+                    <span class="trait">Romantic</span>
+                    <span class="trait">Lonely</span>
+                </div>
+                
+                <p>Miko's black-and-white worldview often clashes with reality, leading to comedic situations and genuine character growth as she learns to understand and accept human imperfections.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Student Council Role</h2>
+                <div class="student-council-section">
+                    <p>As the Discipline Officer, Miko works alongside other Student Council members:</p>
+                    
+                    <div class="rules-list">
+                        <div class="rule-item">
+                            <div class="rule-name">Miyuki Shirogane</div>
+                            <div>President</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Kaguya Shinomiya</div>
+                            <div>Vice President</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Chika Fujiwara</div>
+                            <div>Secretary</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Yu Ishigami</div>
+                            <div>Treasurer</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Enforcement Priorities</h2>
+                <div class="discipline-section">
+                    <p>Miko is particularly vigilant about certain school rules and moral standards:</p>
+                    
+                    <div class="rules-list">
+                        <div class="rule-item">
+                            <div class="rule-name">Uniform Violations</div>
+                            <div>Skirt length, accessories</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Public Displays</div>
+                            <div>Romantic behavior</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Academic Integrity</div>
+                            <div>Cheating, plagiarism</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Property Damage</div>
+                            <div>Graffiti, vandalism</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Skills & Abilities</h2>
+                <p>Despite her small stature and strict demeanor, Miko possesses several notable talents and capabilities.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Rule Enforcement</h3>
+                        <p>Extremely diligent about identifying and correcting rule violations, with an almost supernatural ability to detect infractions.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Academic Excellence</h3>
+                        <p>Maintains excellent grades through hard work and discipline, ranking among the top students in her year.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Musical Talent</h3>
+                        <p>Plays multiple instruments, particularly excelling at classical piano, which provides her emotional outlet.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Debate Skills</h3>
+                        <p>Can construct compelling arguments based on rules and moral principles, though she sometimes lacks flexibility.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Observation</h3>
+                        <p>Highly perceptive about people's behaviors and motivations, even if she sometimes misinterprets romantic cues.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Emotional Resilience</h3>
+                        <p>Despite frequent emotional vulnerability, she possesses strong inner strength and determination to uphold her ideals.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Character Profile</h2>
+            <ul class="power-list">
+                <li><span class="iino-info">Position:</span> Discipline Officer</li>
+                <li><span class="iino-info">Hair:</span> <span class="purple-accent">Lilac twin tails</span></li>
+                <li><span class="iino-info">Eyes:</span> Purple</li>
+                <li><span class="iino-info">Signature:</span> Eye patch (sometimes)</li>
+                <li><span class="iino-info">Motto:</span> <span class="justice">"Justice must prevail!"</span></li>
+                <li><span class="iino-info">Weakness:</span> Romance <span class="heart-sparkle">💖</span></li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Yu Ishigami</strong> - Treasurer & complicated crush</li>
+                <li><strong>Kaguya Shinomiya</strong> - Mentor & role model</li>
+                <li><strong>Miyuki Shirogane</strong> - Respected president</li>
+                <li><strong>Chika Fujiwara</strong> - Chaotic influence</li>
+                <li><strong>Kobachi Osaragi</strong> - Best friend</li>
+                <li><strong>Parents</span> - Strict upbringing influence</li>
+            </ul>
+            
+            <h2>Secret Romantic</h2>
+            <p>Despite her strict exterior, Miko is a <span class="highlight">hopeless romantic</span> who secretly reads shoujo manga and dreams of experiencing love. This creates constant internal conflict between her ideals and desires.</p>
+            
+            <h2>Character Development</h2>
+            <p>Miko undergoes significant growth from a rigid moral enforcer to someone who understands nuance and compassion. She learns that sometimes rules must be bent for the sake of people's happiness.</p>
+            
+            <h2>Ishigami Dynamic</h2>
+            <p>Miko's relationship with Ishigami evolves from constant clashes to a complex bond where they secretly care for each other while maintaining their argumentative facade.</p>
+            
+            <h2>Musical Escape</h2>
+            <p>Playing piano serves as Miko's emotional outlet, where she can express the vulnerability and romantic longing she hides during her enforcement duties.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Miko Iino from Kaguya-sama: Love Is War</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
