@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shouto Todoroki | My Hero Academia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .hero-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .ice-accent {
+            color: #00bfff;
+            text-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .fire-accent {
+            color: #ff4444;
+            text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+            font-weight: bold;
+        }
+        
+        .techniques-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .technique-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .technique-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .technique-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .todoroki-glow {
+            animation: todoroki 3s infinite;
+        }
+        
+        @keyframes todoroki {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(0, 191, 255, 0.6), 0 0 25px rgba(255, 68, 68, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .half-cold-half-hot {
+            background: linear-gradient(45deg, #00bfff, #ff4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .class-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .element-swirl {
+            animation: element-swirl 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes element-swirl {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .technique-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SHOUTO TODOROKI <span class="todoroki-glow">❄️🔥</span></h1>
+        <p class="subtitle">The Dual Quirk Prodigy</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Shouto Todoroki</h2>
+                <p>Shouto Todoroki is one of the main characters in Kohei Horikoshi's My Hero Academia. He is a student in Class 1-A at U.A. High School and the youngest son of the No. 1 Hero Endeavor. Todoroki possesses a powerful dual Quirk called "Half-Cold Half-Hot," allowing him to generate ice from his right side and fire from his left side.</p>
+                
+                <div class="quote">
+                    "It's your power, isn't it?!" - Izuku Midoriya to Todoroki during the Sports Festival
+                </div>
+                
+                <p>Initially cold and distant due to his traumatic upbringing, Todoroki gradually learns to embrace both sides of his power and form genuine friendships with his classmates, particularly Izuku Midoriya and Katsuki Bakugo.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Todoroki appears as a calm, collected, and emotionally reserved individual, but this masks deep-seated trauma and internal conflict about his identity and powers.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Calm</span>
+                    <span class="trait">Determined</span>
+                    <span class="trait">Traumatized</span>
+                    <span class="trait">Analytical</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Growing Empathy</span>
+                </div>
+                
+                <p>Todoroki's character development involves overcoming his childhood trauma, reconciling with both sides of his heritage, and learning to use his complete power to become the hero he wants to be rather than the weapon his father tried to create.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Class 1-A Relationships</h2>
+                <div class="class-section">
+                    <p>Todoroki's key connections at U.A. High School:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Izuku Midoriya</div>
+                            <div>Friend & inspiration</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Katsuki Bakugo</div>
+                            <div>Rival & fellow prodigy</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Tenya Iida</div>
+                            <div>Class representative & friend</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Mom</div>
+                            <div>Scar & emotional anchor</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Quirk Techniques</h2>
+                <div class="techniques-section">
+                    <p>Todoroki's signature moves with his dual Quirk:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Heaven-Piercing Ice Wall</div>
+                            <div>Massive ice creation</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Flashfreeze Heatwave</div>
+                            <div>Ice & fire combination</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Great Glacial Aegir</div>
+                            <div>Ultimate ice attack</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Phosphor</div>
+                            <div>Flame control technique</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Development</h2>
+                <p>Todoroki's journey from rejecting half of his power to mastering his complete Quirk showcases his incredible growth as both a hero and individual.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Half-Cold Half-Hot Mastery</h3>
+                        <p>Can generate massive amounts of ice for offense, defense, and mobility while simultaneously producing intense flames for additional firepower and temperature regulation.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Temperature Regulation</h3>
+                        <p>Uses his fire side to prevent ice side from causing frostbite and vice versa, allowing for extended use of both abilities without adverse effects.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Strategic Combat</h3>
+                        <p>Excellent analytical skills and tactical thinking. Can assess situations quickly and deploy the most effective combination of ice and fire techniques.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Ice Constructions</h3>
+                        <p>Can create complex ice structures for various purposes, from simple ramps and barriers to intricate defensive formations and capture tools.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Flame Control</h3>
+                        <p>Initially rejected but later mastered flame techniques ranging from concentrated blasts to wide-area attacks and propulsion.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Physical Prowess</h3>
+                        <p>Enhanced strength, speed, and durability from extensive hero training. Capable of impressive feats even without using his Quirk.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Hero Profile</h2>
+            <ul class="power-list">
+                <li><span class="hero-info">Quirk:</span> <span class="half-cold-half-hot">Half-Cold Half-Hot</span></li>
+                <li><span class="hero-info">Hero Name:</span> Shouto</li>
+                <li><span class="hero-info">Status:</span> U.A. Student</li>
+                <li><span class="hero-info">Heritage:</span> Todoroki Family</li>
+                <li><span class="hero-info">Scar:</span> Left eye <span class="element-swirl">⚡</span></li>
+                <li><span class="hero-info">Goal:</span> Become his own hero</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Enji Todoroki</strong> - Father & Endeavor</li>
+                <li><strong>Rei Todoroki</strong> - Mother he protects</li>
+                <li><strong>Izuku Midoriya</strong> - Friend who inspired change</li>
+                <li><strong>Katsuki Bakugo</strong> - Rival & classmate</li>
+                <li><strong>Fuyumi Todoroki</strong> - Sister & family anchor</li>
+                <li><strong>Natsuo Todoroki</strong> - Brother & ally</li>
+            </ul>
+            
+            <h2>The Sports Festival Turning Point</h2>
+            <p>Todoroki's fight with Midoriya during the U.A. Sports Festival was the catalyst for his character development, where he began to accept that <span class="highlight">"it's my power"</span> rather than his father's.</p>
+            
+            <h2>Family Trauma</h2>
+            <p>Todoroki's scar comes from his mother pouring boiling water on him after being driven to a breakdown by Endeavor's abuse. This incident symbolizes the family's dysfunction and Todoroki's emotional wounds.</p>
+            
+            <h2>Dual Nature</h2>
+            <p>Todoroki's struggle to accept both his <span class="ice-accent">ice</span> from his mother and <span class="fire-accent">fire</span> from his father represents his journey to integrate both sides of his identity and become a complete person.</p>
+            
+            <h2>Pro Hero Potential</h2>
+            <p>Recognized as one of the most powerful students at U.A., Todoroki has the potential to become a top-ranking pro hero, possibly even surpassing his father Endeavor with his complete mastery of both elements.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Shouto Todoroki from My Hero Academia</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
