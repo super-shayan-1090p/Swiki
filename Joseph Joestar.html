@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Joestar | JoJo's Bizarre Adventure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .joestar-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .hamon-accent {
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .hermit-purple {
+            color: #8a2be2;
+            text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+            font-weight: bold;
+        }
+        
+        .techniques-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .technique-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .technique-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .technique-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .joestar-glow {
+            animation: joestar 3s infinite;
+        }
+        
+        @keyframes joestar {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .next-line {
+            background: linear-gradient(45deg, #ff8c00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .battle-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .clacker-volley {
+            animation: clacker 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes clacker {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .technique-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JOSEPH JOESTAR <span class="joestar-glow">💥</span></h1>
+        <p class="subtitle">Your Next Line Is...</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Joseph Joestar</h2>
+                <p>Joseph Joestar is the main protagonist of Battle Tendency and a major character in Stardust Crusaders in Hirohiko Araki's JoJo's Bizarre Adventure. He is the grandson of Jonathan Joestar and continues the Joestar family tradition of fighting supernatural threats with his quick wit, unpredictable strategies, and mastery of Hamon (Ripple) energy.</p>
+                
+                <div class="quote">
+                    "Your next line is... 'There's no way he could have predicted that!'"
+                </div>
+                
+                <p>Joseph is known for his clever trickery, humorous personality, and tendency to win battles through intelligence and deception rather than brute strength. His famous catchphrase involves predicting his opponents' dialogue.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Joseph is a clever, hot-headed, and often comical hero who relies on his quick thinking and unpredictable nature. Unlike his noble grandfather Jonathan, Joseph is more pragmatic and willing to use any means necessary to win, including cheating and psychological warfare.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Strategic Genius</span>
+                    <span class="trait">Unpredictable</span>
+                    <span class="trait">Hot-headed</span>
+                    <span class="trait">Charismatic</span>
+                    <span class="trait">Resourceful</span>
+                    <span class="trait">Comedic</span>
+                </div>
+                
+                <p>Joseph's greatest strength is his ability to think several steps ahead of his opponents and use their expectations against them. He often pretends to be less intelligent than he actually is to gain tactical advantages.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Battle Tendency Allies</h2>
+                <div class="battle-section">
+                    <p>Joseph's companions during his fight against the Pillar Men:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Caesar Zeppeli</div>
+                            <div>Hamon partner & rival</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Lisa Lisa</div>
+                            <div>Hamon master & mother</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Rudol von Stroheim</div>
+                            <div>German science ally</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Suzi Q</div>
+                            <div>Love interest & wife</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Signature Techniques</h2>
+                <div class="techniques-section">
+                    <p>Joseph's unique fighting style combines Hamon mastery with creative weaponry:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Clackers</div>
+                            <div>Hamon-charged weapons</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Tommy Gun</div>
+                            <div>Hamon bullet technique</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Hermit Purple</div>
+                            <div>Stand ability</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Your Next Line Is</div>
+                            <div>Psychological warfare</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>Joseph possesses one of the most diverse skill sets in the JoJo series, combining traditional Hamon techniques with modern weaponry and psychological tactics.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Hamon Mastery</h3>
+                        <p>Expert control of Hamon (Ripple) energy, using sunlight-based power to combat vampires and Pillar Men. Can conduct Hamon through liquids, objects, and even his own body.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Hermit Purple</h3>
+                        <p>His Stand ability that manifests as thorny vines, allowing him to take spirit photographs, divine information, and sense supernatural energy.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Strategic Brilliance</h3>
+                        <p>Genius-level tactical mind capable of predicting opponents' moves and setting elaborate traps. Famous for his "Your next line is..." predictions.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Weapon Improvisation</h3>
+                        <p>Master of using everyday objects as weapons, from clackers and glass bottles to tommy guns and hand grenades, often charging them with Hamon.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Physical Prowess</h3>
+                        <p>Enhanced strength, agility, and durability from Hamon training. Capable of incredible acrobatic feats and surviving massive injuries.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Escapology</h3>
+                        <p>Expert at escaping seemingly impossible situations, often using trickery, misdirection, and last-minute reversals to turn certain defeat into victory.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Joestar Profile</h2>
+            <ul class="power-list">
+                <li><span class="joestar-info">Part:</span> Battle Tendency</li>
+                <span class="joestar-info">Age (Part 2):</span> 18-19 years</li>
+                <li><span class="joestar-info">Birthmark:</span> Star on shoulder</li>
+                <li><span class="joestar-info">Primary Power:</span> <span class="hamon-accent">Hamon</span></li>
+                <li><span class="joestar-info">Stand:</span> <span class="hermit-purple">Hermit Purple</span></li>
+                <li><span class="joestar-info">Catchphrase:</span> <span class="next-line">"Your next line is..."</span></li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Jonathan Joestar</strong> - Grandfather & inspiration</li>
+                <li><strong>Caesar Zeppeli</strong> - Rival & Hamon brother</li>
+                <li><strong>Lisa Lisa</strong> - Mother & Hamon teacher</li>
+                <li><strong>Jotaro Kujo</strong> - Grandson & partner</li>
+                <li><strong>Suzi Q</strong> - Wife & lifelong partner</li>
+                <li><strong>Holy Kujo</strong> - Daughter</li>
+            </ul>
+            
+            <h2>The Unpredictable Strategist</h2>
+            <p>Joseph's greatest weapon is his unpredictability. He constantly surprises opponents by doing the exact opposite of what they expect, using their assumptions against them in elaborate psychological games <span class="clacker-volley">🪀</span>.</p>
+            
+            <h2>Character Evolution</h2>
+            <p>Joseph evolves from a hot-headed young man in Battle Tendency to a wise, experienced mentor in Stardust Crusaders, though he never loses his cleverness and tendency for dramatic flair.</p>
+            
+            <h2>Legacy & Impact</h2>
+            <p>Joseph is considered one of the most popular JoJos due to his perfect balance of comedy, intelligence, and genuine heroism. His creative battle strategies and charismatic personality set the standard for future JoJo protagonists.</p>
+            
+            <h2>Notable Battles</h2>
+            <p>From defeating ancient Pillar Men with clever tricks to helping his grandson defeat DIO, Joseph's battles are legendary for their creativity and last-minute reversals that showcase his brilliant tactical mind.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Joseph Joestar from JoJo's Bizarre Adventure</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
