@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ichigo Kurosaki | Bleach</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .power-type {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .zanpakuto {
+            color: #ff0000;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .forms-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .forms-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .form-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .form-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .reiatsu-glow {
+            animation: reiatsu 3s infinite;
+        }
+        
+        @keyframes reiatsu {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .bankai-name {
+            background: linear-gradient(45deg, #ff8c00, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .soul-reaper-badge {
+            display: inline-block;
+            animation: badge-pulse 2s infinite;
+        }
+        
+        @keyframes badge-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .forms-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ICHIGO KUROSAKI <span class="reiatsu-glow">⚔️</span></h1>
+        <p class="subtitle">Substitute Soul Reaper</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Ichigo Kurosaki</h2>
+                <p>Ichigo Kurosaki is the main protagonist of Tite Kubo's Bleach series. He is a high school student with the ability to see ghosts who obtains the powers of a Soul Reaper from Rukia Kuchiki to protect his family and friends from evil spirits known as Hollows.</p>
+                
+                <div class="quote">
+                    "If I can't protect them from where I am, then I'll become stronger, no matter what it takes!"
+                </div>
+                
+                <p>Throughout his journey, Ichigo discovers his unique heritage and develops incredible powers, becoming one of the most powerful beings across all realms while maintaining his core values of protecting those he cares about.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Ichigo appears as a typical delinquent with his naturally orange hair and tough attitude, but he's actually compassionate, protective, and driven by a strong sense of justice. He hates seeing innocent people suffer and will risk everything to save others.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Protective</span>
+                    <span class="trait">Determined</span>
+                    <span class="trait">Compassionate</span>
+                    <span class="trait">Stubborn</span>
+                    <span class="trait">Strong-willed</span>
+                    <span class="trait">Natural Leader</span>
+                </div>
+                
+                <p>Despite his immense power, Ichigo remains humble and often doubts himself, constantly striving to become stronger to protect those around him.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Power Forms & Transformations</h2>
+                <div class="forms-section">
+                    <p>Ichigo possesses one of the most diverse and evolving power sets in the Bleach universe, with multiple forms and transformations:</p>
+                    
+                    <div class="forms-list">
+                        <div class="form-item">
+                            <div class="form-name">Shikai</div>
+                            <div>Initial Zanpakuto release</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Bankai</div>
+                            <div>Final Zanpakuto form</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Hollow Mask</div>
+                            <div>Inner Hollow power</div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-name">Fullbring</div>
+                            <div>Human spiritual power</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>Ichigo's unique heritage as a hybrid of multiple races gives him an unprecedented combination of abilities that evolve throughout the series.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Zanpakuto: Zangetsu</h3>
+                        <p>His Soul Reaper weapon that takes the form of a massive cleaver. Its Shikai command is "Reap, Zangetsu!"</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Bankai: Tensa Zangetsu</h3>
+                        <p>Compresses his spiritual power into a small black katana with incredible speed and cutting power.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Getsuga Tensho</h3>
+                        <p>His signature technique that fires concentrated spiritual energy as a crescent moon-shaped attack.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Hollowfication</h3>
+                        <p>Can access his inner Hollow's power, dramatically increasing his abilities with a white mask.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Massive Reiatsu</h3>
+                        <p>Possesses enormous spiritual pressure that can overwhelm most opponents through presence alone.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Fullbring</h3>
+                        <p>Human spiritual power that enhances his physical abilities and connection to his Zanpakuto.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Power Heritage</h2>
+            <ul class="power-list">
+                <li><span class="power-type">Soul Reaper:</span> From his mother Masaki</li>
+                <li><span class="power-type">Quincy:</span> From his mother Masaki</li>
+                <li><span class="power-type">Human:</span> Natural born human</li>
+                <li><span class="power-type">Fullbringer:</span> From his mother's Hollow attack</li>
+                <li><span class="power-type">Hollow:</span> Inner White Hollow fusion</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Rukia Kuchiki</strong> - Soul Reaper who gave him powers</li>
+                <li><strong>Orihime Inoue</strong> - Close friend and classmate</li>
+                <li><strong>Uryu Ishida</strong> - Rival Quincy and friend</li>
+                <li><strong>Yasutora "Chad" Sado</strong> - Best friend and ally</li>
+                <li><strong>Renji Abarai</strong> - Rival turned trusted comrade</li>
+                <li><strong>Kisuke Urahara</strong> - Mentor and former captain</li>
+            </ul>
+            
+            <h2>Zanpakuto Spirit</h2>
+            <p>Ichigo's Zanpakuto spirit manifests as both <span class="zanpakuto">Young Man (Quincy manifestation)</span> and <span class="zanpakuto">White (Hollow manifestation)</span>, representing his dual heritage and internal conflict.</p>
+            
+            <h2>Notable Achievements</h2>
+            <p>Ichigo is the only being to possess powers from all major races: Soul Reaper, Quincy, Human, Fullbringer, and Hollow. He holds the official title of <span class="soul-reaper-badge">Substitute Soul Reaper</span> granted by the Soul Society.</p>
+            
+            <h2>True Bankai</h2>
+            <p>Ichigo's final Bankai takes the form of dual swords - one representing his Quincy powers and the other his Hollow powers, united as the true <span class="bankai-name">Zangetsu</span>.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Ichigo Kurosaki from Bleach</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
