@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jin-U Seong | The Warrior Returns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .warrior-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .returned-accent {
+            color: #ff4444;
+            text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+            font-weight: bold;
+        }
+        
+        .berserker-rage {
+            color: #8b0000;
+            text-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .abilities-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .skill-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .jin-u-glow {
+            animation: jin-u 3s infinite;
+        }
+        
+        @keyframes jin-u {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 68, 68, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .unbreakable {
+            background: linear-gradient(45deg, #ff8c00, #ff4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .companions-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .sword-spin {
+            animation: sword-spin 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes sword-spin {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .skill-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JIN-U SEONG <span class="jin-u-glow">⚔️</span></h1>
+        <p class="subtitle">The Unbreakable Warrior Returns</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Jin-U Seong</h2>
+                <p>Jin-U Seong is the main protagonist of the webtoon "The Warrior Returns." He was one of the heroes summoned to another world to defeat the Demon King, but after succeeding, he was betrayed and killed by his fellow heroes. Miraculously, he returns to Earth with all his powers intact, only to find it overrun by monsters and gates.</p>
+                
+                <div class="quote">
+                    "I survived the betrayal in that world. I'll survive in this one too."
+                </div>
+                
+                <p>Now back on Earth, Jin-U uses his incredible combat experience and powers to protect humanity while dealing with the trauma of his betrayal. He becomes known as one of the strongest hunters in a world where dungeon gates have appeared and monsters threaten humanity's existence.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Jin-U is a hardened warrior who has been through unimaginable trauma. He appears cold and distant, but beneath his tough exterior lies a strong sense of justice and a desire to protect the innocent.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Traumatized</span>
+                    <span class="trait">Determined</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Pragmatic</span>
+                    <span class="trait">Lonely</span>
+                    <span class="trait">Unbreakable Will</span>
+                </div>
+                
+                <p>Having experienced the ultimate betrayal, Jin-U struggles with trust issues but remains committed to saving people. His experiences have made him incredibly resilient and strategic in combat.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Key Relationships</h2>
+                <div class="companions-section">
+                    <p>Jin-U's complicated relationships that define his journey:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Betrayers</div>
+                            <div>Former hero companions</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">New Allies</div>
+                            <div>Earth's hunters & friends</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Innocent Civilians</div>
+                            <div>Those he protects</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Hunters Association</div>
+                            <div>Current organization</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Combat Specializations</h2>
+                <div class="abilities-section">
+                    <p>Jin-U's battle style developed through years of experience in another world:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Sword Mastery</div>
+                            <div>Weapon of choice</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Berserker Rage</div>
+                            <div>Enhanced strength state</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Battle Instincts</div>
+                            <div>Enhanced senses</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Magic Resistance</div>
+                            <div>From other world exposure</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>Jin-U possesses incredible powers gained from his time in another world, making him one of Earth's most powerful hunters.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Enhanced Physicality</h3>
+                        <p>Superhuman strength, speed, and durability far beyond normal hunters. Can move faster than the eye can track and withstand tremendous damage.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Sword Mastery</h3>
+                        <p>Extreme proficiency with various bladed weapons, particularly swords. Can defeat multiple S-rank monsters single-handedly.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Berserker Mode</h3>
+                        <p>Can enter a state of enhanced combat ability where his power multiplies dramatically, though it comes with risks of losing control.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Combat Experience</h3>
+                        <p>Years of experience fighting demons and monsters in another world gives him unparalleled battle instincts and strategic thinking.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Magic Resistance</h3>
+                        <p>High resistance to magical attacks and abilities due to exposure to different magic systems in the other world.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Survival Instincts</h3>
+                        <p>Enhanced senses and intuition in battle, able to predict enemy movements and detect danger before it manifests.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Warrior Profile</h2>
+            <ul class="power-list">
+                <li><span class="warrior-info">Status:</span> <span class="returned-accent">Returned Hero</span></li>
+                <li><span class="warrior-info">Rank:</span> S-Class Hunter</li>
+                <li><span class="warrior-info">Weapon:</span> Sword <span class="sword-spin">🗡️</span></li>
+                <li><span class="warrior-info">Specialty:</span> Close Combat</li>
+                <li><span class="warrior-info">Title:</span> <span class="unbreakable">The Unbreakable</span></li>
+                <li><span class="warrior-info">Motivation:</span> Protection & Redemption</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Former Companions</strong> - Heroes who betrayed him</li>
+                <li><strong>Fellow Hunters</strong> - New allies on Earth</li>
+                <li><strong>Civilians</strong> - Those he swore to protect</li>
+                <li><strong>Hunter Association</strong> - Current organization</li>
+                <li><strong>Monsters</strong> - Constant threats to humanity</li>
+                <li><strong>Gate Creatures</strong> - Enemies from dungeons</li>
+            </ul>
+            
+            <h2>The Betrayal</h2>
+            <p>Jin-U's defining trauma was being <span class="berserker-rage">betrayed and killed</span> by the very heroes he fought alongside to defeat the Demon King. This experience shaped his cynical worldview but also forged his unbreakable determination.</p>
+            
+            <h2>Return to Earth</h2>
+            <p>When Jin-U returned to Earth, he found it transformed by the appearance of dungeon gates and monsters. His otherworldly powers make him uniquely equipped to handle these new threats, though he struggles with adapting to a changed world.</p>
+            
+            <h2>Fighting Style</h2>
+            <p>Jin-U employs a practical, efficient combat style focused on ending battles quickly. He combines sword techniques with enhanced physical abilities, often using his berserker state as a last resort against powerful foes.</p>
+            
+            <h2>Character Development</h2>
+            <p>Throughout his journey, Jin-U gradually learns to trust again while maintaining his protective nature. His growth involves balancing his trauma with his duty to protect the innocent in a dangerous world.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Jin-U Seong from The Warrior Returns</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
