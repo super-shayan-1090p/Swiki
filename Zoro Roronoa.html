@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roronoa Zoro - The Pirate Hunter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .personality-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .personality-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .personality-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .sword-style {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .sword-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .swords-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .sword-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .sword-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .sword-decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 10px;
+        }
+        
+        .bandana {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .personality-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .swords-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .three-swords {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: sword-glint 3s infinite;
+        }
+        
+        @keyframes sword-glint {
+            0%, 90%, 100% { opacity: 1; }
+            95% { opacity: 0.7; }
+        }
+        
+        .navigation-flaw {
+            text-align: center;
+            margin: 10px 0;
+            font-style: italic;
+            color: #ff9933;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Roronoa Zoro</h1>
+        <div class="subtitle">The Pirate Hunter • Straw Hat Swordsman</div>
+        <p>Future World's Greatest Swordsman • Right-Hand Man of the Future Pirate King</p>
+        <div class="three-swords">⚔️ ⚔️ ⚔️</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Roronoa Zoro is a central and immensely popular character from the global phenomenon manga and anime series "One Piece", created by Eiichiro Oda.</p>
+            <p>He is not the main protagonist, but as the first crew member to join, he is the right-hand man of the future Pirate King and is pivotal to the crew's strength and dynamic.</p>
+            
+            <h3>Role in the Story</h3>
+            <p><strong>Position:</strong> Combatant and Swordsman of the Straw Hat Pirates. He is widely recognized as the "Vice-Captain" in all but name due to his seniority, authority, and the crew's trust in him.</p>
+            <p><strong>Dream:</strong> To become the World's Greatest Swordsman. This promise was made to his late childhood friend, Kuina. To achieve this, he must one day defeat the current titleholder, Dracule Mihawk.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Personality</h2>
+            <p>Zoro is defined by his extreme determination, loyalty, and a rugged, no-nonsense attitude.</p>
+            
+            <div class="personality-grid">
+                <div class="personality-item">
+                    <div class="personality-title">Extremely Determined & Resilient</div>
+                    <p>Zoro possesses what is arguably the greatest willpower in the series. He can endure immense amounts of pain and injury and still stand up to fight.</p>
+                    <div class="quote">
+                        "Scars on the back are a swordsman's shame."
+                    </div>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Stoic & Serious (but not always)</div>
+                    <p>He often serves as the straight man to the crew's more eccentric personalities, especially Luffy's. He is typically calm, collected, and perceptive in a crisis.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Fiercely Loyal</div>
+                    <p>His loyalty to Captain Monkey D. Luffy is absolute. He was the first to recognize Luffy's potential as Pirate King and has repeatedly proven he would sacrifice his life, pride, and even his dream for his captain.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">A Bit of a Goof</div>
+                    <p>Despite his tough exterior, he has his own quirks. He has a terrible sense of direction (so bad it's a running gag and a supernatural flaw), a love for alcohol, and often gets into silly arguments with Sanji, the cook.</p>
+                    <div class="navigation-flaw">"I'm not lost, I'm taking a different route!"</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities and Powers - "The Pirate Hunter"</h2>
+            <p>Zoro is one of the three most powerful fighters in the Straw Hat crew (the "Monster Trio") and a master of the unique sword style in the One Piece world.</p>
+            
+            <div class="skill-label">
+                <span>Swordsmanship</span>
+                <span>99%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 99%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Haki Mastery</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Physical Strength</span>
+                <span>98%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 98%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Endurance</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Three Sword Style (Santoryu)</div>
+                    <p>His signature and self-invented fighting style. He wields a sword in each hand and a third one in his mouth.</p>
+                    
+                    <div class="sword-style">
+                        <div class="sword-title">Iconic Techniques</div>
+                        <p><strong>Oni Giri (Demon Slash):</strong> A powerful three-sword slash attack.</p>
+                        <p><strong>Sanzen Sekai (Three Thousand Worlds):</strong> A high-speed spinning attack.</p>
+                        <p><strong>Ittoryu: Iai: Shi Shishi Sonson (One Sword Style: Lion Song):</strong> An incredibly fast single-sword draw technique.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Haki</div>
+                    <p>Like Luffy, he has mastered the two primary forms of Haki to an elite level.</p>
+                    
+                    <div class="sword-style">
+                        <div class="sword-title">Busoshoku Haki (Armament Haki)</div>
+                        <p>He can coat his swords in an invisible armor, making them incredibly hard and allowing him to damage Logia-type Devil Fruit users and bypass durable defenses. His advanced application allows him to make his cuts more destructive.</p>
+                    </div>
+                    
+                    <div class="sword-style">
+                        <div class="sword-title">Kenbunshoku Haki (Observation Haki)</div>
+                        <p>Allows him to sense the presence and emotions of others, and predict an opponent's movements.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Immense Physical Prowess</div>
+                    <p>He possesses superhuman strength, endurance, and durability, often taking injuries that would kill anyone else and fighting through them.</p>
+                </li>
+            </ul>
+            
+            <h3>His Legendary Swords</h3>
+            <div class="swords-grid">
+                <div class="sword-item">
+                    <div class="sword-name">Wado Ichimonji</div>
+                    <p>A priceless sword that was once Kuina's. It represents his promise and is his most treasured possession.</p>
+                </div>
+                
+                <div class="sword-item">
+                    <div class="sword-name">Enma</div>
+                    <p>The sword that once belonged to Kozuki Oden. It is the only blade to have ever injured Kaido. It is incredibly difficult to wield, as it forcibly draws out large amounts of the user's Haki, but mastering it has drastically increased Zoro's power.</p>
+                </div>
+                
+                <div class="sword-item">
+                    <div class="sword-name">Kitetsu III</div>
+                    <p>A cursed blade of the Kitetsu line, known for bringing misfortune to its users. Zoro tamed it with his sheer willpower.</p>
+                </div>
+            </div>
+            
+            <div class="sword-decoration">🗡️ 🗡️ 🗡️</div>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Monkey D. Luffy</div>
+                    <p>His captain and best friend. Their bond is built on absolute, unspoken trust. Zoro was the first to see Luffy's potential and has never wavered in his belief.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Kuina</div>
+                    <p>His late childhood rival and friend. Her death and their shared dream are the entire foundation of his goal to become the world's greatest swordsman.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Dracule Mihawk</div>
+                    <p>His ultimate goal and rival. Mihawk is the man who gave Zoro the large scar on his chest and serves as both his final obstacle and an occasional mentor figure.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Sanji</div>
+                    <p>The cook of the Straw Hats. They have a legendary rivalry filled with constant bickering and fights, but they share a deep, unspoken respect and would trust each other with their lives in battle.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I will never lose again! Is that alright with you... Pirate King?"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why He's So Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Ultimate Right-Hand Man</div>
+                    <p>He embodies the loyal, incredibly powerful first mate who is the rock of the crew.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Unbreakable Will</div>
+                    <p>His feats of endurance are legendary and inspire both his crew and the audience.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Cool Factor</div>
+                    <p>His three-sword style is incredibly unique and visually striking. His pre-fight ritual of tying his bandana is a signal that a serious fight is about to begin.</p>
+                    <div class="bandana">🎗️</div>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Meaningful Dream</div>
+                    <p>His goal is deeply personal and tied to a solemn promise, giving his character immense emotional weight.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "When you decided to go to the sea, it was your own decision. Whatever happens to you on the sea, it's your own responsibility. No matter how powerful the enemies are, or how tough the odds may be... It's my decision!"
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Roronoa Zoro is the immensely powerful, fiercely loyal swordsman of the Straw Hat Pirates, whose dream is to become the World's Greatest Swordsman and whose will is as unbreakable as his blades.</p>
+        <p style="margin-top: 15px;">© One Piece created by Eiichiro Oda | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
