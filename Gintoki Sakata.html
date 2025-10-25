@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gintoki Sakata | Gintama</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .yorozuya-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .silver-accent {
+            color: #c0c0c0;
+            text-shadow: 0 0 5px rgba(192, 192, 192, 0.5);
+            font-weight: bold;
+        }
+        
+        .yato-heritage {
+            color: #ff4444;
+            text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+            font-weight: bold;
+        }
+        
+        .yorozuya-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .crew-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .crew-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .crew-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .gintoki-glow {
+            animation: gintoki 3s infinite;
+        }
+        
+        @keyframes gintoki {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(192, 192, 192, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .strawberry {
+            background: linear-gradient(45deg, #ff8c00, #ff4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .jump-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .sweet-bounce {
+            animation: sweet-bounce 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes sweet-bounce {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .crew-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GINTOKI SAKATA <span class="gintoki-glow">🍓</span></h1>
+        <p class="subtitle">The Lazy Yet Unbreakable Samurai</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Gintoki Sakata</h2>
+                <p>Gintoki Sakata is the main protagonist of Hideaki Sorachi's Gintama series. He's the founder and leader of Yorozuya, a freelance odd-jobs business in an alternate Edo period where aliens have taken over Japan. Despite his lazy, sugar-addicted demeanor, Gintoki is a former legendary samurai who fought in the Joui War.</p>
+                
+                <div class="quote">
+                    "There are things that can't be put back together. But there are also things that won't fall apart."
+                </div>
+                
+                <p>Gintoki maintains his natural perm silver hair and carries a wooden sword named "Lake Toya," living by his own code while taking on any job that comes his way, no matter how ridiculous or dangerous.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Gintoki appears as a lazy, unmotivated slacker obsessed with strawberry milk and Jump manga, but beneath this facade lies a fiercely protective, principled samurai with unshakable loyalty to his friends.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Lazy</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Sarcastic</span>
+                    <span class="trait">Unbreakable</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Unexpectedly Wise</span>
+                </div>
+                
+                <p>Gintoki's philosophy revolves around protecting what's important to him while maintaining his freedom. He hates seeing innocent people suffer and will risk everything for those he cares about, though he'd never admit it.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Yorozuya Crew</h2>
+                <div class="yorozuya-section">
+                    <p>Gintoki's found family and business partners at Yorozuya Gin-chan:</p>
+                    
+                    <div class="crew-list">
+                        <div class="crew-item">
+                            <div class="crew-name">Shinpachi Shimura</div>
+                            <div>The straight man & glasses</div>
+                        </div>
+                        <div class="crew-item">
+                            <div class="crew-name">Kagura</div>
+                            <div>Alien strength & appetite</div>
+                        </div>
+                        <div class="crew-item">
+                            <div class="crew-name">Sadaharu</div>
+                            <div>Giant alien dog</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Gintoki's Essentials</h2>
+                <div class="jump-section">
+                    <p>The things Gintoki can't live without in his daily life:</p>
+                    
+                    <div class="crew-list">
+                        <div class="crew-item">
+                            <div class="crew-name">Strawberry Milk</div>
+                            <div>Primary sustenance</div>
+                        </div>
+                        <div class="crew-item">
+                            <div class="crew-name">Weekly Jump</div>
+                            <div>Spiritual nourishment</div>
+                        </div>
+                        <div class="crew-item">
+                            <div class="crew-name">Sweets</div>
+                            <div>Emergency rations</div>
+                        </div>
+                        <div class="crew-item">
+                            <div class="crew-name">Wooden Sword</div>
+                            <div>For hitting & pachinko</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Skills</h2>
+                <p>Despite his lazy appearance, Gintoki possesses incredible combat skills and survival instincts honed from his days as the "White Demon" of the Joui War.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Master Swordsmanship</h3>
+                        <p>Extremely skilled with a sword despite using a wooden blade. Can defeat armed opponents while severely outnumbered.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Superhuman Strength</h3>
+                        <p>Possesses incredible physical strength, able to lift vehicles and break through solid walls with bare hands.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Enhanced Durability</h3>
+                        <p>Can withstand tremendous amounts of damage and continue fighting through severe injuries.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Battle Intelligence</h3>
+                        <p>Excellent tactical mind and improvisation skills in combat, often using unorthodox methods to win.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Leadership</h3>
+                        <p>Natural leader who inspires loyalty and can unite diverse groups toward a common goal.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Pachinko Master</h3>
+                        <p>Surprisingly skilled at pachinko and gambling, though he usually loses his winnings immediately.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Character Profile</h2>
+            <ul class="power-list">
+                <li><span class="yorozuya-info">Alias:</span> <span class="silver-accent">White Demon</span></li>
+                <li><span class="yorozuya-info">Hair:</span> <span class="silver-accent">Natural Perm Silver</span></li>
+                <li><span class="yorozuya-info">Eyes:</span> Red</li>
+                <li><span class="yorozuya-info">Weapon:</span> Wooden Sword</li>
+                <li><span class="yorozuya-info">Addiction:</span> <span class="strawberry">Strawberry Milk</span></li>
+                <li><span class="yorozuya-info">Business:</span> Yorozuya Gin-chan</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Shinpachi Shimura</strong> - First employee & moral compass</li>
+                <li><strong>Kagura</strong> - Adopted daughter & powerhouse</li>
+                <li><strong>Kotaro Katsura</strong> - Joui war comrade & friend</li>
+                <li><strong>Toshiro Hijikata</strong> - Shinsengumi rival</li>
+                <li><strong>Shinsuke Takasugi</strong> - Former friend & rival</li>
+                <li><strong>Shoyo Yoshida</strong> - Mentor & father figure</li>
+            </ul>
+            
+            <h2>The White Demon</h2>
+            <p>During the Joui War, Gintoki was known as the <span class="silver-accent">"White Demon"</span> for his silver hair and fearsome combat prowess. He was one of the strongest samurai fighting against the Amanto invasion.</p>
+            
+            <h2>Philosophy of Protection</h2>
+            <p>Gintoki lives by a simple code: <span class="highlight">"Protect what you want to protect"</span>. He believes in fighting for the present rather than getting lost in ideals or revenge, choosing to save people right in front of him.</p>
+            
+            <h2>Comedic Genius</h2>
+            <p>Gintoki's fourth-wall breaking, pop culture references, and absurd reactions make him one of anime's greatest comedic characters, often commenting on the series' budget and production quality <span class="sweet-bounce">🎮</span>.</p>
+            
+            <h2>Hidden Depths</h2>
+            <p>Beneath his lazy exterior lies a deeply caring individual who carries the weight of his past. His humor and laziness are coping mechanisms for the trauma he experienced during the war.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Gintoki Sakata from Gintama</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
