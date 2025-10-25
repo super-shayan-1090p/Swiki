@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L Lawliet - The World's Greatest Detective</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .methodology-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .methodology-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .deduction-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .deduction-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .case-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .case-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .l-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: l-glow 3s infinite;
+        }
+        
+        @keyframes l-glow {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #ffffff; }
+            50% { opacity: 1; text-shadow: 0 0 15px #ffffff; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #ffffff; }
+        }
+        
+        .sweets-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .methodology-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .detective-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-mystery {
+            color: #ff9933;
+        }
+        
+        .scale-kira {
+            color: #cc0000;
+        }
+        
+        .scale-legend {
+            color: #ffcc00;
+        }
+        
+        .thinking-symbol {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .posture-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: l-sit 4s infinite;
+        }
+        
+        @keyframes l-sit {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .percentage {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>L Lawliet</h1>
+        <div class="subtitle">The World's Greatest Detective • Eccentric Genius • Ryuzaki</div>
+        <p>The Brilliant Mind Behind the Kira Investigation in Death Note</p>
+        <div class="l-symbol">L</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>L Lawliet, known simply as "L," is the world-renowned detective who takes on the Kira case in Tsugumi Ohba's psychological thriller "Death Note." He is considered the greatest detective in the world, having solved countless unsolvable cases.</p>
+            <p>His unique methods, eccentric personality, and brilliant deductive skills make him one of anime's most iconic characters.</p>
+            
+            <div class="detective-scale">
+                <div class="scale-item scale-mystery">
+                    <h3>Mystery Solver</h3>
+                    <p>Pre-Kira Cases</p>
+                </div>
+                <div class="scale-item scale-kira">
+                    <h3>Kira Investigator</h3>
+                    <p>Main Arc</p>
+                </div>
+                <div class="scale-item scale-legend">
+                    <h3>Legendary Detective</h3>
+                    <p>Legacy</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Detective Methodology</h2>
+            
+            <div class="methodology-grid">
+                <div class="methodology-item">
+                    <div class="methodology-title">Deductive Reasoning</div>
+                    <p>L's primary method involves eliminating impossibilities until only the truth remains. He works with probabilities and percentages, famously stating his suspicions as exact percentages.</p>
+                    <div class="thinking-symbol">🤔 → 🧠 → 💡</div>
+                </div>
+                
+                <div class="methodology-item">
+                    <div class="methodology-title">Psychological Profiling</div>
+                    <p>He excels at understanding criminal psychology, predicting Kira's actions and motivations with uncanny accuracy through behavioral analysis.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <div class="methodology-title">Unconventional Testing</div>
+                    <p>L uses creative methods to test his theories, such as the Lind L. Tailor broadcast to confirm Kira needed a name and face, and the confinement test to pressure Light.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <div class="methodology-title">Information Control</div>
+                    <p>He carefully controls what information is released to the public and to his team, using misinformation and strategic leaks to manipulate Kira into revealing himself.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities & Intellectual Prowess</h2>
+            
+            <div class="skill-label">
+                <span>Deductive Reasoning</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Strategic Planning</span>
+                <span>98%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 98%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Psychological Insight</span>
+                <span>99%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 99%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Physical Combat</span>
+                <span>85%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 85%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Genius-Level Intellect</div>
+                    <div class="deduction-section">
+                        <div class="deduction-title">IQ Estimated Over 200</div>
+                        <p>L possesses one of the highest intellects in fiction. He can process enormous amounts of information, recognize patterns invisible to others, and solve complex problems with minimal data.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Photographic Memory</div>
+                    <p>He can recall minute details from cases, documents, and observations with perfect accuracy, often referencing specific page numbers and timestamps from memory.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Mathematical Brilliance</div>
+                    <p>L thinks in probabilities and percentages, famously quantifying his suspicions (e.g., "<span class="percentage">5%</span> chance Light Yagami is Kira").</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Computer Hacking</div>
+                    <p>He demonstrates exceptional computer skills, able to bypass security systems, track digital footprints, and access restricted information worldwide.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Eccentric Habits & Quirks</h2>
+            
+            <div class="methodology-grid">
+                <div class="methodology-item">
+                    <div class="methodology-title">Unique Posture</div>
+                    <p>L almost always sits in a crouched position with his knees up to his chest, even when using computers or conducting investigations.</p>
+                    <div class="posture-symbol">🧘‍♂️</div>
+                </div>
+                
+                <div class="methodology-item">
+                    <div class="methodology-title">Sweet Tooth</div>
+                    <p>He consumes enormous amounts of sweets, particularly desserts and candies, claiming they help him think. He's rarely seen without some form of sugar.</p>
+                    <div class="sweets-symbol">🍰 🍫 🍭</div>
+                </div>
+                
+                <div class="methodology-item">
+                    <div class="methodology-title">Barefoot Preference</div>
+                    <p>L prefers to be barefoot whenever possible, even in professional settings and during important meetings.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <div class="methodology-title">Sleep Deprivation</div>
+                    <p>He works irregular hours and often goes days without sleep when deeply focused on a case, then sleeps for extended periods.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Light Yagami</div>
+                    <p>His primary suspect and intellectual rival. Their cat-and-mouse game forms the core of Death Note's narrative. L respects Light's intellect while being certain of his guilt.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Watari</div>
+                    <p>His caretaker, handler, and father figure. Watari provides logistical support, handles communications, and has cared for L since childhood.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">The Investigation Team</div>
+                    <p>Includes Soichiro Yagami, Touta Matsuda, and others. L maintains professional distance while utilizing their skills and authority.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Misa Amane</div>
+                    <p>The Second Kira who becomes another piece in his investigation. L quickly identifies her connection to Kira and uses her to pressure Light.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Famous Cases & Investigations</h2>
+            
+            <div class="cases-grid">
+                <div class="case-item">
+                    <div class="case-name">The Kira Case</div>
+                    <p>His final and most famous investigation. L deduces Kira's location, methods, and psychology with astonishing speed, narrowing the suspect pool to Light Yagami within days.</p>
+                </div>
+                
+                <div class="case-item">
+                    <div class="case-name">The Los Angeles BB Murder Cases</div>
+                    <p>A previous case mentioned in the series that established L's reputation. He solved the complex serial murder case that baffled authorities worldwide.</p>
+                </div>
+                
+                <div class="case-item">
+                    <div class="case-name">The Mafia Don Case</div>
+                    <p>Another famous case where L solved a mafia leader's crimes without leaving his room, using only publicly available information.</p>
+                </div>
+                
+                <div class="case-item">
+                    <div class="case-name">The Wammy's House Cases</div>
+                    <p>Various cases solved during his training and early career that established him as the world's greatest detective.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I am L. Nice to meet you. I'm sure we'll get along... that is, if you're not Kira."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why L is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Perfect Rival</div>
+                    <p>His intellectual battle with Light represents one of the greatest rivalries in fiction, pitting two geniuses against each other in a battle of wits.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Unique Character Design</div>
+                    <p>His disheveled appearance, unusual posture, and eccentric habits make him visually distinctive and memorable.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Moral Complexity</div>
+                    <p>While hunting a mass murderer, L employs questionable methods himself, creating fascinating moral ambiguity.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Tragic Hero</div>
+                    <p>His ultimate fate adds depth to his character, making his intellectual victory bittersweet and memorable.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "There are many types of monsters that scare me: Monsters who cause trouble without showing themselves, monsters who abduct children, monsters who devour dreams, monsters who suck blood... and then, monsters who tell nothing but lies. Lying monsters are a real nuisance: They are much more cunning than others. They pose as humans even though they have no understanding of the human heart."
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, L Lawliet is the eccentric, brilliant, and unforgettable detective whose intellectual battle with Kira in Death Note created one of the most compelling psychological thrillers in anime history.</p>
+        <p style="margin-top: 15px;">© Death Note created by Tsugumi Ohba and Takeshi Obata | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
