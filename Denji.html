@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denji | Chainsaw Man</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .rank {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .dreams-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .dreams-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .dream {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .dream-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .chainsaw-element {
+            display: inline-block;
+            animation: chainsaw 2s infinite;
+            transform-origin: center;
+        }
+        
+        @keyframes chainsaw {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .dreams-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DENJI <span class="chainsaw-element">⛓️⚡</span></h1>
+        <p class="subtitle">The Chainsaw Devil Hybrid</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Denji</h2>
+                <p>Denji is the protagonist of Tatsuki Fujimoto's manga series Chainsaw Man. He starts as a poverty-stricken young man forced to repay his father's debt by hunting devils with his pet devil-dog Pochita.</p>
+                
+                <div class="quote">
+                    "I wanna eat toast with jam... I wanna touch some boobs... I want a girlfriend!"
+                </div>
+                
+                <p>After being betrayed and killed, Denji merges with Pochita and becomes the Chainsaw Man - a human-devil hybrid with the ability to transform parts of his body into chainsaws.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Denji begins as a simple-minded youth with extremely low expectations for life, having known nothing but poverty and exploitation. His desires are basic: food, shelter, and human connection.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Simple-Minded</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Brutally Honest</span>
+                    <span class="trait">Emotionally Scarred</span>
+                    <span class="trait">Surprisingly Clever</span>
+                    <span class="trait">Yearning for Normalcy</span>
+                </div>
+                
+                <p>Despite his rough exterior and simplistic desires, Denji possesses a strong moral compass and grows emotionally throughout the series, though his development is often messy and complicated.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Simple Dreams</h2>
+                <div class="dreams-section">
+                    <p>Denji's aspirations reflect his deprived upbringing and basic human needs:</p>
+                    
+                    <div class="dreams-list">
+                        <div class="dream">
+                            <div class="dream-name">Good Food</div>
+                            <div>Jam toast & proper meals</div>
+                        </div>
+                        <div class="dream">
+                            <div class="dream-name">Physical Affection</div>
+                            <div>To touch breasts</div>
+                        </div>
+                        <div class="dream">
+                            <div class="dream-name">Romance</div>
+                            <div>A girlfriend</div>
+                        </div>
+                        <div class="dream">
+                            <div class="dream-name">Safety</div>
+                            <div>A bed to sleep in</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>As the Chainsaw Devil hybrid, Denji possesses incredible regenerative abilities and combat prowess.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Chainsaw Transformation</h3>
+                        <p>Can manifest chainsaws from his head, arms, and legs by pulling a cord on his chest.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Devil Hybrid Physiology</h3>
+                        <p>Enhanced strength, speed, and near-instant regeneration from blood consumption.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Blood Consumption</h3>
+                        <p>Drinking blood accelerates his healing factor and powers his transformations.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Devil Erasure</h3>
+                        <p>Chainsaw Man can permanently erase devils by consuming them, removing their concept from existence.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Pochita</strong> - The Chainsaw Devil, his partner and heart</li>
+                <li><strong>Makima</strong> - The Control Devil, his manipulator</li>
+                <li><strong>Power</strong> - The Blood Devil, his "little sister"</li>
+                <li><strong>Aki Hayakawa</strong> - His Public Safety partner</li>
+                <li><strong>Kobeni</strong> - Fellow Public Safety devil hunter</li>
+            </ul>
+            
+            <h2>Notable Forms</h2>
+            <ul class="power-list">
+                <li><span class="rank">Human Form:</span> Normal appearance</li>
+                <li><span class="rank">Hybrid Form:</span> Partial chainsaw transformation</li>
+                <li><span class="rank">Chainsaw Man:</span> Full devil transformation</li>
+                <li><span class="rank">Hero of Hell:</span> True Chainsaw Devil form</li>
+            </ul>
+            
+            <h2>Public Safety Division</h2>
+            <p>Denji works for Tokyo's Special Division 4 of Public Safety, hunting devils under Makima's command in exchange for basic living necessities and the chance at a normal life.</p>
+            
+            <h2>Iconic Features</h2>
+            <p>Denji's most recognizable traits include his <span class="highlight">chainsaw cord pull-starter</span> on his chest and his <span class="highlight">devilish grin</span> when transformed.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Denji from Chainsaw Man</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
