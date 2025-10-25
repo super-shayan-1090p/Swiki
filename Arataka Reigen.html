@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arataka Reigen - The Greatest Psychic of the 21st Century</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .technique-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .technique-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .technique-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .salt-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .salt-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font fontSize: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .business-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .business-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .business-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .salt-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: salt-shimmer 3s infinite;
+        }
+        
+        @keyframes salt-shimmer {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #ffffff; }
+            50% { opacity: 1; text-shadow: 0 0 15px #ffffff; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #ffffff; }
+        }
+        
+        .business-card {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .technique-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .business-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .reigen-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-conman {
+            color: #ff9933;
+        }
+        
+        .scale-mentor {
+            color: #00cc00;
+        }
+        
+        .scale-hero {
+            color: #ffcc00;
+        }
+        
+        .price-tag {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .self-defense {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: reigen-flip 4s infinite;
+        }
+        
+        @keyframes reigen-flip {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arataka Reigen</h1>
+        <div class="subtitle">The Greatest Psychic of the 21st Century • Master of Salt • Businessman Extraordinaire</div>
+        <p>The Charismatic Conman-Turned-Mentor of Mob Psycho 100</p>
+        <div class="salt-symbol">🧂</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Arataka Reigen is one of the most unique and beloved characters from ONE's manga and anime series "Mob Psycho 100." He begins as a fraudulent psychic running a spiritual consultation business but evolves into a genuine mentor and father figure.</p>
+            <p>The brilliant twist: Reigen has absolutely no psychic powers whatsoever, yet he's one of the most effective "exorcists" in the series.</p>
+            
+            <div class="reigen-scale">
+                <div class="scale-item scale-conman">
+                    <h3>Conman</h3>
+                    <p>Spirits & Such</p>
+                </div>
+                <div class="scale-item scale-mentor">
+                    <h3>Mentor</h3>
+                    <p>Mob's Guide</p>
+                </div>
+                <div class="scale-item scale-hero">
+                    <h3>Genuine Hero</h3>
+                    <p>Season 2 & 3</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>The Business of Exorcism</h2>
+            
+            <div class="technique-grid">
+                <div class="technique-item">
+                    <div class="technique-title">Spirits & Such Consultation Office</div>
+                    <p>Reigen's business establishment where he offers exorcisms, spiritual consultations, and various other services. Prices range from ¥3,000 to ¥10,000 depending on the severity.</p>
+                    <div class="price-tag">¥3,000~¥10,000</div>
+                </div>
+                
+                <div class="technique-item">
+                    <div class="technique-title">The Art of the Con</div>
+                    <p>Reigen's initial approach involves cold reading, psychological manipulation, and exploiting people's fears and desires. He's exceptionally skilled at reading people and situations.</p>
+                </div>
+                
+                <div class="technique-item">
+                    <div class="technique-title">The Salt Splash</div>
+                    <p>His signature move - throwing salt at spirits. While initially just for show, it becomes surprisingly effective when combined with Mob's actual powers.</p>
+                    <div class="salt-symbol">🧂 → 👻 → 💥</div>
+                </div>
+                
+                <div class="technique-item">
+                    <div class="technique-title">Self-Defense Techniques</div>
+                    <p>Reigen's legitimate martial arts skills including throws, joint locks, and pressure points. His "Ultimate Technique: Self-Defense Rush" is surprisingly effective against normal humans.</p>
+                    <div class="self-defense">🥋</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Reigen's "Psychic" Abilities</h2>
+            
+            <div class="skill-label">
+                <span>People Skills & Charisma</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Quick Thinking & Improvisation</span>
+                <span>98%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 98%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Actual Psychic Power</span>
+                <span>0%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 0%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Mentorship Ability</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Master of Psychology</div>
+                    <div class="salt-section">
+                        <div class="salt-title">The Real Power Was Emotional Intelligence All Along</div>
+                        <p>Reigen's true strength lies in his understanding of human psychology. He can read people's emotions, fears, and motivations with uncanny accuracy, allowing him to provide genuine help despite his fraudulent premise.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Exceptional Oratory Skills</div>
+                    <p>Reigen can talk his way out of (and into) almost any situation. His speeches are so compelling that he can convince powerful espers, evil spirits, and entire organizations.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Crisis Management</div>
+                    <p>He remains calm and analytical in dangerous situations, quickly assessing threats and formulating plans despite having no actual powers to protect himself.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Business Acumen</div>
+                    <p>From marketing to client relations to financial management, Reigen demonstrates legitimate business skills that keep his consultation office running successfully.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Shigeo "Mob" Kageyama</div>
+                    <p>His student and employee. What begins as exploitation evolves into genuine mentorship and paternal care. Reigen becomes the moral compass Mob needs.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Dimple</div>
+                    <p>The powerful spirit who starts as an enemy but becomes Reigen's reluctant partner. Their snarky banter and unexpected teamwork become a series highlight.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Serizawa</div>
+                    <p>A former Claw member who becomes Reigen's second employee. Reigen helps him reintegrate into society and gain confidence.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Ritsu Kageyama</div>
+                    <p>Mob's younger brother who initially distrusts Reigen but gradually comes to respect him as he proves his genuine care for Mob.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Business Services & Pricing</h2>
+            
+            <div class="business-grid">
+                <div class="business-item">
+                    <div class="business-name">Standard Exorcism</div>
+                    <p><strong>Price:</strong> ¥3,000</p>
+                    <p>Basic spirit removal using salt splash techniques. Suitable for minor hauntings and pesky ghosts.</p>
+                </div>
+                
+                <div class="business-item">
+                    <div class="business-name">Advanced Spiritual Consultation</div>
+                    <p><strong>Price:</strong> ¥5,000</p>
+                    <p>In-depth analysis of spiritual problems, life advice, and personalized solutions.</p>
+                </div>
+                
+                <div class="business-item">
+                    <div class="business-name">Massage Therapy</div>
+                    <p><strong>Price:</strong> ¥4,000/hour</p>
+                    <p>Legitimate massage services using actual therapeutic techniques. Surprisingly popular.</p>
+                </div>
+                
+                <div class="business-item">
+                    <div class="business-name">Emergency Exorcism</div>
+                    <p><strong>Price:</strong> ¥10,000+</p>
+                    <p>For serious spiritual emergencies, dangerous apparitions, and world-threatening entities.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I'm actually a really good adult. I pay my taxes, I don't smoke, I drink in moderation... I'm a good citizen!"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why Reigen is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Anti-Hero Mentor</div>
+                    <p>A flawed, fraudulent character who becomes one of anime's most genuine and effective mentors through sheer force of personality and wisdom.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Subversion of Expectations</div>
+                    <p>In a world of superpowered espers, the most effective character has no powers at all, proving that emotional intelligence and people skills are true superpowers.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Character Growth</div>
+                    <p>His journey from selfish conman to selfless mentor is one of the most satisfying character arcs in modern anime.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Comic Relief with Depth</div>
+                    <p>While hilarious in his antics, Reigen's wisdom and genuine care for Mob give him surprising emotional weight.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "Listen up, Mob. It's okay to run away. It's okay to not have a dream. You can just be a normal, kind person."
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Arataka Reigen is the charismatic, salt-throwing, self-proclaimed greatest psychic of the 21st century who, despite having no actual powers, becomes one of the most effective and beloved mentors in anime through sheer force of personality and genuine wisdom.</p>
+        <p style="margin-top: 15px;">© Mob Psycho 100 created by ONE | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
