@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitagi Senjougahara | Monogatari Series</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .crab-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .tsundere-accent {
+            color: #ff69b4;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+            font-weight: bold;
+        }
+        
+        .crab-apparition {
+            color: #ff4444;
+            text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+            font-weight: bold;
+        }
+        
+        .weapons-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .weapon-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .weapon-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .weapon-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .senjougahara-glow {
+            animation: senjougahara 3s infinite;
+        }
+        
+        @keyframes senjougahara {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 105, 180, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .stapler {
+            background: linear-gradient(45deg, #ff8c00, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .relationships-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .crab-pinch {
+            animation: crab-pinch 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes crab-pinch {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .weapon-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HITAGI SENJOUGAHARA <span class="senjougahara-glow">🦀</span></h1>
+        <p class="subtitle">The Weightless Tsundere Crab</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Hitagi Senjougahara</h2>
+                <p>Hitagi Senjougahara is one of the main heroines in Nisio Isin's Monogatari series. She is a high school student who was afflicted by a crab apparition that made her weightless, both physically and emotionally. After being cured by Koyomi Araragi, she develops a complex relationship with him, characterized by her sharp tongue, violent tendencies, and deep-seated emotional vulnerability.</p>
+                
+                <div class="quote">
+                    "I don't know everything. I only know what I know."
+                </div>
+                
+                <p>Known for her tsundere personality and arsenal of hidden stationery weapons, Senjougahara presents herself as cold and calculating but gradually reveals her caring nature and deep loyalty to those she trusts.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Senjougahara appears as an intelligent, sharp-tongued, and emotionally distant girl, but this facade conceals a deeply vulnerable individual struggling with trust issues and emotional connection.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Tsundere</span>
+                    <span class="trait">Intelligent</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Vulnerable</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Emotionally Complex</span>
+                </div>
+                
+                <p>Senjougahara's character development involves learning to trust and love again after years of emotional isolation. Her relationship with Araragi becomes the catalyst for her emotional healing.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Key Relationships</h2>
+                <div class="relationships-section">
+                    <p>Senjougahara's most significant connections:</p>
+                    
+                    <div class="weapon-list">
+                        <div class="weapon-item">
+                            <div class="weapon-name">Koyomi Araragi</div>
+                            <div>Boyfriend & emotional anchor</div>
+                        </div>
+                        <div class="weapon-item">
+                            <div class="weapon-name">Tsubasa Hanekawa</div>
+                            <div>Friend & class president</div>
+                        </div>
+                        <div class="weapon-item">
+                            <div class="weapon-name">Memé Oshino</div>
+                            <div>Occult specialist who helped her</div>
+                        </div>
+                        <div class="weapon-item">
+                            <div class="weapon-name">Her Father</div>
+                            <div>Source of past trauma</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Arsenal of Stationery</h2>
+                <div class="weapons-section">
+                    <p>Senjougahara's signature hidden weapons:</p>
+                    
+                    <div class="weapon-list">
+                        <div class="weapon-item">
+                            <div class="weapon-name">Staplers</div>
+                            <div>Primary weapon of choice</div>
+                        </div>
+                        <div class="weapon-item">
+                            <div class="weapon-name">Pens & Pencils</div>
+                            <div>Precision throwing weapons</div>
+                        </div>
+                        <div class="weapon-item">
+                            <div class="weapon-name">Scissors</div>
+                            <div>Close-quarters combat</div>
+                        </div>
+                        <div class="weapon-item">
+                            <div class="weapon-name">Rulers</div>
+                            <div>Measuring & striking tool</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Character Development</h2>
+                <p>Senjougahara's journey from emotional isolation to genuine connection showcases one of the most compelling character arcs in the series.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>The Crab Apparition</h3>
+                        <p>Senjougahara was afflicted by a weight crab that made her physically weightless as a manifestation of her emotional burden and desire to forget traumatic memories.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Emotional Armor</h3>
+                        <p>Her sharp tongue and violent tendencies serve as defense mechanisms to protect herself from emotional vulnerability and potential betrayal.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Trust Issues</h3>
+                        <p>Developed severe trust issues after her mother joined a cult and her father was emotionally destroyed, leaving her to fend for herself emotionally.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Romantic Development</h3>
+                        <p>Her relationship with Araragi evolves from initial hostility to deep devotion, representing her gradual ability to trust and love again.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Protective Nature</h3>
+                        <p>Despite her cold exterior, Senjougahara becomes fiercely protective of those she cares about, especially Araragi and her few friends.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Intellectual Prowess</h3>
+                        <p>Extremely intelligent and observant, often using her sharp wit and analytical skills to navigate social situations and protect herself.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Crab Apparition Profile</h2>
+            <ul class="power-list">
+                <li><span class="crab-info">Affliction:</span> <span class="crab-apparition">Weight Crab</span></li>
+                <li><span class="crab-info">Personality:</span> <span class="tsundere-accent">Tsundere</span></li>
+                <li><span class="crab-info">Weapon of Choice:</span> <span class="stapler">Stapler</span></li>
+                <li><span class="crab-info">Academic:</span> Top Student</li>
+                <li><span class="crab-info">Signature Move:</span> Stationery Attack <span class="crab-pinch">📎</span></li>
+                <li><span class="crab-info">Status:</span> Cured & in relationship</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Koyomi Araragi</strong> - Boyfriend & savior</li>
+                <li><strong>Tsubasa Hanekawa</strong> - Only female friend</li>
+                <li><strong>Memé Oshino</strong> - The specialist who cured her</li>
+                <li><strong>Suruga Kanbaru</strong> - Underclassman & rival</li>
+                <li><strong>Mayoi Hachikuji</strong> - Lost snail girl</li>
+                <li><strong>Her Parents</strong> - Source of trauma</li>
+            </ul>
+            
+            <h2>The Stapler Scene</h2>
+            <p>Senjougahara's iconic introduction involves threatening Araragi with a <span class="stapler">stapler</span> to his mouth, establishing her violent tsundere personality while simultaneously revealing her vulnerability about her condition.</p>
+            
+            <h2>Emotional Weight</h2>
+            <p>The crab apparition represented Senjougahara's desire to be "weightless" - to forget her painful memories and emotional burdens. Her cure involved accepting her past and learning to carry her emotional weight.</p>
+            
+            <h2>Development Arc</h2>
+            <p>Senjougahara evolves from a emotionally closed-off girl who trusts no one to someone capable of deep love and vulnerability, while maintaining her sharp wit and unique personality.</p>
+            
+            <h2>Cultural Impact</h2>
+            <p>Senjougahara has become one of anime's most iconic tsundere characters, known for her intelligent dialogue, stationery weapons, and complex emotional journey that subverts many tsundere tropes.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Hitagi Senjougahara from the Monogatari Series</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
