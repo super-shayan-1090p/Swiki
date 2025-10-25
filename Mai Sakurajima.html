@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mai Sakurajima - The Dreaming Girl</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .personality-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .personality-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .personality-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .bunny-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .bunny-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .arc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .arc-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .arc-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .bunny-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: bunny-hop 3s infinite;
+        }
+        
+        @keyframes bunny-hop {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .actress-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .personality-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .arc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .mai-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-actress {
+            color: #ff9933;
+        }
+        
+        .scale-dream {
+            color: #00cc00;
+        }
+        
+        .scale-love {
+            color: #ffcc00;
+        }
+        
+        .senpai-symbol {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .forget-me {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: memory-pulse 4s infinite;
+        }
+        
+        @keyframes memory-pulse {
+            0% { color: #ff7700; }
+            50% { color: #ffcc00; }
+            100% { color: #ff7700; }
+        }
+        
+        .bunny-text {
+            font-weight: bold;
+            color: #cc0000;
+        }
+        
+        .dream-text {
+            font-weight: bold;
+            color: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mai Sakurajima</h1>
+        <div class="subtitle">The Dreaming Girl • Bunny Girl Senpai • The Caring Actress</div>
+        <p>The Complex Heroine of Rascal Does Not Dream of Bunny Girl Senpai</p>
+        <div class="bunny-symbol">🐇</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Mai Sakurajima is the main heroine of Hajime Kamoshida's light novel series "Rascal Does Not Dream of Bunny Girl Senpai" and its anime adaptation. She is a third-year high school student and former child actress who becomes involved with supernatural phenomena known as "Adolescence Syndrome."</p>
+            <p>Her mature demeanor, hidden vulnerabilities, and complex relationship with Sakuta Azusagawa make her one of the most compelling modern anime heroines.</p>
+            
+            <div class="mai-scale">
+                <div class="scale-item scale-actress">
+                    <h3>Former Actress</h3>
+                    <p>Public Persona</p>
+                </div>
+                <div class="scale-item scale-dream">
+                    <h3>Dreaming Girl</h3>
+                    <p>Adolescence Syndrome</p>
+                </div>
+                <div class="scale-item scale-love">
+                    <h3>Loving Senpai</h3>
+                    <p>Relationship Growth</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Complex Personality</h2>
+            
+            <div class="personality-grid">
+                <div class="personality-item">
+                    <div class="personality-title">The Mature Senpai</div>
+                    <p>Mai presents herself as composed, intelligent, and mature beyond her years, often serving as the voice of reason while dealing with her own supernatural struggles.</p>
+                    <div class="senpai-symbol">🎭 → 🧠 → 💝</div>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Hidden Vulnerability</div>
+                    <p>Beneath her confident exterior lies deep emotional scars from her acting career and the pressure of public expectations, making her surprisingly vulnerable.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">The Tsundere Heart</div>
+                    <p>While not a classic tsundere, Mai often masks her genuine affection with sarcasm and teasing, particularly in her interactions with Sakuta.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Protective Nature</div>
+                    <p>She demonstrates fierce protectiveness toward those she cares about, willing to make significant personal sacrifices for their well-being.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities & Adolescence Syndrome</h2>
+            
+            <div class="skill-label">
+                <span>Acting Talent</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Emotional Intelligence</span>
+                <span>90%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 90%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Academic Performance</span>
+                <span>85%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 85%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Personal Sacrifice</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">The Invisibility Syndrome</div>
+                    <div class="bunny-section">
+                        <div class="bunny-title">Nobody Can See Me</div>
+                        <p>Mai's initial Adolescence Syndrome causes her to become gradually invisible to everyone except Sakuta, representing her desire to escape public scrutiny and live a normal life.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Exceptional Acting Skills</div>
+                    <div class="bunny-section">
+                        <div class="bunny-title">The Professional Actress</div>
+                        <p>As a former child star, Mai possesses remarkable acting talent, able to convincingly portray various emotions and characters, though she retired due to industry pressures.</p>
+                        <div class="actress-symbol">🎬 🌟 🎭</div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Emotional Resilience</div>
+                    <p>Despite facing public criticism, career pressures, and supernatural phenomena, Mai demonstrates incredible emotional strength and maturity.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Self-Sacrifice</div>
+                    <p>Her willingness to sacrifice her own happiness and memories for others' well-being becomes a defining characteristic throughout the series.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Sakuta Azusagawa</div>
+                    <p>The series protagonist who can see her during her invisibility. Their relationship evolves from mutual understanding to deep romantic connection, with Mai becoming his emotional anchor.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Tomoe Koga</div>
+                    <p>The middle school girl who develops a crush on Sakuta. Despite initial tension, Mai treats her with maturity and understanding, eventually forming a sisterly bond.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Rio Futaba</div>
+                    <p>The science-minded friend who helps research Adolescence Syndrome. They share an intellectual respect and work together to understand supernatural phenomena.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Her Mother</div>
+                    <p>The stage mother who pushed her into acting, creating complex family dynamics and contributing to Mai's desire for a normal life.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "<span class="bunny-text">I'm not wearing this for fun, you know.</span>"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Character Development Arcs</h2>
+            
+            <div class="arc-grid">
+                <div class="arc-item">
+                    <div class="arc-name">Bunny Girl Syndrome</div>
+                    <p>Her initial arc dealing with invisibility and the desire to escape public attention, leading to her meeting Sakuta and beginning her emotional healing.</p>
+                </div>
+                
+                <div class="arc-item">
+                    <div class="arc-name">The Sister's Shadow</div>
+                    <p>Supporting Sakuta through his sister Kaede's trauma while navigating her own growing feelings and the complexities of their relationship.</p>
+                </div>
+                
+                <div class="arc-item">
+                    <div class="arc-name">The Movie Arc</div>
+                    <p>Her return to acting and the ultimate test of her relationship with Sakuta, involving time loops and profound personal sacrifice.</p>
+                </div>
+                
+                <div class="arc-item">
+                    <div class="arc-name">Dreaming Girl</div>
+                    <p>The emotional climax where she must choose between her memories of Sakuta and his very existence, demonstrating the depth of her love.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "<span class="dream-text">I want to be with you. I want to see you. I want to hear your voice. I want to touch you. I want to be touched by you.</span>"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Psychological Depth</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Burden of Fame</div>
+                    <p>Mai's experience as a child actress left her with deep-seated issues regarding public perception, privacy, and authentic self-expression.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Yearning for Normalcy</div>
+                    <p>Despite her success, she craves ordinary experiences and relationships unavailable in the spotlight, making her connection with Sakuta precious.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Emotional Maturity</div>
+                    <p>Her ability to handle complex emotional situations with grace and understanding sets her apart as one of anime's most mature heroines.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Self-Worth Struggles</div>
+                    <p>Beneath her confidence, Mai struggles with feelings of inadequacy and the fear of being loved for her persona rather than her true self.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I'm not a good person. I'm selfish, and I get jealous easily. But... I want to be with you."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why Mai is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">Modern Heroine</div>
+                    <p>She represents a new type of anime heroine - emotionally complex, intellectually equal to the protagonist, and dealing with contemporary psychological issues.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Emotional Authenticity</div>
+                    <p>Her emotional responses feel genuine and earned, avoiding melodrama while maintaining deep emotional impact.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Mature Romance</div>
+                    <p>Her relationship with Sakuta is built on mutual respect, understanding, and emotional support rather than typical anime romance tropes.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Symbolic Depth</div>
+                    <p>The bunny girl costume becomes a powerful symbol of vulnerability, public perception, and the gap between appearance and reality.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                <div class="forget-me">"Please don't forget about me."</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Mai Sakurajima is the emotionally complex, mature heroine of Rascal Does Not Dream of Bunny Girl Senpai whose journey from invisible actress to emotionally fulfilled young woman represents one of the most authentic character developments in modern romance anime.</p>
+        <p style="margin-top: 15px;">© Rascal Does Not Dream of Bunny Girl Senpai created by Hajime Kamoshida | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
