@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chika Fujiwara | Kaguya-sama: Love Is War</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .fujiwara-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .pink-accent {
+            color: #ff69b4;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+            font-weight: bold;
+        }
+        
+        .dance-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .talents-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .talent-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .talent-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .fujiwara-glow {
+            animation: fujiwara 3s infinite;
+        }
+        
+        @keyframes fujiwara {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 105, 180, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .chaos {
+            background: linear-gradient(45deg, #ff8c00, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .student-council-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .sparkle {
+            animation: sparkle 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .talents-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CHIKA FUJIWARA <span class="fujiwara-glow">💃</span></h1>
+        <p class="subtitle">The Student Council's Chaotic Secretary</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Chika Fujiwara</h2>
+                <p>Chika Fujiwara is the secretary of the Student Council in Aka Akasaka's Kaguya-sama: Love Is War. Despite her innocent and cheerful appearance, she's known for her chaotic energy and unpredictable nature that often derails the psychological battles between Kaguya and Miyuki.</p>
+                
+                <div class="quote">
+                    "Fujiwara-chika, chika, chika, chika, Fujiwara!"
+                </div>
+                
+                <p>As the daughter of a political family, Chika possesses incredible intelligence and talents, though she often uses them in the most unexpected and chaotic ways possible. She serves as both comic relief and an unexpected wild card in the Student Council's dynamics.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Chika appears as a cheerful, energetic, and somewhat airheaded girl, but she's actually highly intelligent and perceptive when she wants to be. Her chaotic nature makes her both endearing and terrifying to those around her.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Energetic</span>
+                    <span class="trait">Chaotic</span>
+                    <span class="trait">Cheerful</span>
+                    <span class="trait">Musical</span>
+                    <span class="trait">Unpredictable</span>
+                    <span class="trait">Secretly Brilliant</span>
+                </div>
+                
+                <p>Chika's most defining trait is her ability to create <span class="chaos">beautiful chaos</span> wherever she goes, often unintentionally disrupting the carefully laid plans of Kaguya and Miyuki while bringing genuine joy to the Student Council room.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Student Council Members</h2>
+                <div class="student-council-section">
+                    <p>Chika serves as secretary alongside the other Student Council members:</p>
+                    
+                    <div class="talents-list">
+                        <div class="talent-item">
+                            <div class="talent-name">Kaguya Shinomiya</div>
+                            <div>Vice President</div>
+                        </div>
+                        <div class="talent-item">
+                            <div class="talent-name">Miyuki Shirogane</div>
+                            <div>President</div>
+                        </div>
+                        <div class="talent-item">
+                            <div class="talent-name">Yu Ishigami</div>
+                            <div>Treasurer</div>
+                        </div>
+                        <div class="talent-item">
+                            <div class="talent-name">Miko Iino</div>
+                            <div>Discipline Officer</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Fujiwara Dance & Talents</h2>
+                <div class="dance-section">
+                    <p>Chika is famous for her incredible talents and the viral "Fujiwara Dance" that became a cultural phenomenon:</p>
+                    
+                    <div class="talents-list">
+                        <div class="talent-item">
+                            <div class="talent-name">Fujiwara Dance</div>
+                            <div>Iconic viral dance</div>
+                        </div>
+                        <div class="talent-item">
+                            <div class="talent-name">Piano Virtuoso</div>
+                            <div>Classical music expert</div>
+                        </div>
+                        <div class="talent-item">
+                            <div class="talent-name">Language Genius</div>
+                            <div>Quick language learning</div>
+                        </div>
+                        <div class="talent-item">
+                            <div class="talent-name">Game Master</div>
+                            <div>Unbeatable at games</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Talents</h2>
+                <p>Behind her chaotic exterior, Chika possesses an array of impressive skills that demonstrate her hidden genius.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Musical Prodigy</h3>
+                        <p>An accomplished pianist who can play complex classical pieces flawlessly, though she often uses her skills for comedic effect.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Language Mastery</h3>
+                        <p>Can learn new languages incredibly quickly, as demonstrated when she mastered Portuguese in just three days.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Game Strategy</h3>
+                        <p>Unbeatable at various games, using unconventional strategies that confuse and overwhelm her opponents.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Teaching Skills</h3>
+                        <p>Despite her chaotic methods, she's surprisingly effective at teaching others, having tutored both Kaguya and Miyuki.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Political Acumen</h3>
+                        <p>Comes from a political family and understands manipulation and strategy, though she rarely uses these skills seriously.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Chaos Induction</h3>
+                        <p>Her signature ability to create beautiful chaos that disrupts everything around her while bringing people together.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Character Profile</h2>
+            <ul class="power-list">
+                <li><span class="fujiwara-info">Position:</span> Student Council Secretary</li>
+                <li><span class="fujiwara-info">Hair Color:</span> <span class="pink-accent">Pink</span></li>
+                <li><span class="fujiwara-info">Ribbons:</span> White ribbons in hair</li>
+                <li><span class="fujiwara-info">Signature:</span> Fujiwara Dance</li>
+                <li><span class="fujiwara-info">Family:</span> Political dynasty</li>
+                <li><span class="fujiwara-info">Role:</span> <span class="chaos">Chaos Bringer</span></li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Kaguya Shinomiya</strong> - Best friend & Vice President</li>
+                <li><strong>Miyuki Shirogane</strong> - Student Council President</li>
+                <li><strong>Yu Ishigami</strong> - Fellow council member</li>
+                <li><strong>Miko Iino</strong> - Discipline officer</li>
+                <li><strong>Hayasaka</strong> - Sometimes accomplice in chaos</li>
+            </ul>
+            
+            <h2>The Fujiwara Dance</h2>
+            <p>Chika's iconic dance became a viral sensation both in-universe and in real life. The dance is characterized by its cheerful, energetic movements and the catchy "Fujiwara-chika, chika" chant that accompanies it <span class="sparkle">✨</span>.</p>
+            
+            <h2>Hidden Depths</h2>
+            <p>Despite her often silly behavior, Chika comes from an influential political family and is actually highly intelligent and perceptive. She chooses to embrace chaos and fun rather than the serious demeanor expected of her background.</p>
+            
+            <h2>Musical Theme</h2>
+            <p>Chika is strongly associated with music, particularly piano. Her musical talents serve as both a genuine skill and a source of comedy, especially when she uses classical music for ridiculous purposes.</p>
+            
+            <h2>Quirky Teaching Methods</h2>
+            <p>Famous for her unconventional teaching style that involves games, songs, and chaotic energy. Despite the madness, her students (including geniuses like Kaguya and Miyuki) actually learn effectively from her methods.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Chika Fujiwara from Kaguya-sama: Love Is War</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
