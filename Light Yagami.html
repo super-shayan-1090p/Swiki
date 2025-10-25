@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Yagami | Death Note</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .rule {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .god-complex {
+            color: #ff0000;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .death-note-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .rules-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .rule-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .rule-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .death-note-glow {
+            animation: death-note 4s infinite;
+        }
+        
+        @keyframes death-note {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .identity-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .rules-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LIGHT YAGAMI <span class="death-note-glow">📓</span></h1>
+        <p class="subtitle">Kira - The God of the New World</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Light Yagami</h2>
+                <p>Light Yagami is the main protagonist and anti-hero of Tsugumi Ohba's Death Note series. He begins as a brilliant but bored high school student who discovers the Death Note - a supernatural notebook that allows him to kill anyone whose name he writes in it.</p>
+                
+                <div class="quote">
+                    "I am justice! I protect the innocent and those who fear evil. I'm the one who will become the god of a new world that everyone desires!"
+                </div>
+                
+                <p>Adopting the alias "Kira," Light uses the Death Note to execute criminals worldwide, aiming to create a utopian society free from crime under his absolute rule.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Light begins as an intellectually gifted but morally upright student, but the power of the Death Note corrupts him, revealing his underlying god complex and narcissistic tendencies.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Genius Intellect</span>
+                    <span class="trait">Manipulative</span>
+                    <span class="trait">Charismatic</span>
+                    <span class="trait">Narcissistic</span>
+                    <span class="trait">Strategic</span>
+                    <span class="trait">God Complex</span>
+                </div>
+                
+                <p>Light's transformation from idealistic vigilante to power-hungry deity demonstrates the corrupting nature of absolute power and the danger of unchecked ambition.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Identities & Aliases</h2>
+                <div class="identity-section">
+                    <div class="rules-list">
+                        <div class="rule-item">
+                            <div class="rule-name">Light Yagami</div>
+                            <div>His real identity</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Kira</div>
+                            <div>Public persona</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">L's Successor</div>
+                            <div>As investigator</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Death Note Rules & Abilities</h2>
+                <div class="death-note-section">
+                    <p>The Death Note follows specific supernatural rules that govern its use and limitations:</p>
+                    
+                    <div class="rules-list">
+                        <div class="rule-item">
+                            <div class="rule-name">Name & Face</div>
+                            <div>Must visualize face while writing name</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">40 Seconds</div>
+                            <div>Default time until death</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Cause of Death</div>
+                            <div>Can specify method and timing</div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-name">Shinigami Eyes</div>
+                            <div>Can trade lifespan for ability to see names and lifespans</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Skills & Capabilities</h2>
+                <p>Beyond the Death Note itself, Light possesses exceptional intellectual and strategic abilities that make him a formidable opponent.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Genius-Level Intellect</h3>
+                        <p>Extremely high IQ, perfect grades, and exceptional deductive reasoning skills.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Master Strategist</h3>
+                        <p>Capable of planning complex schemes years in advance and anticipating opponents' moves.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Manipulation</h3>
+                        <p>Expert at manipulating people and situations to serve his goals while maintaining multiple false identities.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Acting Skills</h3>
+                        <p>Maintains convincing personas, including playing the role of L's successor while secretly being Kira.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Ryuk</strong> - The Shinigami who dropped the Death Note</li>
+                <li><strong>L</strong> - The world's greatest detective and his arch-nemesis</li>
+                <li><strong>Misa Amane</strong> - The second Kira and his devoted follower</li>
+                <li><strong>Soichiro Yagami</strong> - His father, head of the Kira investigation</li>
+                <li><strong>Near & Mello</strong> - L's successors who continue the investigation</li>
+            </ul>
+            
+            <h2>Death Note Rules</h2>
+            <ul class="power-list">
+                <li><span class="rule">Rule 1:</span> Human whose name is written dies</li>
+                <li><span class="rule">Rule 2:</span> Death occurs in 40 seconds unless specified</li>
+                <li><span class="rule">Rule 3:</span> Cause of death can be specified</li>
+                <li><span class="rule">Rule 4:</span> If cause not specified, heart attack</li>
+                <li><span class="rule">Rule 5:</span> Must visualize victim's face</li>
+            </ul>
+            
+            <h2>Motivation</h2>
+            <p>Light's goal evolves from eliminating crime to becoming the <span class="god-complex">god of a new world</span> where he rules as the ultimate moral authority through fear of the Death Note.</p>
+            
+            <h2>Legacy</h2>
+            <p>As Kira, Light divided the world between those who worshipped him as a savior and those who saw him as the ultimate terrorist, creating a global phenomenon that changed society forever.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Light Yagami from Death Note</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
