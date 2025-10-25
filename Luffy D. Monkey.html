@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey D. Luffy - Future King of the Pirates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .personality-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .personality-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .personality-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .gear-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .gear-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .haki-section {
+            margin-top: 15px;
+        }
+        
+        .spoiler-warning {
+            background-color: #330000;
+            border: 2px solid #ff3300;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .spoiler-warning h3 {
+            color: #ff3300;
+        }
+        
+        .spoiler-content {
+            background-color: #220000;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .personality-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .straw-hat-decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 10px;
+        }
+        
+        .rubber-text {
+            display: inline-block;
+            animation: stretch 3s infinite alternate;
+        }
+        
+        @keyframes stretch {
+            0% { transform: scaleX(1); }
+            50% { transform: scaleX(1.05); }
+            100% { transform: scaleX(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="rubber-text">Monkey D. Luffy</h1>
+        <div class="subtitle">Future King of the Pirates</div>
+        <p>Captain of the Straw Hat Pirates</p>
+        <div class="straw-hat-decoration">♛</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Monkey D. Luffy is the main protagonist of the globally popular manga and anime series "One Piece", created by Eiichiro Oda. He is one of the most iconic and recognizable characters in all of fiction.</p>
+            
+            <h3>Role in the Story</h3>
+            <p><strong>Position:</strong> Captain of the Straw Hat Pirates.</p>
+            <p><strong>Goal:</strong> To find the legendary treasure, the "One Piece", and become the King of the Pirates. This dream was inspired by his childhood idol, the pirate "Red-Haired" Shanks.</p>
+            
+            <div class="quote">
+                "I don't want to conquer anything. I just think the guy with the most freedom in the entire ocean is the Pirate King."
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Personality</h2>
+            <p>Luffy's personality is simple, direct, and incredibly compelling:</p>
+            
+            <div class="personality-grid">
+                <div class="personality-item">
+                    <div class="personality-title">Energetic and Naive</div>
+                    <p>He is pure of heart, often childish, and has a very straightforward way of thinking. His naivety leads to hilarious and sometimes profound moments.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Fearless and Determined</div>
+                    <p>He possesses an unshakable will and an immense amount of courage. He fears almost nothing and will never back down from a challenge, especially when his friends are threatened.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Loyal and Caring</div>
+                    <p>His core philosophy is that his crewmates and friends are his greatest treasure. He would willingly risk his life and defy the entire world for them.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Simple-Minded</div>
+                    <p>He is not intelligent in a conventional sense and often misunderstands situations. However, he has incredible instinct and emotional intelligence when it comes to understanding people's true hearts.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities and Powers</h2>
+            <p>Luffy's strength comes from a unique power he consumed as a child.</p>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Devil Fruit: Gomu Gomu no Mi (Gum-Gum Fruit)</div>
+                    <p>Originally classified as a Paramecia-type Devil Fruit, it granted his body the properties of rubber, making him immune to blunt attacks and electricity and allowing him to stretch his body in incredible ways.</p>
+                    
+                    <div class="spoiler-warning">
+                        <h3>Major Reveal</h3>
+                        <div class="spoiler-content">
+                            <p>It was later revealed that the fruit's true name is the Hito Hito no Mi, Model: Nika (Human-Human Fruit, Model: Nika). This is a Mythical Zoan-type fruit, said to be the most ridiculous power in the world, granting the user a body limited only by their imagination. This transformation represents the "warrior of liberation."</p>
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Gears</div>
+                    <p>Luffy creatively developed various "Gears" to enhance his rubber abilities:</p>
+                    
+                    <div class="gear-section">
+                        <div class="gear-title">Gear 2</div>
+                        <p>Accelerates his blood flow, granting superhuman speed and power.</p>
+                    </div>
+                    
+                    <div class="gear-section">
+                        <div class="gear-title">Gear 3</div>
+                        <p>Inflates his bones, granting gigantic limbs for immense destructive force.</p>
+                    </div>
+                    
+                    <div class="gear-section">
+                        <div class="gear-title">Gear 4</div>
+                        <p>Inflates his muscles and coats himself in a powerful form of Haki, creating different forms like Boundman (balanced), Snakeman (speed), and Tankman (defense).</p>
+                    </div>
+                    
+                    <div class="gear-section">
+                        <div class="gear-title">Gear 5</div>
+                        <p>The awakening of his Nika-model fruit. In this form, he achieves a cartoonish, reality-warping freedom, referred to as "the peak of his abilities." His hair and clothes turn white, and he can affect his environment as if it were rubber, fighting with complete creative freedom and joy.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Haki</div>
+                    <p>A latent power found in all living beings that Luffy has mastered to an elite level.</p>
+                    
+                    <div class="haki-section">
+                        <h3>Haoshoku Haki (Conqueror's Haki)</h3>
+                        <p>Allows him to overwhelm the will of others, knocking out weak-willed individuals. Only one in several million people possess this. He can also infuse it into his attacks for devastating damage.</p>
+                    </div>
+                    
+                    <div class="haki-section">
+                        <h3>Kenbunshoku Haki (Observation Haki)</h3>
+                        <p>Grants a "sixth sense," allowing him to sense the presence, emotions, and predict the movements of his opponents.</p>
+                    </div>
+                    
+                    <div class="haki-section">
+                        <h3>Busoshoku Haki (Armament Haki)</h3>
+                        <p>Creates an invisible armor around his body or weapons, allowing him to hit the true form of Logia-type Devil Fruit users and significantly increase his attack and defense.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why He's So Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">Symbol of Freedom</div>
+                    <p>Luffy embodies the ultimate pursuit of freedom and adventure. His dream isn't about power or统治, but about being the most free person on the seas.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Inspiring Leadership</div>
+                    <p>He doesn't lead by command, but by example. His unwavering determination and loyalty inspire absolute devotion from his crew.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Evolution</div>
+                    <p>He has grown from a rookie rubber boy into one of the most powerful and influential figures in the world, all while staying true to his core self.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Joyful Protagonist</div>
+                    <p>In a world full of darkness and corruption, Luffy's simple, joyful, and often hilarious approach to life and fighting is a breath of fresh air.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Monkey D. Luffy is the rubber-bodied, fiercely loyal, and freedom-loving captain of the Straw Hat Pirates, whose journey to become the Pirate King forms the epic heart of the "One Piece" saga.</p>
+        <p style="margin-top: 15px;">© One Piece created by Eiichiro Oda | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
