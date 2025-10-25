@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yor Forger | Spy x Family</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .forger-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .assassin-accent {
+            color: #ff4444;
+            text-shadow: 0 0 5px rgba(255, 68, 68, 0.5);
+            font-weight: bold;
+        }
+        
+        .motherly-accent {
+            color: #ff69b4;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+            font-weight: bold;
+        }
+        
+        .skills-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .skill-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .yor-glow {
+            animation: yor 3s infinite;
+        }
+        
+        @keyframes yor {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 68, 68, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .thorn-princess {
+            background: linear-gradient(45deg, #ff8c00, #ff4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .family-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .stiletto-spin {
+            animation: stiletto-spin 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes stiletto-spin {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .skill-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YOR FORGER <span class="yor-glow">🗡️</span></h1>
+        <p class="subtitle">The Thorn Princess Assassin</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Yor Forger</h2>
+                <p>Yor Forger (née Briar) is one of the main protagonists in Tatsuya Endo's Spy x Family series. By day, she works as an unassuming clerk at Berlint City Hall, but by night, she is the legendary assassin known as the "Thorn Princess," working for an organization called the Garden to eliminate targets that threaten Ostania's peace.</p>
+                
+                <div class="quote">
+                    "I may not be a real mother, but I'll do my best to protect this family!"
+                </div>
+                
+                <p>Yor enters a marriage of convenience with Loid Forger (Twilight) to maintain her cover as an assassin, but gradually develops genuine maternal feelings for their adopted daughter Anya and romantic feelings for Loid, creating a complex web of secret identities within their fake family.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Yor presents herself as a kind, somewhat clumsy, and socially awkward office worker, but this facade hides a highly skilled and deadly assassin with incredible physical prowess and combat intelligence.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Kind-hearted</span>
+                    <span class="trait">Deadly</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Socially Awkward</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Growing Maternal</span>
+                </div>
+                
+                <p>Yor's character development involves learning to balance her assassin life with her growing role as a wife and mother. Despite her lethal profession, she possesses a pure heart and genuinely wants to protect innocent people.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Forger Family Dynamics</h2>
+                <div class="family-section">
+                    <p>Yor's relationships within her unconventional family:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Loid Forger</div>
+                            <div>Husband & WISE spy</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Anya Forger</div>
+                            <div>Adopted daughter & telepath</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Bond Forger</div>
+                            <div>Family dog & precog</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Yuri Briar</div>
+                            <div>Brother & SSS agent</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Assassin Skills & Techniques</h2>
+                <div class="skills-section">
+                    <p>Yor's formidable abilities as the Thorn Princess:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Stiletto Mastery</div>
+                            <div>Primary weapon expertise</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Superhuman Strength</div>
+                            <div>Kicks that shatter concrete</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Acrobatic Prowess</div>
+                            <div>Incredible agility & balance</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Pain Resistance</div>
+                            <div>High tolerance to injury</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Development</h2>
+                <p>Yor combines incredible assassin skills with a growing understanding of family life, creating a unique and compelling character arc.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Peak Physical Condition</h3>
+                        <p>Possesses superhuman strength, speed, and durability far beyond normal humans. Can kick speeding vehicles, survive explosions, and move faster than the eye can track.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Weapons Expertise</h3>
+                        <p>Master of various assassination tools, particularly stilettos which she conceals in her hair. Can throw with pinpoint accuracy and use them in close combat with deadly efficiency.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Stealth & Infiltration</h3>
+                        <p>Expert at moving undetected, eliminating targets silently, and escaping crime scenes without leaving evidence. Her daytime cover as an office worker is perfect camouflage.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Combat Intelligence</h3>
+                        <p>Excellent tactical thinking in combat situations. Can assess threats quickly and neutralize multiple opponents simultaneously with precise, efficient movements.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Growing Domestic Skills</h3>
+                        <p>Initially terrible at cooking and household chores, Yor gradually improves through her determination to be a good wife and mother, showing her commitment to the family.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Protective Instinct</h3>
+                        <p>Fiercely protective of her family, willing to use her assassin skills to defend Loid and Anya from any threat, even if it means revealing her secret identity.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Forger Family Profile</h2>
+            <ul class="power-list">
+                <li><span class="forger-info">Alias:</span> <span class="thorn-princess">Thorn Princess</span></li>
+                <li><span class="forger-info">Occupation:</span> City Hall Clerk</li>
+                <li><span class="forger-info">Organization:</span> Garden</li>
+                <li><span class="forger-info">Weapon:</span> Stilettos <span class="stiletto-spin">⚔️</span></li>
+                <li><span class="forger-info">Role:</span> <span class="motherly-accent">Mother</span> & <span class="assassin-accent">Assassin</span></li>
+                <li><span class="forger-info">Goal:</span> Protect her family</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Loid Forger</strong> - Husband & WISE spy</li>
+                <li><strong>Anya Forger</strong> - Adopted telepath daughter</li>
+                <li><strong>Yuri Briar</strong> - Overprotective brother</li>
+                <li><strong>Shopkeeper</strong> - Garden handler</li>
+                <li><strong>Camilla</strong> - Office gossip rival</li>
+                <li><strong>Bond</strong> - Precognitive family dog</li>
+            </ul>
+            
+            <h2>The Thorn Princess</h2>
+            <p>Yor's codename "<span class="thorn-princess">Thorn Princess</span>" reflects her dual nature - beautiful and elegant like a princess, but deadly and protective like thorns. She eliminates targets that threaten national security while maintaining her innocent facade.</p>
+            
+            <h2>Family Motivation</h2>
+            <p>Yor originally joined the fake marriage to avoid suspicion from the Secret Police, but gradually develops <span class="motherly-accent">genuine maternal love</span> for Anya and romantic feelings for Loid, creating internal conflict between her assassin duties and family desires.</p>
+            
+            <h2>Comedic Contrast</h2>
+            <p>The series humorously contrasts Yor's <span class="assassin-accent">deadly assassin skills</span> with her <span class="motherly-accent">domestic incompetence</span> - she can eliminate trained soldiers effortlessly but struggles with basic cooking and social situations.</p>
+            
+            <h2>Character Growth</h2>
+            <p>Yor evolves from seeing her family as merely a cover to genuinely valuing them above her mission. Her protective instincts extend beyond duty to heartfelt concern, making her question her assassin lifestyle for the first time.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Yor Forger from Spy x Family</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
