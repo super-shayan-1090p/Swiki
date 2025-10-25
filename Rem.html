@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rem | Re:Zero</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .maid-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .demon-accent {
+            color: #ff69b4;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+            font-weight: bold;
+        }
+        
+        .blue-hair {
+            color: #00bfff;
+            text-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .abilities-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .skill-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .rem-glow {
+            animation: rem 3s infinite;
+        }
+        
+        @keyframes rem {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 105, 180, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .love {
+            background: linear-gradient(45deg, #ff8c00, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .relationships-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .horn-glow {
+            animation: horn-glow 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes horn-glow {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .skill-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>REM <span class="rem-glow">💙</span></h1>
+        <p class="subtitle">The Devoted Oni Maid</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Rem</h2>
+                <p>Rem is one of the main heroines in Tappei Nagatsuki's Re:Zero − Starting Life in Another World. She is an oni (demon) maid working at Roswaal L Mansion alongside her older sister Ram. Initially hostile toward Subaru, she gradually develops deep feelings for him and becomes one of his most loyal and devoted supporters.</p>
+                
+                <div class="quote">
+                    "From now on, I am your knight. I will be your sword, your shield, and your strength. I will protect you with my life."
+                </div>
+                
+                <p>Despite her calm and composed demeanor as a maid, Rem possesses incredible combat abilities and will stop at nothing to protect those she cares about, especially Subaru. Her character arc is one of the most beloved in the series.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Rem appears as a dutiful, composed maid, but beneath this exterior lies a fiercely loyal and emotionally complex individual struggling with deep-seated insecurities and self-worth issues.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Devoted</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Insecure</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Hardworking</span>
+                    <span class="trait">Emotionally Complex</span>
+                </div>
+                
+                <p>Rem's character is defined by her unwavering devotion to Subaru and her internal struggle with feeling inferior to her sister Ram. She constantly pushes herself to be worthy of love and recognition.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Key Relationships</h2>
+                <div class="relationships-section">
+                    <p>Rem's most important connections that shape her journey:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Subaru Natsuki</div>
+                            <div>Beloved & person she protects</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Ram</div>
+                            <div>Older sister & rival</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Roswaal L. Mathers</div>
+                            <div>Master & employer</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Beatrice</div>
+                            <div>Mansion companion</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Combat Abilities</h2>
+                <div class="abilities-section">
+                    <p>Rem's formidable skills as an oni warrior:</p>
+                    
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-name">Iron Ball</div>
+                            <div>Primary weapon of choice</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Oni Transformation</div>
+                            <div>Demon horn activation</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Water Magic</div>
+                            <div>Healing & support magic</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Enhanced Strength</div>
+                            <div>Superhuman physical power</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>As an oni, Rem possesses extraordinary abilities that make her one of the most powerful combatants in the series when she unleashes her full potential.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Oni Physiology</h3>
+                        <p>Possesses superhuman strength, speed, and durability inherent to her oni heritage. Can manifest a horn that dramatically increases her power.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Iron Ball Mastery</h3>
+                        <p>Extremely skilled with her signature morning star-like iron ball weapon, capable of crushing enemies and destroying obstacles with ease.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Water Magic</h3>
+                        <p>Proficient in water-based healing magic, able to treat wounds and provide support in combat situations.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Demon Form</h3>
+                        <p>Can activate her oni horn to enter a powered-up state with dramatically enhanced abilities, though it consumes massive amounts of mana.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Combat Instincts</h3>
+                        <p>Excellent fighter with sharp instincts, able to assess threats quickly and respond with appropriate force.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Maid Skills</h3>
+                        <p>Exceptional at household duties, cooking, cleaning, and organization, demonstrating her dedication to her role.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Oni Maid Profile</h2>
+            <ul class="power-list">
+                <li><span class="maid-info">Race:</span> <span class="demon-accent">Oni (Demon)</span></li>
+                <li><span class="maid-info">Hair:</span> <span class="blue-hair">Blue</span> with fringe</li>
+                <li><span class="maid-info">Eyes:</span> Blue</li>
+                <li><span class="maid-info">Horn:</span> Right side <span class="horn-glow">👹</span></li>
+                <li><span class="maid-info">Weapon:</span> Iron Ball</li>
+                <li><span class="maid-info">Magic:</span> Water Affinity</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Subaru Natsuki</strong> - The person she loves</li>
+                <li><strong>Ram</strong> - Older twin sister</li>
+                <li><strong>Roswaal L. Mathers</strong> - Master of mansion</li>
+                <li><strong>Beatrice</strong> - Mansion's librarian</li>
+                <li><strong>Emilia</strong> - Royal candidate & friend</li>
+                <li><strong>Oni Village</span> - Her destroyed home</li>
+            </ul>
+            
+            <h2>The Famous Confession</h2>
+            <p>Rem's confession to Subaru in Episode 18 is considered one of the most iconic moments in anime, where she declares her <span class="love">unconditional love</span> while acknowledging he loves Emilia, showing her selfless devotion.</p>
+            
+            <h2>Character Development</h2>
+            <p>Rem evolves from someone filled with self-hatred and guilt over surviving when her sister lost her horn, to finding self-worth through her love for Subaru and her determination to protect him.</p>
+            
+            <h2>Sister Dynamic</h2>
+            <p>Rem's relationship with her sister Ram is complex - while they care deeply for each other, Rem carries immense guilt and feels she must constantly prove herself worthy of existing alongside her "perfect" sister.</p>
+            
+            <h2>Legacy & Impact</h2>
+            <p>Despite not being the main heroine, Rem became one of the most popular characters in Re:Zero due to her compelling character arc, unwavering loyalty, and emotional depth that resonated deeply with audiences.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Rem from Re:Zero − Starting Life in Another World</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
