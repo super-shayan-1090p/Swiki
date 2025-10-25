@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nico Robin | One Piece</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .strawhat-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .archaeologist-accent {
+            color: #8a2be2;
+            text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+            font-weight: bold;
+        }
+        
+        .hana-hana {
+            color: #ff69b4;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+            font-weight: bold;
+        }
+        
+        .techniques-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .technique-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .technique-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .technique-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .robin-glow {
+            animation: robin 3s infinite;
+        }
+        
+        @keyframes robin {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(138, 43, 226, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .i-want-to-live {
+            background: linear-gradient(45deg, #ff8c00, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .crew-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .flower-bloom {
+            animation: flower-bloom 2s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes flower-bloom {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .technique-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NICO ROBIN <span class="robin-glow">📚</span></h1>
+        <p class="subtitle">The Straw Hat Pirates' Archaeologist</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Nico Robin</h2>
+                <p>Nico Robin is the archaeologist of the Straw Hat Pirates and the seventh member to join Monkey D. Luffy's crew in Eiichiro Oda's One Piece. She is the sole survivor of the destroyed Ohara, an island of archaeologists, and possesses the ability to read Poneglyphs - ancient stones that hold the secrets of the Void Century.</p>
+                
+                <div class="quote">
+                    "I want to live! Take me out to sea with you!"
+                </div>
+                
+                <p>Known for her calm demeanor, intelligence, and dark sense of humor, Robin serves as the crew's intellectual anchor. Her dream is to find the Rio Poneglyph and learn the true history of the world, fulfilling the legacy of the scholars of Ohara.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Robin presents herself as a mature, composed, and intelligent woman with a dark sense of humor, but this masks a deeply traumatized individual who spent most of her life running from the World Government.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Intelligent</span>
+                    <span class="trait">Composed</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Dark Humor</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Emotionally Resilient</span>
+                </div>
+                
+                <p>Robin's character development involves learning to trust others and embrace life after years of isolation and betrayal. Her famous declaration "I want to live!" during the Enies Lobby arc represents her emotional rebirth.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Straw Hat Crew Dynamics</h2>
+                <div class="crew-section">
+                    <p>Robin's relationships within the Straw Hat Pirates:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Monkey D. Luffy</div>
+                            <div>Captain who saved her</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Franky</div>
+                            <div>Shipwright & close friend</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Tony Tony Chopper</div>
+                            <div>Doctor she mothers</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">All Crew</div>
+                            <div>First real family</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Hana Hana no Mi Techniques</h2>
+                <div class="techniques-section">
+                    <p>Robin's Devil Fruit abilities with the Flower-Flower Fruit:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Clutch</div>
+                            <div>Neck-breaking technique</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Gigantesco Mano</div>
+                            <div>Giant limb manifestations</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Mil Fleur</div>
+                            <div>Mass flower blooming</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Demonio Fleur</div>
+                            <div>Awakened demon form</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Skills</h2>
+                <p>Robin combines her unique Devil Fruit powers with exceptional intelligence and archaeological expertise, making her invaluable to the Straw Hat crew.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Hana Hana no Mi Mastery</h3>
+                        <p>Can sprout duplicates of any part of her body on any surface within her range. This allows for reconnaissance, combat, and utility applications limited only by her imagination.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Archaeological Expertise</h3>
+                        <p>One of the last people who can read Poneglyphs, possessing extensive knowledge of ancient civilizations, languages, and world history from her Ohara training.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Espionage Skills</h3>
+                        <p>Expert at infiltration, intelligence gathering, and assassination techniques developed during her years with Baroque Works and as a fugitive.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Combat Prowess</h3>
+                        <p>Highly skilled martial artist who can disable multiple opponents simultaneously using her Devil Fruit abilities combined with joint-locking techniques.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Multilingual</h3>
+                        <p>Fluent in multiple languages including the ancient language of the Poneglyphs, various modern languages, and potentially the language of the Three-Eyed Tribe.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Strategic Intelligence</h3>
+                        <p>Exceptional analytical and strategic thinking abilities, often serving as the crew's voice of reason and providing crucial insights during complex situations.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Straw Hat Profile</h2>
+            <ul class="power-list">
+                <li><span class="strawhat-info">Position:</span> <span class="archaeologist-accent">Archaeologist</span></li>
+                <li><span class="strawhat-info">Bounty:</span> 930,000,000 Berries</li>
+                <li><span class="strawhat-info">Devil Fruit:</span> <span class="hana-hana">Hana Hana no Mi</span></li>
+                <li><span class="strawhat-info">Epithet:</span> "Devil Child"</li>
+                <li><span class="strawhat-info">Specialty:</span> Poneglyph Reading</li>
+                <li><span class="strawhat-info">Dream:</span> Find True History</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Monkey D. Luffy</strong> - Captain who gave her hope</li>
+                <li><strong>Franky</strong> - Close friend & shipmate</li>
+                <li><strong>Chopper</strong> - Crew's "child" she protects</li>
+                <li><strong>Ohara Scholars</strong> - Deceased mentors</li>
+                <li><strong>Saul</strong> - Giant who saved her life</li>
+                <li><strong>World Government</strong> - Lifelong pursuers</li>
+            </ul>
+            
+            <h2>The Ohara Incident</h2>
+            <p>Robin is the sole survivor of the <span class="highlight">Buster Call</span> on Ohara, where the World Government destroyed her homeland and killed all archaeologists for researching the Void Century. This trauma shaped her entire life until meeting the Straw Hats.</p>
+            
+            <h2>Emotional Declaration</h2>
+            <p>Robin's famous "<span class="i-want-to-live">I want to live!</span>" declaration at Enies Lobby represents her emotional turning point, where she finally accepts that she deserves to live and be loved after 20 years of running <span class="flower-bloom">💮</span>.</p>
+            
+            <h2>Archaeological Importance</h2>
+            <p>As one of the last people who can read Poneglyphs, Robin holds the key to uncovering the world's hidden history. The World Government considers her existence a threat to their power structure.</p>
+            
+            <h2>Character Evolution</h2>
+            <p>Robin evolves from a cynical survivor who expects betrayal to a cherished crew member who genuinely smiles and jokes. Her dark humor remains, but it's now balanced with genuine affection for her found family.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Nico Robin from One Piece</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
