@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marin Kitagawa | My Dress-Up Darling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .cosplay-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .pink-accent {
+            color: #ff69b4;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+            font-weight: bold;
+        }
+        
+        .cosplay-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .characters-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .character-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .character-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .sparkle-glow {
+            animation: sparkle 3s infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 105, 180, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .kyaa {
+            background: linear-gradient(45deg, #ff8c00, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .friends-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .characters-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MARIN KITAGAWA <span class="sparkle-glow">✨</span></h1>
+        <p class="subtitle">The Radiant Cosplay Enthusiast</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Marin Kitagawa</h2>
+                <p>Marin Kitagawa is the main female protagonist of Shinichi Fukuda's My Dress-Up Darling (Sono Bisque Doll wa Koi wo Suru). She's a popular, outgoing high school student who becomes fascinated with cosplay after meeting Wakana Gojo, a skilled hina doll artisan.</p>
+                
+                <div class="quote">
+                    "KYAAA! This is so amazing! You're seriously incredible, Gojo-kun!"
+                </div>
+                
+                <p>With her bright personality and infectious enthusiasm, Marin brings joy and energy to everyone around her. She's unapologetically passionate about her hobbies, from cosplay to video games and anime, and isn't afraid to show her true self to the world.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Marin is characterized by her boundless energy, genuine enthusiasm, and lack of social filters. She's incredibly expressive and wears her heart on her sleeve, making her both endearing and unforgettable to those around her.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Energetic</span>
+                    <span class="trait">Expressive</span>
+                    <span class="trait">Passionate</span>
+                    <span class="trait">Supportive</span>
+                    <span class="trait">Confident</span>
+                    <span class="trait">Genuine</span>
+                </div>
+                
+                <p>Despite being popular and attractive, Marin remains down-to-earth and values genuine connections over superficial relationships. Her friendship with Wakana develops into a deep bond built on mutual respect and shared passions.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Friends & Relationships</h2>
+                <div class="friends-section">
+                    <p>Marin's vibrant personality attracts various relationships that shape her cosplay journey:</p>
+                    
+                    <div class="characters-list">
+                        <div class="character-item">
+                            <div class="character-name">Wakana Gojo</div>
+                            <div>Cosplay partner & love interest</div>
+                        </div>
+                        <div class="character-item">
+                            <div class="character-name">Sajuna Inui</div>
+                            <div>Fellow cosplayer & friend</div>
+                        </div>
+                        <div class="character-item">
+                            <div class="character-name">Shinju Inui</div>
+                            <div>Younger cosplay friend</div>
+                        </div>
+                        <div class="character-item">
+                            <div class="character-name">Nowa</div>
+                            <div>Best friend & classmate</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Notable Cosplays</h2>
+                <div class="cosplay-section">
+                    <p>Marin has brought numerous characters to life through her dedicated cosplay efforts:</p>
+                    
+                    <div class="characters-list">
+                        <div class="character-item">
+                            <div class="character-name">Shizuku-tan</div>
+                            <div>First cosplay with Gojo</div>
+                        </div>
+                        <div class="character-item">
+                            <div class="character-name">Black Lobelia</div>
+                            <div>Complex costume challenge</div>
+                        </div>
+                        <div class="character-item">
+                            <div class="character-name">Veronica</div>
+                            <div>Confident character portrayal</div>
+                        </div>
+                        <div class="character-item">
+                            <div class="character-name">Rei-sama</div>
+                            <div>School uniform character</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Skills & Talents</h2>
+                <p>Marin brings incredible dedication and natural talent to her cosplay hobby, developing various skills along the way.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Character Portrayal</h3>
+                        <p>Exceptional ability to embody characters through poses, expressions, and mannerisms, bringing them to life authentically.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Makeup Artistry</h3>
+                        <p>Skilled at applying cosplay makeup to transform her appearance to match various anime and game characters perfectly.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Photography Posing</h3>
+                        <p>Natural talent for striking character-accurate poses that capture the essence of whoever she's cosplaying.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Social Confidence</h3>
+                        <p>Comfortable being the center of attention and expressing her passions openly without embarrassment.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Gaming Skills</h3>
+                        <p>Avid gamer with considerable skill in various video games, particularly the ones featuring characters she cosplays.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Emotional Intelligence</h3>
+                        <p>Surprisingly perceptive about others' feelings, especially when it comes to understanding and supporting Gojo.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Character Profile</h2>
+            <ul class="power-list">
+                <li><span class="cosplay-info">Age:</span> High School Student</li>
+                <li><span class="cosplay-info">Hair:</span> <span class="pink-accent">Blonde with pink tips</span></li>
+                <li><span class="cosplay-info">Eyes:</span> Blue</li>
+                <li><span class="cosplay-info">Persona:</span> <span class="kyaa">"KYAAA!" Energy</span></li>
+                <li><span class="cosplay-info">Hobbies:</span> Cosplay, Gaming</li>
+                <li><span class="cosplay-info">Favorite:</span> <span class="heart-beat">❤️</span> Gojo-kun</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Wakana Gojo</strong> - Cosplay partner & crush</li>
+                <li><strong>Sajuna Inui (Juju)</strong> - Experienced cosplay mentor</li>
+                <li><strong>Shinju Inui</strong> - Younger cosplay companion</li>
+                <li><strong>Nowa</strong> - Best friend & confidante</li>
+                <li><strong>Classmates</strong> - Popular but genuine friendships</li>
+            </ul>
+            
+            <h2>The "KYAAA!" Energy</h2>
+            <p>Marin is famous for her expressive reactions, particularly her excited "<span class="kyaa">KYAAA!</span>" exclamations when she's thrilled or impressed. This genuine enthusiasm becomes infectious and helps break down Gojo's social barriers.</p>
+            
+            <h2>Cosplay Philosophy</h2>
+            <p>For Marin, cosplay isn't just about wearing costumes - it's about <span class="highlight">becoming the character</span> she loves and sharing that passion with others. She sees it as the ultimate form of appreciation for her favorite series.</p>
+            
+            <h2>Fashion Sense</h2>
+            <p>Marin has a distinctive fashion style featuring gyaru-inspired elements mixed with cute, feminine touches. Her signature look includes her blonde hair with pink tips and trendy, expressive outfits.</p>
+            
+            <h2>Growth & Development</h2>
+            <p>While Marin starts as the confident one teaching Gojo about cosplay culture, she also grows significantly through their relationship, learning about craftsmanship, dedication, and the beauty of traditional arts.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Marin Kitagawa from My Dress-Up Darling</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
