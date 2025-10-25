@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guts - The Black Swordsman</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .journey-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .journey-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .journey-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .weapon-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .weapon-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .berserk-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: berserk-pulse 3s infinite;
+        }
+        
+        @keyframes berserk-pulse {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #ff0000; }
+            50% { opacity: 1; text-shadow: 0 0 15px #ff0000; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #ff0000; }
+        }
+        
+        .sword-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .journey-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .brand-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            color: #cc0000;
+        }
+        
+        .struggle-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-mercenary {
+            color: #ff9933;
+        }
+        
+        .scale-band {
+            color: #00cc00;
+        }
+        
+        .scale-black {
+            color: #cc0000;
+        }
+        
+        .scale-struggle {
+            color: #ff7700;
+        }
+        
+        .blood-drop {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guts</h1>
+        <div class="subtitle">The Black Swordsman • The Struggler • Hundred-Man Slayer</div>
+        <p>The Protagonist of Kentaro Miura's Epic Dark Fantasy Manga "Berserk"</p>
+        <div class="berserk-symbol">⚔️</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Guts, known as the "Black Swordsman," is the protagonist of Kentaro Miura's landmark dark fantasy manga series "Berserk."</p>
+            <p>He is a deeply tragic and complex warrior whose life has been defined by endless struggle, betrayal, and unimaginable suffering, yet he continues to fight against his cursed destiny.</p>
+            
+            <div class="struggle-scale">
+                <div class="scale-item scale-mercenary">
+                    <h3>Mercenary</h3>
+                    <p>Early Life</p>
+                </div>
+                <div class="scale-item scale-band">
+                    <h3>Band of the Falcon</h3>
+                    <p>Golden Age</p>
+                </div>
+                <div class="scale-item scale-black">
+                    <h3>Black Swordsman</h3>
+                    <p>Eclipse</p>
+                </div>
+                <div class="scale-item scale-struggle">
+                    <h3>The Struggler</h3>
+                    <p>Current Journey</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>The Journey of Suffering</h2>
+            
+            <div class="journey-grid">
+                <div class="journey-item">
+                    <div class="journey-title">Birth from Death</div>
+                    <p>Guts was born from the corpse of his hanged mother, found under a tree by a mercenary band. He was named "Guts" because he was found in a pool of blood and guts.</p>
+                </div>
+                
+                <div class="journey-item">
+                    <div class="journey-title">The Mercenary Life</div>
+                    <p>Raised by Gambino's mercenary band, he learned to fight from childhood, wielding a sword nearly as tall as himself by age 9.</p>
+                </div>
+                
+                <div class="journey-item">
+                    <div class="journey-title">The Band of the Falcon</div>
+                    <p>He found purpose and camaraderie as the captain of the Band of the Falcon's raiders, and his legendary duel with Griffith began their fateful relationship.</p>
+                </div>
+                
+                <div class="journey-item">
+                    <div class="journey-title">The Eclipse</div>
+                    <p>The catastrophic event where Griffith sacrificed the Band of the Falcon to become a God Hand, leaving Guts physically and emotionally scarred forever.</p>
+                    <div class="blood-drop">💀</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities and Arsenal</h2>
+            
+            <div class="skill-label">
+                <span>Superhuman Strength</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Combat Experience</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Pain Tolerance</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Will to Survive</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">The Dragonslayer</div>
+                    <div class="weapon-section">
+                        <div class="weapon-title">A Sword Too Massive to Be Called a Sword</div>
+                        <p>A gigantic slab of iron measuring over 6 feet long and weighing 400 pounds. Forged to kill dragons, it has become the only weapon capable of harming astral beings and apostles.</p>
+                        <div class="sword-symbol">🗡️</div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Prosthetic Arm</div>
+                    <div class="weapon-section">
+                        <div class="weapon-title">The Mechanical Arm</div>
+                        <p>After losing his left arm during the Eclipse, Guts uses a sophisticated prosthetic created by Rickert. It contains:</p>
+                        <p>• A hidden repeater crossbow</p>
+                        <p>• A cannon</p>
+                        <p>• A magnet for holding the Dragonslayer</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">The Berserker Armor</div>
+                    <div class="weapon-section">
+                        <div class="weapon-title">The Beast of Darkness Unleashed</div>
+                        <p>A cursed suit of armor that removes the limits of the human body, allowing Guts to fight beyond mortal limitations. However, it risks consuming his humanity and letting the "Beast of Darkness" take control.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">The Brand of Sacrifice</div>
+                    <div class="weapon-section">
+                        <div class="weapon-title">The Mark of Doom</div>
+                        <p>A cursed brand carved into his neck during the Eclipse. It constantly bleeds in the presence of demons and apostles, marking him for eternal torment in the afterlife and making him a beacon for supernatural predators.</p>
+                        <div class="brand-symbol">✢</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Casca</div>
+                    <p>The only female soldier in the Band of the Falcon and Guts' greatest love. Their relationship survives unimaginable trauma, with Guts dedicating himself to protecting her broken state.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Griffith</div>
+                    <p>His former friend, commander, and ultimate nemesis. Their relationship represents one of the greatest betrayals in fiction, with Griffith sacrificing everything Guts loved to achieve his dream.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Puck</div>
+                    <p>The cheerful elf who becomes Guts' traveling companion. His optimism and healing powers provide crucial support, often serving as comic relief amidst the darkness.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Farnese & Serpico</div>
+                    <p>Former enemies who become loyal companions. Farnese develops deep feelings for Guts while Serpico serves as a capable and loyal ally.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>The Nature of His Struggle</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">Against Fate</div>
+                    <p>Guts refuses to accept the destiny laid out for him by the God Hand and the Idea of Evil, constantly fighting against cosmic forces that seek to control his life.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Against His Own Nature</div>
+                    <p>He battles the "Beast of Darkness" within himself - the rage and violence that threatens to consume what remains of his humanity.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">For Those He Protects</div>
+                    <p>His journey evolves from pure revenge to protecting Casca and his new companions, giving his endless struggle new meaning.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">The Human Spirit</div>
+                    <p>Guts represents the ultimate expression of human will - the refusal to surrender no matter how hopeless the situation or how great the suffering.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "You're going to be all right. You just stumbled over a stone in the road. It means nothing. Your goal lies far beyond this. Doesn't it? I'm sure you'll overcome this. You'll walk again... soon."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why Guts is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Ultimate Underdog</div>
+                    <p>A mere human fighting against gods and demons, representing the power of human determination against impossible odds.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Depth of Character</div>
+                    <p>His journey from angry mercenary to loving companion to broken avenger to protective guardian shows incredible character development.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Realistic Portrayal of Trauma</div>
+                    <p>His psychological scars and struggles with trust and intimacy are portrayed with remarkable depth and realism.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Symbol of Resilience</div>
+                    <p>Guts embodies the idea that no matter how much life breaks you, the will to keep moving forward defines your humanity.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "If you're always worried about crushing the ants beneath you... you won't be able to walk."
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Guts is the eternally struggling warrior of Berserk, a man who has known nothing but suffering yet continues to fight against gods, demons, and his own inner darkness in a world that offers no mercy.</p>
+        <p style="margin-top: 15px;">© Berserk created by Kentaro Miura | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
