@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ken Kaneki - The One-Eyed King</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .transformation-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .transformation-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .kagune-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .kagune-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .eye-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: eye-glow 3s infinite;
+        }
+        
+        @keyframes eye-glow {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #ff0000; }
+            50% { opacity: 1; text-shadow: 0 0 15px #ff0000; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #ff0000; }
+        }
+        
+        .mask-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .transformation-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .transformation-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-human {
+            color: #00cc00;
+        }
+        
+        .scale-ghoul {
+            color: #cc0000;
+        }
+        
+        .scale-king {
+            color: #ffcc00;
+        }
+        
+        .book-symbol {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .hair-white {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: hair-shift 4s infinite;
+        }
+        
+        @keyframes hair-shift {
+            0% { color: #ff7700; }
+            50% { color: #ffffff; }
+            100% { color: #ff7700; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ken Kaneki</h1>
+        <div class="subtitle">The One-Eyed King • The Centipede • The Bookworm Ghoul</div>
+        <p>The Protagonist of Sui Ishida's Dark Fantasy Manga "Tokyo Ghoul"</p>
+        <div class="eye-symbol">👁️</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Ken Kaneki is the protagonist of Sui Ishida's dark fantasy manga series "Tokyo Ghoul." He begins as an ordinary college student who loves literature, but his life takes a tragic turn when he becomes a half-ghoul.</p>
+            <p>His journey explores themes of identity, trauma, and what it means to be human in a world divided between humans and ghouls.</p>
+            
+            <div class="transformation-scale">
+                <div class="scale-item scale-human">
+                    <h3>Human</h3>
+                    <p>Bookworm Student</p>
+                </div>
+                <div class="scale-item scale-ghoul">
+                    <h3>Half-Ghoul</h3>
+                    <p>Anteiku Coffee</p>
+                </div>
+                <div class="scale-item scale-king">
+                    <h3>One-Eyed King</h3>
+                    <p>:re & Goat</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>The Transformation Journey</h2>
+            
+            <div class="transformation-grid">
+                <div class="transformation-item">
+                    <div class="transformation-title">The Bookworm</div>
+                    <p>Kaneki begins as a shy, book-loving literature student at Kamii University. His favorite book is "The Metamorphosis" by Franz Kafka, which foreshadows his own transformation.</p>
+                    <div class="book-symbol">📚</div>
+                </div>
+                
+                <div class="transformation-item">
+                    <div class="transformation-title">The Accident</div>
+                    <p>After a date with Rize Kamishiro goes wrong, Kaneki is critically injured and receives organ transplants from Rize, turning him into a half-ghoul - neither fully human nor fully ghoul.</p>
+                </div>
+                
+                <div class="transformation-item">
+                    <div class="transformation-title">The Torture & White Hair</div>
+                    <p>Captured and tortured by Yamori, Kaneki undergoes a psychological breaking point. He accepts his ghoul nature, and his hair turns white from the trauma.</p>
+                    <div class="hair-white">⚪</div>
+                </div>
+                
+                <div class="transformation-item">
+                    <div class="transformation-title">The One-Eyed King</div>
+                    <p>After losing his memories and living as Haise Sasaki, Kaneki eventually reclaims his identity and becomes the legendary "One-Eyed King" who seeks to bridge the gap between humans and ghouls.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities and Powers</h2>
+            
+            <div class="skill-label">
+                <span>Kagune Control</span>
+                <span>98%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 98%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Regeneration</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Strategic Intelligence</span>
+                <span>90%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 90%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>RC Cell Count</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Rinkaku Kagune</div>
+                    <div class="kagune-section">
+                        <div class="kagune-title">The Tentacle-Type Kagune</div>
+                        <p>Inherited from Rize Kamishiro, Kaneki's kagune takes the form of flexible, powerful tentacles with exceptional regenerative properties. They can be used for offense, defense, and mobility.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Kakuja Form</div>
+                    <div class="kagune-section">
+                        <div class="kagune-title">The Centipede</div>
+                        <p>After consuming other ghouls, Kaneki develops a kakuja - an armored form that covers his body. His takes the appearance of a terrifying centipede, representing the "centipede's nest" of voices in his head.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Superhuman Physicality</div>
+                    <p>As a half-ghoul, Kaneki possesses enhanced strength, speed, durability, and senses far beyond human capabilities.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Rapid Regeneration</div>
+                    <p>He can heal from nearly any injury, though severe damage requires consuming human flesh to replenish his RC cells.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Hideyoshi Nagachika</div>
+                    <p>Kaneki's best friend since childhood. Hide represents his connection to his human past and remains loyal despite knowing Kaneki's true nature.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Touka Kirishima</div>
+                    <p>The ghoul who helps him adapt to his new life. Their relationship evolves from mentor-student to deep romantic connection, with Touka becoming his wife.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Rize Kamishiro</div>
+                    <p>The ghoul whose organs transformed him. Her "voice" and influence continue to haunt him throughout his journey.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Yoshimura</div>
+                    <p>The manager of Anteiku who becomes a father figure to Kaneki, teaching him how to live as a ghoul while maintaining his humanity.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Personality Evolution</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Timid Scholar</div>
+                    <p>Initially passive, polite, and conflict-averse. He struggles to accept his new reality and the violence it requires.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">The Broken Warrior</div>
+                    <p>After torture, he becomes colder, more calculating, and willing to use violence to protect what matters. His famous line: "I'm not the protagonist of a novel or anything. I'm a college student who likes to read, like you... I am... a ghoul."</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Haise Sasaki</div>
+                    <p>As an amnesiac CCG investigator, he's more stable and responsible, leading the Quinx Squad while suppressing his true nature.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">The One-Eyed King</div>
+                    <p>Finally balanced, he accepts both his human and ghoul sides, becoming a confident leader who fights for coexistence.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I'm not the protagonist of a novel or anything. I'm a college student who likes to read, like you... I am... a ghoul."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why Kaneki is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">Relatable Transformation</div>
+                    <p>His journey from ordinary student to powerful ghoul mirrors the struggles of growing up and finding one's identity.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Psychological Depth</div>
+                    <p>His internal conflicts, trauma, and multiple personality shifts are portrayed with remarkable psychological realism.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Symbol of Duality</div>
+                    <p>As a half-human, half-ghoul, he represents the struggle between two natures and the search for belonging in neither world.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Growth Through Suffering</div>
+                    <p>His character develops through immense pain and trauma, yet he continually strives to protect others and find a better way.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "If you were to write a story with me in the lead role, it would certainly be... a tragedy."
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Ken Kaneki is the tragic yet resilient protagonist of Tokyo Ghoul, a bookworm turned half-ghoul whose journey of self-discovery, trauma, and eventual acceptance makes him one of modern manga's most compelling characters.</p>
+        <p style="margin-top: 15px;">© Tokyo Ghoul created by Sui Ishida | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
