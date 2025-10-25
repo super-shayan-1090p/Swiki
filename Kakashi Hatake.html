@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakashi Hatake | Naruto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .rank {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .team-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .member {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .member-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .team-members {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KAKASHI HATAKE</h1>
+        <p class="subtitle">The Copy Ninja of the Leaf</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Kakashi Hatake</h2>
+                <p>Kakashi Hatake is one of the most prominent characters in the Naruto series, known as "Kakashi of the Sharingan" and famously called "Copy Ninja Kakashi." He is a Jonin of Konohagakure and the leader of Team 7.</p>
+                
+                <div class="quote">
+                    "Those who break the rules are scum, but those who abandon their friends are worse than scum."
+                </div>
+                
+                <p>Throughout the series, Kakashi serves as a mentor to Naruto Uzumaki, Sasuke Uchiha, and Sakura Haruno, eventually becoming the Sixth Hokage.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character Traits</h2>
+                <p>Kakashi presents himself as aloof and detached, often arriving late to appointments and reading his favorite book series, Make-Out Paradise. However, beneath this exterior lies a deeply caring individual dedicated to his students and village.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Calm & Collected</span>
+                    <span class="trait">Highly Intelligent</span>
+                    <span class="trait">Mysterious</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Deadly in Combat</span>
+                    <span class="trait">Dry Humor</span>
+                </div>
+                
+                <p>Kakashi carries the trauma of losing his father and teammates, which shaped his philosophy about protecting comrades at all costs.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Team 7</h2>
+                <div class="team-section">
+                    <p>As the sensei of Team 7, Kakashi was responsible for training the next generation of Konoha's strongest ninja:</p>
+                    
+                    <div class="team-members">
+                        <div class="member">
+                            <div class="member-name">Naruto Uzumaki</div>
+                            <div>Future Hokage</div>
+                        </div>
+                        <div class="member">
+                            <div class="member-name">Sasuke Uchiha</div>
+                            <div>Last Uchiha</div>
+                        </div>
+                        <div class="member">
+                            <div class="member-name">Sakura Haruno</div>
+                            <div>Medical Ninja</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Ninja Abilities & Jutsu</h2>
+                <p>Kakashi is one of the most skilled shinobi in the Naruto universe, known for his versatility and intelligence in battle.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Sharingan</h3>
+                        <p>Gifted by Obito Uchiha, allowing him to copy over 1,000 jutsu.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Chidori</h3>
+                        <p>His signature lightning-style technique, requiring Sharingan to use safely.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Lightning Blade</h3>
+                        <p>An enhanced version of Chidori that became his trademark technique.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Kamui</h3>
+                        <p>A space-time ninjutsu that allows him to warp objects to another dimension.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Summoning Technique</h3>
+                        <p>Can summon ninja dogs, particularly his ninken pack led by Pakkun.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Purple Lightning</h3>
+                        <p>Developed after losing his Sharingan, a versatile lightning-style technique.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Ninja Ranks & Roles</h2>
+            <p>Kakashi's progression through the ninja ranks:</p>
+            
+            <ul class="power-list">
+                <li><span class="rank">Genin:</span> Graduated at age 5</li>
+                <li><span class="rank">Chunin:</span> Promoted at age 6</li>
+                <li><span class="rank">Jonin:</span> ANBU Captain</li>
+                <li><span class="rank">Leader:</span> Team 7 Sensei</li>
+                <li><span class="rank">Hokage:</span> Sixth Hokage</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Obito Uchiha</strong> - Teammate who gifted him Sharingan</li>
+                <li><strong>Rin Nohara</strong> - Teammate and unrequited love</li>
+                <li><strong>Minato Namikaze</strong> - Sensei and Fourth Hokage</li>
+                <li><strong>Might Guy</strong> - Eternal Rival and best friend</li>
+                <li><strong>Team 7</strong> - Students he mentored</li>
+            </ul>
+            
+            <h2>Notable Facts</h2>
+            <p>Kakashi's famous catchphrase: <span class="highlight">"Sorry I'm late. I was lost on the path of life."</span></p>
+            <p>He permanently wears a mask, with his face remaining one of the great mysteries of the series until later revelations.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Kakashi Hatake from Naruto</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
