@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiyotaka Ayanokouji | Classroom of the Elite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .white-room-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .mastermind-accent {
+            color: #00bfff;
+            text-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .white-room {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .strategies-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .strategy-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .strategy-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .strategy-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .ayanokouji-glow {
+            animation: ayanokouji 3s infinite;
+        }
+        
+        @keyframes ayanokouji {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(0, 191, 255, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .calculation {
+            background: linear-gradient(45deg, #ff8c00, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .classroom-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .chess-piece {
+            animation: chess-move 4s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes chess-move {
+            0% { transform: translateX(0px) rotate(0deg); }
+            25% { transform: translateX(5px) rotate(5deg); }
+            75% { transform: translateX(-5px) rotate(-5deg); }
+            100% { transform: translateX(0px) rotate(0deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .strategy-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KIYOTAKA AYANOKOUJI <span class="ayanokouji-glow">♟️</span></h1>
+        <p class="subtitle">The Perfect Mastermind</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Kiyotaka Ayanokouji</h2>
+                <p>Kiyotaka Ayanokouji is the main protagonist of Syougo Kinugasa's Classroom of the Elite series. He appears as an average, unremarkable student in Class D of Advanced Nurturing High School, but this is merely a facade to conceal his true nature as the ultimate product of the White Room - a secret facility that creates perfect human beings.</p>
+                
+                <div class="quote">
+                    "I don't care about others. I don't intend to make friends either. I just want to lead a peaceful, quiet life."
+                </div>
+                
+                <p>Despite his claims of wanting an ordinary life, Ayanokouji consistently demonstrates superhuman intellect, physical prowess, and manipulative abilities while carefully maintaining his appearance as an average student.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Ayanokouji presents himself as calm, reserved, and socially awkward, but this is a carefully constructed persona. His true nature is that of a cold, calculating genius who views human relationships as tools and society as a chessboard.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Calculating</span>
+                    <span class="trait">Observant</span>
+                    <span class="trait">Manipulative</span>
+                    <span class="trait">Emotionally Detached</span>
+                    <span class="trait">Perfectionist</span>
+                    <span class="trait">Pragmatic</span>
+                </div>
+                
+                <p>Despite his emotional detachment, Ayanokouji shows subtle signs of developing genuine connections, particularly with Suzune Horikita and Kikyou Kushida, though he often manipulates even these relationships for his own purposes.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Class D Dynamics</h2>
+                <div class="classroom-section">
+                    <p>Ayanokouji's key relationships within Class D:</p>
+                    
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <div class="strategy-name">Suzune Horikita</div>
+                            <div>Class representative & pawn</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Kikyou Kushida</div>
+                            <div>Information broker & tool</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Kakeru Ryuen</div>
+                            <div>Class C rival & tester</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Kei Karuizawa</div>
+                            <div>Key asset & relationship</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Strategic Approaches</h2>
+                <div class="strategies-section">
+                    <p>Ayanokouji's methods for manipulating situations while maintaining his facade:</p>
+                    
+                    <div class="strategy-list">
+                        <div class="strategy-item">
+                            <div class="strategy-name">Behind the Scenes</div>
+                            <div>Manipulates through proxies</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Controlled Performance</div>
+                            <div>Shows exactly calculated ability</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Information Control</div>
+                            <div>Manages what others know</div>
+                        </div>
+                        <div class="strategy-item">
+                            <div class="strategy-name">Psychological Warfare</div>
+                            <div>Exploits emotional weaknesses</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Skills</h2>
+                <p>Ayanokouji possesses near-perfect capabilities in every measurable area, the result of his upbringing in the White Room.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Genius-Level Intellect</h3>
+                        <p>Possesses superhuman analytical abilities, pattern recognition, and strategic thinking that allows him to outmaneuver any opponent.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Physical Prowess</h3>
+                        <p>Exceptional combat skills, speed, strength, and reflexes that surpass professional athletes and trained fighters.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Psychological Manipulation</h3>
+                        <p>Master of reading and influencing others' emotions, motivations, and behaviors without their awareness.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Information Processing</h3>
+                        <p>Can process and analyze vast amounts of information simultaneously while maintaining multiple complex plans.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Adaptive Learning</h3>
+                        <p>Can master any skill or subject almost instantly upon observation or minimal practice.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Emotional Control</h3>
+                        <p>Complete mastery over his own emotions and physiological responses, appearing perfectly calm in any situation.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>White Room Profile</h2>
+            <ul class="power-list">
+                <li><span class="white-room-info">Origin:</span> <span class="white-room">The White Room</span></li>
+                <li><span class="white-room-info">Generation:</span> Fourth Generation</li>
+                <li><span class="white-room-info">Status:</span> <span class="mastermind-accent">Masterpiece</span></li>
+                <li><span class="white-room-info">IQ:</span> Classified</li>
+                <li><span class="white-room-info">Physical:</span> Peak Human</li>
+                <li><span class="white-room-info">Goal:</span> Prove White Room's failure</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Suzune Horikita</strong> - Primary pawn & class leader</li>
+                <li><strong>Kikyou Kushida</strong> - Information source & manipulator</li>
+                <li><strong>Kei Karuizawa</strong> - Romantic interest & key piece</li>
+                <li><strong>Kakeru Ryuen</strong> - Rival & capability tester</li>
+                <li><strong>Manabu Horikita</strong> - Student council president</li>
+                <li><strong>His Father</strong> - White Room creator & antagonist</li>
+            </ul>
+            
+            <h2>The White Room</h2>
+            <p>Ayanokouji was raised in the <span class="white-room">White Room</span>, a secret facility designed to create perfect human beings through extreme education and training from infancy. He is the only successful product of this program <span class="chess-piece">♟️</span>.</p>
+            
+            <h2>Philosophy of Equality</h2>
+            <p>Ayanokouji believes true equality means <span class="calculation">"everyone should be equally worthless"</span>. He sees the school's class system as artificial and manipulates it to prove his father's methods were flawed.</p>
+            
+            <h2>Controlled Revelation</h2>
+            <p>Ayanokouji carefully controls how much of his true ability he reveals, always maintaining plausible deniability while achieving his objectives through indirect means.</p>
+            
+            <h2>Ultimate Goal</h2>
+            <p>Despite claiming to want an ordinary life, Ayanokouji's true motivation is to prove the White Room's failure by demonstrating that his "perfect" upbringing couldn't create a normal, emotionally developed human being.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Kiyotaka Ayanokouji from Classroom of the Elite</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
