@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power - The Blood Fiend</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .personality-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .personality-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .personality-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .blood-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .blood-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .moment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .moment-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .moment-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .blood-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: blood-pulse 3s infinite;
+        }
+        
+        @keyframes blood-pulse {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #cc0000; }
+            50% { opacity: 1; text-shadow: 0 0 15px #cc0000; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #cc0000; }
+        }
+        
+        .horns-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .personality-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .moment-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .power-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-fiend {
+            color: #ff9933;
+        }
+        
+        .scale-friend {
+            color: #00cc00;
+        }
+        
+        .scale-hero {
+            color: #ffcc00;
+        }
+        
+        .chaos-symbol {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .meowy {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: meowy-pulse 4s infinite;
+        }
+        
+        @keyframes meowy-pulse {
+            0% { color: #ff7700; }
+            50% { color: #ffcc00; }
+            100% { color: #ff7700; }
+        }
+        
+        .blood-text {
+            font-weight: bold;
+            color: #cc0000;
+        }
+        
+        .friendship-text {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Power</h1>
+        <div class="subtitle">The Blood Fiend • Chainsaw Man's Best Friend • The Great Power-sama</div>
+        <p>The Fiend of Chainsaw Man</p>
+        <div class="blood-symbol">🩸</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Power is one of the main characters in Tatsuki Fujimoto's manga "Chainsaw Man." She is a Blood Fiend who becomes a Public Safety Devil Hunter and forms an unlikely friendship with Denji.</p>
+            <p>Her chaotic personality, selfish nature, and unexpected capacity for friendship make her one of the most memorable and entertaining characters in the series.</p>
+            
+            <div class="power-scale">
+                <div class="scale-item scale-fiend">
+                    <h3>Selfish Fiend</h3>
+                    <p>Initial Persona</p>
+                </div>
+                <div class="scale-item scale-friend">
+                    <h3>Reluctant Friend</h3>
+                    <p>With Denji</p>
+                </div>
+                <div class="scale-item scale-hero">
+                    <h3>True Friend</h3>
+                    <p>Final Sacrifice</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Chaotic Personality</h2>
+            
+            <div class="personality-grid">
+                <div class="personality-item">
+                    <div class="personality-title">The Great Power-sama</div>
+                    <p>Power refers to herself in the third person and demands to be treated as royalty, despite her often ridiculous and undignified behavior.</p>
+                    <div class="chaos-symbol">👑 → 🤪 → 💥</div>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Unapologetically Selfish</div>
+                    <p>She openly prioritizes her own needs and desires above all else, often manipulating others for her benefit without remorse.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Lovable Brute</div>
+                    <p>Despite her terrible personality, her honesty and lack of pretense make her strangely endearing and hilarious.</p>
+                </div>
+                
+                <div class="personality-item">
+                    <div class="personality-title">Cat Obsession</div>
+                    <p>Her love for her cat Meowy is one of her few genuinely pure and selfless traits, showing her capacity for genuine affection.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Fiend Abilities & Powers</h2>
+            
+            <div class="skill-label">
+                <span>Blood Manipulation</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Physical Strength</span>
+                <span>90%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 90%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Chaos Creation</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Friendship Growth</span>
+                <span>85%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 85%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Blood Weapon Creation</div>
+                    <div class="blood-section">
+                        <div class="blood-title">The Power of Blood</div>
+                        <p>As a Blood Fiend, Power can manipulate her own blood to create various weapons including hammers, spears, and protective armor.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Enhanced Physicality</div>
+                    <div class="blood-section">
+                        <div class="blood-title">Fiend Strength</div>
+                        <p>She possesses superhuman strength, durability, and regeneration abilities typical of fiends, making her a formidable combatant.</p>
+                        <div class="horns-symbol">👹 → 💪 → 🔥</div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Blood Consumption</div>
+                    <p>She can consume blood to regenerate and enhance her abilities, though she finds the taste of her own blood disgusting.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Fiend Physiology</div>
+                    <p>As a fiend, she has horns and enhanced senses, and can survive injuries that would be fatal to humans.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Denji</div>
+                    <p>Her "subordinate" who becomes her first real friend. Their relationship evolves from mutual manipulation to genuine camaraderie and sacrifice.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Aki Hayakawa</div>
+                    <p>Her fellow Public Safety Devil Hunter who initially despises her but gradually develops a begrudging tolerance and even protective instinct.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Meowy</div>
+                    <p>Her beloved cat who represents her capacity for genuine, selfless love and becomes a driving motivation for her actions.</p>
+                    <div class="meowy">Meowy! 🐱</div>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Makima</div>
+                    <p>The controlling director who manipulates Power and ultimately becomes responsible for her tragic fate.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "<span class="blood-text">I am Power! The great Power-sama! You will refer to me as such!</span>"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Iconic Moments</h2>
+            
+            <div class="moment-grid">
+                <div class="moment-item">
+                    <div class="moment-name">The Toilet Paper Incident</div>
+                    <p>Her introduction where she's found hoarding toilet paper in the bathroom, immediately establishing her selfish and chaotic nature.</p>
+                </div>
+                
+                <div class="moment-item">
+                    <div class="moment-name">The "Friendship" Contract</div>
+                    <p>Forcing Denji to become her "subordinate" in exchange for helping him get closer to Makima, showcasing her manipulative side.</p>
+                </div>
+                
+                <div class="moment-item">
+                    <div class="moment-name">Saving Meowy</div>
+                    <p>Her genuine distress and determination when her cat is in danger, revealing her capacity for real emotional attachment.</p>
+                </div>
+                
+                <div class="moment-item">
+                    <div class="moment-name">The Final Sacrifice</div>
+                    <p>Her ultimate act of friendship for Denji, demonstrating how much she had grown from her initial selfish persona.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "<span class="friendship-text">You're my first friend. I don't want to see you die.</span>"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Character Development</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">From Selfish to Selfless</div>
+                    <p>Power's journey from a completely self-centered fiend to someone capable of genuine friendship and sacrifice.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Learning Human Emotions</div>
+                    <p>Her gradual understanding and experience of emotions like friendship, loyalty, and love through her relationships.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">The Value of Connection</div>
+                    <p>Discovering that having people who care about you is more valuable than any material possession or selfish desire.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Redefining Strength</div>
+                    <p>Learning that true strength isn't just about physical power but about having the courage to protect what matters.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I don't want to die! I want to eat hamburgers with Denji again!"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why Power is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">Unapologetic Personality</div>
+                    <p>Her complete lack of filter and refusal to conform to social norms makes her incredibly entertaining and refreshing.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Surprising Depth</div>
+                    <p>Beneath her chaotic exterior lies genuine character growth and emotional complexity that makes her journey compelling.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Comic Relief with Heart</div>
+                    <p>She provides most of the series' comedy while also delivering some of its most emotional and impactful moments.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Unique Friendship Dynamic</div>
+                    <p>Her relationship with Denji represents one of the most unconventional but genuine friendships in modern manga.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "We're friends! The best of friends! So you have to do what I say!"
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Power is the chaotic, selfish, and unexpectedly heartfelt Blood Fiend of Chainsaw Man whose journey from self-centered manipulator to genuine friend represents one of the most entertaining and emotionally impactful character arcs in modern manga.</p>
+        <p style="margin-top: 15px;">© Chainsaw Man created by Tatsuki Fujimoto | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
