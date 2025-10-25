@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaguya Shinomiya - The Ice Queen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff7700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #ff7700;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 25px 0 15px;
+            border-left: 4px solid #ff7700;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+            color: #ff9933;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 119, 0, 0.2);
+        }
+        
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .strategy-item {
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .strategy-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ability-list {
+            list-style-type: none;
+        }
+        
+        .ability-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-left: 3px solid #ff7700;
+        }
+        
+        .ability-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+        }
+        
+        .tactic-section {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px dashed #ff7700;
+        }
+        
+        .tactic-title {
+            color: #ffcc00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .relationships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .relationship-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .development-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .development-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .development-name {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .iconic-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .iconic-item {
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+            border-top: 3px solid #ff7700;
+        }
+        
+        .iconic-title {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ff7700;
+            font-size: 0.9rem;
+            color: #ff9933;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff7700;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+        }
+        
+        .ice-queen-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            animation: ice-glow 3s infinite;
+        }
+        
+        @keyframes ice-glow {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #ffffff; }
+            50% { opacity: 1; text-shadow: 0 0 15px #ffffff; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #ffffff; }
+        }
+        
+        .tsundere-symbol {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            
+            .strategy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .relationships-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .development-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .iconic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .skill-meter {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background-color: #ff7700;
+            border-radius: 5px;
+        }
+        
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .kaguya-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border-radius: 6px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-ice {
+            color: #ff9933;
+        }
+        
+        .scale-war {
+            color: #cc0000;
+        }
+        
+        .scale-love {
+            color: #ffcc00;
+        }
+        
+        .chika-symbol {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .how-cute {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 3rem;
+            animation: cute-pulse 4s infinite;
+        }
+        
+        @keyframes cute-pulse {
+            0% { color: #ff7700; }
+            50% { color: #ffcc00; }
+            100% { color: #ff7700; }
+        }
+        
+        .shinomiya-text {
+            font-weight: bold;
+            color: #cc0000;
+        }
+        
+        .love-text {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kaguya Shinomiya</h1>
+        <div class="subtitle">The Ice Queen • Student Council Vice President • How Cute</div>
+        <p>The Genius Heiress of Kaguya-sama: Love is War</p>
+        <div class="ice-queen-symbol">👑</div>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Character Overview</h2>
+            <p>Kaguya Shinomiya is one of the main protagonists of Aka Akasaka's romantic comedy manga and anime "Kaguya-sama: Love is War." She serves as the vice president of the prestigious Shuchi'in Academy Student Council and is the heiress to the wealthy Shinomiya conglomerate.</p>
+            <p>Her brilliant mind, tsundere personality, and emotional vulnerability make her one of the most complex and beloved characters in modern romance anime.</p>
+            
+            <div class="kaguya-scale">
+                <div class="scale-item scale-ice">
+                    <h3>Ice Queen</h3>
+                    <p>Initial Persona</p>
+                </div>
+                <div class="scale-item scale-war">
+                    <h3>Love is War</h3>
+                    <p>Psychological Battles</p>
+                </div>
+                <div class="scale-item scale-love">
+                    <h3>In Love</h3>
+                    <p>Character Growth</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>The Art of Psychological Warfare</h2>
+            
+            <div class="strategy-grid">
+                <div class="strategy-item">
+                    <div class="strategy-title">The Ice Queen Persona</div>
+                    <p>Kaguya maintains a cold, calculating exterior to hide her emotional vulnerability and romantic feelings, presenting herself as the perfect, unapproachable heiress.</p>
+                    <div class="chika-symbol">❄️ 👑 ❄️</div>
+                </div>
+                
+                <div class="strategy-item">
+                    <div class="strategy-title">Psychological Manipulation</div>
+                    <p>She excels at reading people and situations, using sophisticated psychological tactics to manipulate scenarios to her advantage in the "war of love."</p>
+                </div>
+                
+                <div class="strategy-item">
+                    <div class="strategy-title">Information Control</div>
+                    <p>Kaguya carefully controls what information she reveals, using strategic silence and calculated revelations to maintain the upper hand in social situations.</p>
+                </div>
+                
+                <div class="strategy-item">
+                    <div class="strategy-title">Emotional Warfare</div>
+                    <p>She understands that love is ultimately about emotional vulnerability and uses this knowledge to craft elaborate plans that force emotional confessions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Abilities & Strategic Prowess</h2>
+            
+            <div class="skill-label">
+                <span>Psychological Analysis</span>
+                <span>98%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 98%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Strategic Planning</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 95%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Emotional Control</span>
+                <span>90%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 90%"></div>
+            </div>
+            
+            <div class="skill-label">
+                <span>Academic Excellence</span>
+                <span>100%</span>
+            </div>
+            <div class="skill-meter">
+                <div class="skill-fill" style="width: 100%"></div>
+            </div>
+            
+            <ul class="ability-list">
+                <li>
+                    <div class="ability-name">Genius-Level Intellect</div>
+                    <div class="tactic-section">
+                        <div class="tactic-title">The Shinomiya Mind</div>
+                        <p>Kaguya possesses exceptional intelligence, consistently ranking at the top of her class and demonstrating remarkable analytical abilities in both academic and social situations.</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Master Strategist</div>
+                    <div class="tactic-section">
+                        <div class="tactic-title">Love is War</div>
+                        <p>She approaches romance as a battlefield, developing elaborate strategies and counter-strategies to make Miyuki Shirogane confess his feelings first, believing the first to confess "loses."</p>
+                        <div class="how-cute">"How Cute"</div>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Social Manipulation</div>
+                    <p>Raised in the cutthroat world of high society, Kaguya excels at social manipulation, understanding hierarchy, power dynamics, and human psychology.</p>
+                </li>
+                
+                <li>
+                    <div class="ability-name">Adaptive Thinking</div>
+                    <p>When her plans fail, Kaguya quickly analyzes what went wrong and develops new strategies, demonstrating remarkable flexibility and resilience.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Relationships</h2>
+            
+            <div class="relationships-grid">
+                <div class="relationship-item">
+                    <div class="relationship-title">Miyuki Shirogane</div>
+                    <p>The student council president and object of her affection. Their psychological battles form the core of the series, evolving from strategic warfare to genuine romantic connection.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Chika Fujiwara</div>
+                    <p>The student council secretary and Kaguya's closest friend. Chika's chaotic energy often disrupts Kaguya's carefully laid plans while providing emotional support.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">Yu Ishigami</div>
+                    <p>The student council treasurer who sees through Kaguya's facade. Their relationship evolves from distant to genuinely supportive friendship.</p>
+                </div>
+                
+                <div class="relationship-item">
+                    <div class="relationship-title">The Shinomiya Family</div>
+                    <p>Her cold, manipulative family who view relationships as transactional, shaping Kaguya's initial understanding of love and human connection.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "<span class="shinomiya-text">O kawaii koto.</span> (How cute.)"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Character Development Journey</h2>
+            
+            <div class="development-grid">
+                <div class="development-item">
+                    <div class="development-name">The Ice Queen Facade</div>
+                    <p>Initially presenting as cold and calculating, using her intelligence as a shield to protect herself from emotional vulnerability.</p>
+                </div>
+                
+                <div class="development-item">
+                    <div class="development-name">Discovering Emotions</div>
+                    <p>Gradually learning to recognize and understand her own feelings, often with hilarious and dramatic results.</p>
+                </div>
+                
+                <div class="development-item">
+                    <div class="development-name">Learning Friendship</div>
+                    <p>Developing genuine friendships with Chika and other characters, learning that relationships aren't always transactional.</p>
+                </div>
+                
+                <div class="development-item">
+                    <div class="development-name">Embracing Vulnerability</div>
+                    <p>Ultimately learning that true strength comes from being vulnerable and honest about her feelings.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "<span class="love-text">I want to know everything about you. I want to know what you like, what you dislike, the things that make you happy, the things that make you sad.</span>"
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Personality & Inner Conflict</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">The Tsundere Archetype</div>
+                    <p>Kaguya embodies the classic tsundere personality - cold and hostile exterior masking warm, caring feelings - but with unprecedented psychological depth.</p>
+                    <div class="tsundere-symbol">😠 → 😊 → 😳</div>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Emotional Intelligence vs. Emotional Experience</div>
+                    <p>While intellectually understanding emotions, she struggles to experience and express them authentically due to her sheltered upbringing.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">The Desire for Normalcy</div>
+                    <p>Despite her wealth and status, Kaguya yearns for ordinary experiences and genuine connections unavailable in her controlled world.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Breaking Family Patterns</div>
+                    <p>Her journey involves rejecting the cold, manipulative relationship models of her family in favor of authentic emotional connection.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "I've never had a friend before. I've never even had a proper conversation with someone my own age until I entered high school."
+            </div>
+        </div>
+        
+        <div class="section full-width">
+            <h2>Why Kaguya is Iconic</h2>
+            
+            <div class="iconic-grid">
+                <div class="iconic-item">
+                    <div class="iconic-title">Psychological Depth</div>
+                    <p>She represents one of the most psychologically complex characters in romantic comedy, with genuine trauma and growth beyond typical tropes.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Modern Tsundere</div>
+                    <p>Kaguya redefines the tsundere archetype for modern audiences, combining classic elements with contemporary psychological insight.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Relatable Vulnerability</div>
+                    <p>Despite her wealth and genius, her struggles with emotional expression and social anxiety are deeply relatable.</p>
+                </div>
+                
+                <div class="iconic-item">
+                    <div class="iconic-title">Character Growth</div>
+                    <p>Her journey from cold manipulator to emotionally open young woman feels earned and authentic through careful writing.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "Love isn't something you win or lose. It's something you share."
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>In short, Kaguya Shinomiya is the brilliant, complex Ice Queen of Kaguya-sama: Love is War whose journey from psychological manipulator to emotionally vulnerable young woman represents one of the most compelling character developments in modern romance anime.</p>
+        <p style="margin-top: 15px;">© Kaguya-sama: Love is War created by Aka Akasaka | Fan Tribute Site</p>
+    </footer>
+</body>
+</html>
