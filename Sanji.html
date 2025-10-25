@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanji | One Piece</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .strawhat-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .chef-accent {
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+            font-weight: bold;
+        }
+        
+        .germa-tech {
+            color: #66ff66;
+            text-shadow: 0 0 5px rgba(102, 255, 102, 0.5);
+            font-weight: bold;
+        }
+        
+        .combat-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .technique-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .technique-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .technique-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .sanji-glow {
+            animation: sanji 3s infinite;
+        }
+        
+        @keyframes sanji {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .chivalry {
+            background: linear-gradient(45deg, #ff8c00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .crew-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .cigarette-smoke {
+            animation: smoke 4s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes smoke {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-5px) rotate(5deg); opacity: 0.5; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .technique-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SANJI <span class="sanji-glow">👨‍🍳</span></h1>
+        <p class="subtitle">The Straw Hat Pirates' Cook</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Sanji</h2>
+                <p>Sanji, also known as "Black Leg" Sanji, is the cook of the Straw Hat Pirates and one of the main characters in Eiichiro Oda's One Piece. He is the fifth member to join Luffy's crew and serves as both the ship's chef and one of the crew's top three fighters, known as the "Monster Trio" alongside Luffy and Zoro.</p>
+                
+                <div class="quote">
+                    "A man who can't feed himself can't protect anything!"
+                </div>
+                
+                <p>Sanji is renowned for his chivalry towards women, his incredible culinary skills, and his unique fighting style that exclusively uses his legs to preserve his hands for cooking. His dream is to find the legendary All Blue, a sea where all the world's oceans meet.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Sanji is a complex character who combines the elegance of a master chef with the ferocity of a skilled fighter. He's known for his chivalrous nature, particularly his unwavering respect for women, though this often manifests as comedic obsession.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Chivalrous</span>
+                    <span class="trait">Passionate Chef</span>
+                    <span class="trait">Loyal Crewmate</span>
+                    <span class="trait">Hot-headed</span>
+                    <span class="trait">Strategic Fighter</span>
+                    <span class="trait">Romantic</span>
+                </div>
+                
+                <p>Despite his flirtatious nature and rivalry with Zoro, Sanji is deeply loyal to his crew and will risk everything to protect them. His background as a former prince of the Germa Kingdom adds depth to his character.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Straw Hat Crew</h2>
+                <div class="crew-section">
+                    <p>Sanji's family aboard the Thousand Sunny:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Monkey D. Luffy</div>
+                            <div>Captain & friend</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Roronoa Zoro</div>
+                            <div>Rival & fellow fighter</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Nami</div>
+                            <div>Navigator & crush</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Vinsmoke Family</div>
+                            <div>Biological family</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Black Leg Style</h2>
+                <div class="combat-section">
+                    <p>Sanji's signature fighting techniques that use only his legs:</p>
+                    
+                    <div class="technique-list">
+                        <div class="technique-item">
+                            <div class="technique-name">Diable Jambe</div>
+                            <div>Flaming leg attacks</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Hell Memories</div>
+                            <div>Emotional power boost</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Sky Walk</div>
+                            <div>Air walking technique</div>
+                        </div>
+                        <div class="technique-item">
+                            <div class="technique-name">Raid Suit</div>
+                            <div><span class="germa-tech">Germa technology</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Skills</h2>
+                <p>Sanji combines exceptional culinary expertise with formidable combat abilities, making him invaluable to the Straw Hat crew.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Master Chef</h3>
+                        <p>World-class culinary skills trained under Chef Zeff. Can create gourmet meals from any ingredients and adapt cooking to various dietary needs and cultures.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Black Leg Style</h3>
+                        <p>Expert martial artist who fights exclusively with his legs. His kicks are powerful enough to shatter stone and metal with ease.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Diable Jambe</h3>
+                        <p>Can generate intense heat in his legs through friction, creating flaming attacks that significantly increase his striking power.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Observation Haki</h3>
+                        <p>Master of Kenbunshoku Haki, with exceptional sensory abilities that make him one of the best at predicting enemy movements.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Germa Enhancements</h3>
+                        <p>Enhanced physical abilities from his genetic modifications, including increased durability, strength, and recovery capabilities.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Sky Walk</h3>
+                        <p>Can kick the air with enough force to walk on it, granting him aerial mobility and three-dimensional combat capabilities.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Straw Hat Profile</h2>
+            <ul class="power-list">
+                <li><span class="strawhat-info">Position:</span> <span class="chef-accent">Ship's Cook</span></li>
+                <li><span class="strawhat-info">Bounty:</span> 1.032 Billion Berries</li>
+                <li><span class="strawhat-info">Epithet:</span> "Black Leg"</li>
+                <li><span class="strawhat-info">Fighting Style:</span> Black Leg Style</li>
+                <li><span class="strawhat-info">Signature:</span> Cigarette <span class="cigarette-smoke">🚬</span></li>
+                <li><span class="strawhat-info">Dream:</span> Find the All Blue</li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Monkey D. Luffy</strong> - Captain he respects</li>
+                <strong>Roronoa Zoro</strong> - Rival & fellow monster</li>
+                <li><strong>Nami</strong> - Navigator he adores</li>
+                <li><strong>Chef Zeff</strong> - Mentor & father figure</li>
+                <li><strong>Vinsmoke Family</strong> - Biological family</li>
+                <li><strong>Pudding</strong> - Arranged marriage partner</li>
+            </ul>
+            
+            <h2>The Chivalry Code</h2>
+            <p>Sanji lives by an absolute <span class="chivalry">code of chivalry</span> - he will never hit a woman, even if it costs him his life. This principle stems from Chef Zeff's teachings and defines his character throughout the series.</p>
+            
+            <h2>Baratie Training</h2>
+            <p>Sanji was trained by "Red Leg" Zeff, a former pirate captain who sacrificed his leg to save Sanji. Their relationship forms the foundation of Sanji's cooking philosophy and fighting style.</p>
+            
+            <h2>Germa Heritage</h2>
+            <p>Sanji is the third son of the <span class="germa-tech">Vinsmoke Family</span>, rulers of the Germa Kingdom. He rejected his family's warmongering ways but later accepted their Raid Suit technology to better protect his crew.</p>
+            
+            <h2>Culinary Philosophy</h2>
+            <p>Sanji believes food should never be wasted and will feed anyone who's hungry, even enemies. His cooking has saved the crew multiple times and won over numerous allies.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Sanji from One Piece</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
