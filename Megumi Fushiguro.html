@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megumi Fushiguro | Jujutsu Kaisen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #ff8c00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #ff8c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 15px;
+            border-bottom: 1px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffa64d;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .main-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 3px solid #ff8c00;
+            margin: 20px 0;
+            background-color: #111;
+        }
+        
+        .power-list {
+            list-style-type: none;
+        }
+        
+        .power-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ff8c00;
+        }
+        
+        .power-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .abilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ability {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ff8c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #ff8c00;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ffa64d;
+        }
+        
+        .character-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .trait {
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ff8c00;
+        }
+        
+        .jujutsu-info {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        
+        .zenin-accent {
+            color: #0000ff;
+            text-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+            font-weight: bold;
+        }
+        
+        .shadow-garden {
+            color: #4b0082;
+            text-shadow: 0 0 5px rgba(75, 0, 130, 0.5);
+            font-weight: bold;
+        }
+        
+        .shikigami-section {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .shikigami-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .shikigami-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .shikigami-name {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .megumi-glow {
+            animation: megumi 3s infinite;
+        }
+        
+        @keyframes megumi {
+            0% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 20px rgba(0, 0, 255, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+        
+        .potential {
+            background: linear-gradient(45deg, #ff8c00, #4b0082);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .relationships-section {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border: 1px solid #ff8c00;
+        }
+        
+        .domain-expansion {
+            animation: domain 4s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes domain {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .shikigami-list {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MEGUMI FUSHIGURO <span class="megumi-glow">🌙</span></h1>
+        <p class="subtitle">The Shadow User of Jujutsu High</p>
+    </header>
+    
+    <div class="container">
+        <main class="main-content">
+            <section>
+                <h2>About Megumi Fushiguro</h2>
+                <p>Megumi Fushiguro is one of the main protagonists of Gege Akutami's Jujutsu Kaisen. He is a first-year jujutsu sorcerer at Tokyo Jujutsu High and a member of the prestigious Zenin clan, though he rejects his family name. Megumi specializes in the Ten Shadows Technique, one of the most powerful inherited techniques in the jujutsu world.</p>
+                
+                <div class="quote">
+                    "I don't need to know if I'm a cog in the machine. I'll keep moving forward until I die."
+                </div>
+                
+                <p>Despite his serious and pragmatic demeanor, Megumi possesses a strong moral compass and will risk everything to save people he believes are worth saving. His growth throughout the series showcases his incredible potential as a jujutsu sorcerer.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Personality & Character</h2>
+                <p>Megumi appears cold, logical, and emotionally reserved, but this masks a deeply caring individual who values human life above all else. He operates on a utilitarian philosophy but is willing to break his own rules for those he deems worth saving.</p>
+                
+                <div class="character-traits">
+                    <span class="trait">Serious</span>
+                    <span class="trait">Pragmatic</span>
+                    <span class="trait">Loyal</span>
+                    <span class="trait">Analytical</span>
+                    <span class="trait">Protective</span>
+                    <span class="trait">Morally Complex</span>
+                </div>
+                
+                <p>Megumi's character development involves learning to value his own life and potential while balancing his pragmatic approach to jujutsu with his inherent desire to protect innocent people.</p>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Key Relationships</h2>
+                <div class="relationships-section">
+                    <p>Megumi's most significant connections at Jujutsu High:</p>
+                    
+                    <div class="shikigami-list">
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Yuji Itadori</div>
+                            <div>Classmate & close friend</div>
+                        </div>
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Nobara Kugisaki</div>
+                            <div>Classmate & teammate</div>
+                        </div>
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Satoru Gojo</div>
+                            <div>Mentor & guardian</div>
+                        </div>
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Tsumiki Fushiguro</div>
+                            <div>Stepsister he protects</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Ten Shadows Technique</h2>
+                <div class="shikigami-section">
+                    <p>Megumi's signature ability to summon and control shikigami through shadows:</p>
+                    
+                    <div class="shikigami-list">
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Divine Dogs</div>
+                            <div>White & Black tracking duo</div>
+                        </div>
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Nue</div>
+                            <div>Flying electric shikigami</div>
+                        </div>
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Great Serpent</div>
+                            <div>Giant snake summon</div>
+                        </div>
+                        <div class="shikigami-item">
+                            <div class="shikigami-name">Mahoraga</div>
+                            <div>Ultimate shikigami <span class="domain-expansion">⚔️</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+            
+            <section>
+                <h2>Abilities & Powers</h2>
+                <p>As a prodigy from the Zenin clan, Megumi possesses exceptional jujutsu skills and one of the most versatile techniques in the jujutsu world.</p>
+                
+                <div class="abilities">
+                    <div class="ability">
+                        <h3>Ten Shadows Technique</h3>
+                        <p>Can summon and control ten different shikigami through shadows. Each shikigami has unique abilities and can be combined for complex strategies.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Domain Expansion: Chimera Shadow Garden</h3>
+                        <p>His incomplete Domain creates a garden of shadows where he can spawn unlimited shikigami and use shadows more freely.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Shadow Storage</h3>
+                        <p>Can store objects and weapons within shadows, allowing him to retrieve them instantly during combat.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Strategic Combat</h3>
+                        <p>Excellent analytical skills and tactical thinking. Can assess opponents' abilities quickly and devise effective counterstrategies.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Cursed Energy Control</h3>
+                        <p>Proficient in cursed energy manipulation with precise control, allowing for efficient use of his techniques.</p>
+                    </div>
+                    
+                    <div class="ability">
+                        <h3>Hand-to-Hand Combat</h3>
+                        <p>Skilled martial artist trained in close-quarters combat, capable of holding his own even without shikigami.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Jujutsu Sorcerer Profile</h2>
+            <ul class="power-list">
+                <li><span class="jujutsu-info">Grade:</span> Grade 2 Sorcerer</li>
+                <li><span class="jujutsu-info">Innate Technique:</span> <span class="shadow-garden">Ten Shadows</span></li>
+                <li><span class="jujutsu-info">Heritage:</span> <span class="zenin-accent">Zenin Clan</span></li>
+                <li><span class="jujtuu-info">Domain:</span> Chimera Shadow Garden</li>
+                <li><span class="jujutsu-info">Weapon:</span> Cursed Tool Storage</li>
+                <li><span class="jujutsu-info">Potential:</span> <span class="potential">Special Grade</span></li>
+            </ul>
+            
+            <h2>Key Relationships</h2>
+            <ul class="power-list">
+                <li><strong>Yuji Itadori</strong> - Best friend & battle partner</li>
+                <li><strong>Nobara Kugisaki</strong> - Teammate & classmate</li>
+                <li><strong>Satoru Gojo</strong> - Mentor who raised him</li>
+                <li><strong>Tsumiki Fushiguro</strong> - Stepsister in coma</li>
+                <li><strong>Zenin Clan</strong> - Family he rejects</li>
+                <li><strong>Sukuna</strong> - Ancient threat</li>
+            </ul>
+            
+            <h2>The Ten Shadows Legacy</h2>
+            <p>The Ten Shadows Technique is one of the two great techniques of the <span class="zenin-accent">Zenin Clan</span>, rivaled only by the Gojo Clan's Six Eyes. Historically, users of these techniques often killed each other in battle.</p>
+            
+            <h2>Moral Philosophy</h2>
+            <p>Megumi operates on a unique moral code: he won't save everyone, but he will save those he judges as "<span class="highlight">worth saving</span>." This pragmatic approach often puts him at odds with Yuji's more idealistic worldview.</p>
+            
+            <h2>Domain Expansion</h2>
+            <p>Megumi's <span class="shadow-garden">Chimera Shadow Garden</span> is unique among Domains - it's incomplete but doesn't have a sure-hit effect, instead enhancing his shadows and allowing free shikigami creation.</p>
+            
+            <h2>Growth & Potential</h2>
+            <p>Throughout the series, Megumi evolves from a competent but limited sorcerer to someone recognized as having the potential to reach <span class="potential">Special Grade</span> level, with Gojo noting he could eventually rival even him.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>Tribute website to Megumi Fushiguro from Jujutsu Kaisen</p>
+        <p>Created with HTML and CSS | No images used</p>
+    </footer>
+</body>
+</html>
